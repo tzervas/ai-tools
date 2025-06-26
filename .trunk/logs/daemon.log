@@ -1,0 +1,263 @@
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/bin\python3 // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/Scripts\python3.bat // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/Scripts\python3 // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\trufflehog\3.89.2-ab97d3228fe4893489b3ee12607c3189/Scripts\python3.exe // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3 // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.660] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\tyler\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-06-26 11:40:50.693] [global] [info] [cache.cc:1117] [monitor] [trufflehog:lint:.gitignore... (20 files):HEAD] Linter ran in 1019ms
+[2025-06-26 11:41:01.211] [global] [info] [git_source_control.cc:517] Computing merge base between 717a3b071048b57b226d8732bee8c1e615fbebd3 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:41:01.212] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:41:49.339] [global] [info] [git_source_control.cc:517] Computing merge base between 717a3b071048b57b226d8732bee8c1e615fbebd3 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:41:49.339] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:42:20.663] [global] [info] [git_source_control.cc:517] Computing merge base between 88eceacbd624fe973106c8e892c967c2e909589e and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:42:20.668] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:42:21.796] [global] [info] [git_source_control.cc:517] Computing merge base between 88eceacbd624fe973106c8e892c967c2e909589e and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:42:21.796] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:42:51.143] [global] [info] [git_source_control.cc:517] Computing merge base between 88eceacbd624fe973106c8e892c967c2e909589e and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:42:51.143] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:42:57.830] [global] [info] [git_source_control.cc:517] Computing merge base between 88eceacbd624fe973106c8e892c967c2e909589e and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:42:57.831] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:43:08.453] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:43:08.454] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:43:11.831] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:43:11.831] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:51:33.942] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:51:33.943] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:51:35.395] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:51:35.395] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:28.298] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:28.298] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:30.013] [global] [info] [service.cc:266] lint session ended sid=16
+[2025-06-26 11:57:30.013] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=16] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:30.013] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:30.013] [global] [info] [service.cc:266] lint session ended sid=17
+[2025-06-26 11:57:30.013] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=17] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:30.013] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:30.015] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=16] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:30.015] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:30.015] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=17] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:30.015] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:30.024] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:30.032] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:30.759] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::actions::Service::GetNotificationsStream(grpc::ServerContext *, const proto::v1::GetNotificationsStreamRequest *, grpc::ServerWriter<proto::v1::GetNotificationsStreamResponse> *) status=OK
+[2025-06-26 11:57:30.885] [global] [info] [service.cc:108] CLI version change; do not run file-triggered actions
+[2025-06-26 11:57:30.887] [global] [info] [service.cc:36] CLI version change; do not update tools
+[2025-06-26 11:57:30.888] [global] [info] [git_source_control.cc:517] Computing merge base between 4dd1bc0bd7dfacf7a76163e865447535f51edac8 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:30.888] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:30.898] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:30.898] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:30.898] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:30.900] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:34.477] [global] [info] [git_source_control.cc:517] Computing merge base between 4dd1bc0bd7dfacf7a76163e865447535f51edac8 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:34.477] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:34.478] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:34.479] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:34.479] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:34.480] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:37.434] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:37.435] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:37.529] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.530] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:37.530] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.530] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:37.530] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.531] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:37.531] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.532] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.582] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:37.582] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:37.582] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.296] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:39.296] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:39.388] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.388] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:39.388] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.389] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:39.389] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.390] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:39.390] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.390] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.390] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:39.391] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:39.391] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.162] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:41.163] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:41.163] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:41.164] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.165] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.165] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:41.165] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:41.165] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.243] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:42.243] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:42.331] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.331] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:42.331] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.331] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:42.331] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.332] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:42.332] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.333] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.338] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:42.338] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:42.338] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:48.521] [global] [info] [service.cc:266] lint session ended sid=15
+[2025-06-26 11:57:48.521] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=15] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:48.525] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:48.525] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:48.525] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=15] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:48.525] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:48.533] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:48.537] [global] [info] [service.cc:266] lint session ended sid=14
+[2025-06-26 11:57:48.537] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=14] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:48.537] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:48.538] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:48.538] [global] [info] [service.cc:268] [user-agent=lsp-proxy sid=14] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:48.538] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-06-26 11:57:48.547] [global] [info] [service.cc:335] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-06-26 11:57:57.718] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:57:57.719] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:57:57.725] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.725] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:57.725] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.726] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:57.726] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.727] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:57.727] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.728] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.728] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:57:57.729] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:57:57.729] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.694] [global] [info] [git_source_control.cc:517] Computing merge base between 55eea75007e4041f36c1c8a85571f06c5948df8b and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:05.694] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:58:05.698] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.698] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:05.698] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.698] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:05.699] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.699] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:05.700] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.700] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.700] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:05.700] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:05.701] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.539] [global] [info] [git_source_control.cc:517] Computing merge base between 15b7a919613195564120f0daa4fea5b65e7dfa56 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:06.539] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:58:06.542] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.542] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:06.542] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.543] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:06.543] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.544] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:06.544] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.545] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.545] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:06.546] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:06.546] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.863] [global] [info] [git_source_control.cc:517] Computing merge base between 15b7a919613195564120f0daa4fea5b65e7dfa56 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:14.864] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 67480bc4a4b7af1a409c7b926feb83c4b67a27a7
+[2025-06-26 11:58:14.870] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.870] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:14.870] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.871] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:14.871] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.872] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:14.872] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.873] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.873] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:14.874] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:14.874] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.297] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:36.297] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:36.302] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.302] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:36.302] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.303] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:36.303] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.304] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:36.304] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.304] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.304] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:36.305] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:36.305] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.316] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:39.316] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 11:58:39.316] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.316] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.317] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.318] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 11:58:39.318] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 11:58:39.318] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.802] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:33.803] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:33.807] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.807] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:33.807] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.808] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:33.808] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.809] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:33.809] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.809] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.809] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:33.810] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:33.810] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.756] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:48.757] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:48.764] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.764] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:48.764] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.764] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:48.764] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.765] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:48.765] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.766] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.766] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:48.766] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:48.766] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.771] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:49.771] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:49.775] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.776] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:49.776] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.776] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:49.777] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.778] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:49.778] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.778] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.779] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:49.779] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:49.780] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.128] [global] [info] [git_source_control.cc:517] Computing merge base between 2640ef149d7b2620b24bf35ab48bfa52e8049397 and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:55.128] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:02:55.144] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.144] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:55.145] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.145] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:55.145] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.146] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:55.147] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.147] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.148] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:02:55.148] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:02:55.148] [global] [info] [app_context.cc:357] GetTrunkContext failed
+[2025-06-26 12:03:05.246] [global] [info] [service.cc:108] CLI version change; do not run file-triggered actions
+[2025-06-26 12:03:05.248] [global] [info] [service.cc:36] CLI version change; do not update tools
+[2025-06-26 12:03:05.248] [global] [info] [git_source_control.cc:517] Computing merge base between 85b3678cbb8142878bd58b2433061d7a2011a48f and 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:03:05.249] [global] [info] [git_source_control.cc:519] Resolved divergent commit as 4dd1bc0bd7dfacf7a76163e865447535f51edac8
+[2025-06-26 12:03:05.261] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:03:05.261] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:03:05.262] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
+[2025-06-26 12:03:05.262] [global] [info] [app_context.cc:409] TryGetTrunkConfigPb failed
