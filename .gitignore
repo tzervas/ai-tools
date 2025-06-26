@@ -2,7 +2,6 @@
 __pycache__/
 *.py[codz]
 *$py.class
-*.pyc
 *.bin
 
 # C extensions
@@ -101,7 +100,7 @@ ipython_config.py
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
-#uv.lock
+uv.lock
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
@@ -121,7 +120,6 @@ ipython_config.py
 #   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
 #   in the .venv directory. It is recommended not to include this directory in version control.
 .pixi
-
 __pypackages__/
 
 # Celery stuff
@@ -170,18 +168,15 @@ cython_debug/
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore
 #  Consider using .idea/ miesto .idea/ ** /
 #  Benefit: allow user to track files in .idea/ but not entire .idea/ dir
-# .idea/
-# .idea/ ** / *.iml
-# .idea/ ** /modules.xml
-# .idea/ ** /./*.xml
-# .idea/ ** /workspace.xml
-# .idea/**/shelf/
-# .idea/**/tasks.xml
-# .idea/dictionaries
-# .idea/shelf
-
-# VS Code
-.vscode/
+.idea/
+.idea/ ** / *.iml
+.idea/ ** /modules.xml
+.idea/ ** /./*.xml
+.idea/ ** /workspace.xml
+.idea/**/shelf/
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/shelf
 
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
@@ -200,7 +195,7 @@ cython_debug/
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #  and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+.vscode/
 
 # Ruff stuff:
 .ruff_cache/
