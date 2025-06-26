@@ -1,0 +1,1488 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Pattern",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Pattern",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "AnyStr",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Pattern",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "AnyStr",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Pattern",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "gnupg",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gnupg",
+        "description": "gnupg",
+        "detail": "gnupg",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "fnmatch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fnmatch",
+        "description": "fnmatch",
+        "detail": "fnmatch",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "git",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "git",
+        "description": "git",
+        "detail": "git",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "TestClient",
+        "importPath": "fastapi.testclient",
+        "description": "fastapi.testclient",
+        "isExtraImport": true,
+        "detail": "fastapi.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "TestClient",
+        "importPath": "fastapi.testclient",
+        "description": "fastapi.testclient",
+        "isExtraImport": true,
+        "detail": "fastapi.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "isExtraImport": true,
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "CONTEXT_STORE",
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "isExtraImport": true,
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "isExtraImport": true,
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "call_echo_tool",
+        "importPath": "src.mcp_tools.echo_tool.client",
+        "description": "src.mcp_tools.echo_tool.client",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.echo_tool.client",
+        "documentation": {}
+    },
+    {
+        "label": "PolicyConfig",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "BranchNamingPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "CommitMessagePolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "ConventionalCommitPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "RequireIssueNumberPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternsPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternItem",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "FileSizePolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_CONFIG_FILENAME",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "BranchNamingPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "CommitMessagePolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "ConventionalCommitPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "RequireIssueNumberPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternsPolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternItem",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "FileSizePolicy",
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "branch",
+        "importPath": "src.mcp_tools.pr_reviewer.policies",
+        "description": "src.mcp_tools.pr_reviewer.policies",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.policies",
+        "documentation": {}
+    },
+    {
+        "label": "commit",
+        "importPath": "src.mcp_tools.pr_reviewer.policies",
+        "description": "src.mcp_tools.pr_reviewer.policies",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.policies",
+        "documentation": {}
+    },
+    {
+        "label": "file",
+        "importPath": "src.mcp_tools.pr_reviewer.policies",
+        "description": "src.mcp_tools.pr_reviewer.policies",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.pr_reviewer.policies",
+        "documentation": {}
+    },
+    {
+        "label": "CreateContextRequest",
+        "kind": 6,
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "peekOfCode": "class CreateContextRequest(BaseModel):\n    context_id: str\n    # Add other MCP-specific fields for context creation as needed\n    # For example: metadata: Optional[Dict[str, Any]] = None\n    # initial_data: Optional[Dict[str, Any]] = None\nclass UpdateContextRequest(BaseModel):\n    # Define fields for updating a context according to MCP\n    # For example: new_data: Dict[str, Any]\n    pass\nclass GetContextResponse(BaseModel):",
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateContextRequest",
+        "kind": 6,
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "peekOfCode": "class UpdateContextRequest(BaseModel):\n    # Define fields for updating a context according to MCP\n    # For example: new_data: Dict[str, Any]\n    pass\nclass GetContextResponse(BaseModel):\n    context_id: str\n    data: Dict[str, Any]\n    # Add other MCP-specific fields\n@app.post(\"/v1/contexts\", status_code=201)\nasync def create_context(request: CreateContextRequest):",
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "GetContextResponse",
+        "kind": 6,
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "peekOfCode": "class GetContextResponse(BaseModel):\n    context_id: str\n    data: Dict[str, Any]\n    # Add other MCP-specific fields\n@app.post(\"/v1/contexts\", status_code=201)\nasync def create_context(request: CreateContextRequest):\n    \"\"\"\n    Create a new context.\n    This is a simplified placeholder. MCP might have more specific requirements.\n    \"\"\"",
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "EchoPayload",
+        "kind": 6,
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "peekOfCode": "class EchoPayload(BaseModel):\n    message: str\n    context_id: Optional[str] = None # Example: tool might operate within a context\n@app.post(\"/v1/tools/echo\")\nasync def echo_tool_endpoint(payload: EchoPayload):\n    \"\"\"\n    Echoes back the received message.\n    Optionally, this could interact with a context if context_id is provided.\n    \"\"\"\n    # For now, a simple echo.",
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.mcp_server.main",
+        "description": "src.mcp_server.main",
+        "peekOfCode": "app = FastAPI(\n    title=\"Anthropic Model Context Protocol Server\",\n    description=\"A server implementing the Anthropic Model Context Protocol (MCP).\",\n    version=\"0.1.0\",\n)\n# In-memory store for contexts (for demonstration purposes)\n# In a real application, this would be a persistent database.\nCONTEXT_STORE: Dict[str, Dict[str, Any]] = {}\nclass CreateContextRequest(BaseModel):\n    context_id: str",
+        "detail": "src.mcp_server.main",
+        "documentation": {}
+    },
+    {
+        "label": "call_echo_tool",
+        "kind": 2,
+        "importPath": "src.mcp_tools.echo_tool.client",
+        "description": "src.mcp_tools.echo_tool.client",
+        "peekOfCode": "def call_echo_tool(\n    server_url: str,\n    message: str,\n    context_id: str = None,\n    http_client: httpx.Client = None\n) -> dict:\n    \"\"\"\n    Calls the echo tool endpoint on the MCP server.\n    Args:\n        server_url: The base URL of the MCP server.",
+        "detail": "src.mcp_tools.echo_tool.client",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.mcp_tools.echo_tool.client",
+        "description": "src.mcp_tools.echo_tool.client",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"MCP Echo Tool Client\")\n    parser.add_argument(\"message\", type=str, help=\"The message to send to the echo tool.\")\n    parser.add_argument(\"--server-url\", type=str, default=DEFAULT_SERVER_URL,\n                        help=f\"The base URL of the MCP server (default: {DEFAULT_SERVER_URL}).\")\n    parser.add_argument(\"--context-id\", type=str, help=\"Optional context ID to associate with the echo request.\")\n    args = parser.parse_args()\n    try:\n        result = call_echo_tool(args.server_url, args.message, args.context_id)\n        print(\"Server response:\")",
+        "detail": "src.mcp_tools.echo_tool.client",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_SERVER_URL",
+        "kind": 5,
+        "importPath": "src.mcp_tools.echo_tool.client",
+        "description": "src.mcp_tools.echo_tool.client",
+        "peekOfCode": "DEFAULT_SERVER_URL = \"http://localhost:8000\"\ndef call_echo_tool(\n    server_url: str,\n    message: str,\n    context_id: str = None,\n    http_client: httpx.Client = None\n) -> dict:\n    \"\"\"\n    Calls the echo tool endpoint on the MCP server.\n    Args:",
+        "detail": "src.mcp_tools.echo_tool.client",
+        "documentation": {}
+    },
+    {
+        "label": "generate_gpg_key",
+        "kind": 2,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "def generate_gpg_key(gpg_home: str, name: str, email: str, expiry: str, passphrase: str = None) -> tuple[str, str, str]:\n    \"\"\"\n    Generates a new GPG key pair.\n    Args:\n        gpg_home: Path to the GPG home directory to use.\n        name: Real name for the GPG key.\n        email: Email for the GPG key.\n        expiry: Expiration date for the GPG key (e.g., 0 for no expiry, 1y, 7d).\n        passphrase: Optional passphrase for the key. If None, key will not be passphrase protected.\n    Returns:",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "add_gpg_key_to_github",
+        "kind": 2,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "def add_gpg_key_to_github(public_key_armored: str, github_token: str) -> bool:\n    \"\"\"\n    Adds the GPG public key to the authenticated user's GitHub account.\n    Args:\n        public_key_armored: The GPG public key in ASCII-armored format.\n        github_token: GitHub Personal Access Token with 'write:gpg_key' scope.\n    Returns:\n        True if successful, False otherwise.\n    \"\"\"\n    headers = {",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"Generate a GPG key and add it to GitHub.\")\n    parser.add_argument(\"--name\", required=True, help=\"Real name for the GPG key (e.g., 'Tyler Zervas Agent').\")\n    parser.add_argument(\"--email\", required=True, help=\"Email for the GPG key (e.g., 'tz-dev-agent@vectorwieght.com').\")\n    parser.add_argument(\"--expiry\", default=DEFAULT_KEY_EXPIRY,\n                        help=f\"Expiration for the GPG key (e.g., 0, 1y, 30d). Default: {DEFAULT_KEY_EXPIRY}.\")\n    parser.add_argument(\"--passphrase\", default=None, help=\"Optional passphrase for the GPG key. If not provided, key will have no passphrase (less secure).\")\n    parser.add_argument(\"--github-token\", help=\"GitHub Personal Access Token with 'write:gpg_key' scope. Can also be set via GITHUB_TOKEN env var.\")\n    parser.add_argument(\"--gpg-home\", default=None,\n                        help=f\"Custom GPG home directory. Default: ~/{DEFAULT_GPG_HOME_RELATIVE} (a new temporary one is used if this is not set).\")",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_GPG_HOME_RELATIVE",
+        "kind": 5,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "DEFAULT_GPG_HOME_RELATIVE = \".gnupg_mcp_tool\" # Relative to user's home directory\nDEFAULT_KEY_EXPIRY = \"7d\" # Default to 7 days for short-lived keys\nGITHUB_API_URL = \"https://api.github.com\"\ndef generate_gpg_key(gpg_home: str, name: str, email: str, expiry: str, passphrase: str = None) -> tuple[str, str, str]:\n    \"\"\"\n    Generates a new GPG key pair.\n    Args:\n        gpg_home: Path to the GPG home directory to use.\n        name: Real name for the GPG key.\n        email: Email for the GPG key.",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_KEY_EXPIRY",
+        "kind": 5,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "DEFAULT_KEY_EXPIRY = \"7d\" # Default to 7 days for short-lived keys\nGITHUB_API_URL = \"https://api.github.com\"\ndef generate_gpg_key(gpg_home: str, name: str, email: str, expiry: str, passphrase: str = None) -> tuple[str, str, str]:\n    \"\"\"\n    Generates a new GPG key pair.\n    Args:\n        gpg_home: Path to the GPG home directory to use.\n        name: Real name for the GPG key.\n        email: Email for the GPG key.\n        expiry: Expiration date for the GPG key (e.g., 0 for no expiry, 1y, 7d).",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "GITHUB_API_URL",
+        "kind": 5,
+        "importPath": "src.mcp_tools.gpg_github_tool.key_manager",
+        "description": "src.mcp_tools.gpg_github_tool.key_manager",
+        "peekOfCode": "GITHUB_API_URL = \"https://api.github.com\"\ndef generate_gpg_key(gpg_home: str, name: str, email: str, expiry: str, passphrase: str = None) -> tuple[str, str, str]:\n    \"\"\"\n    Generates a new GPG key pair.\n    Args:\n        gpg_home: Path to the GPG home directory to use.\n        name: Real name for the GPG key.\n        email: Email for the GPG key.\n        expiry: Expiration date for the GPG key (e.g., 0 for no expiry, 1y, 7d).\n        passphrase: Optional passphrase for the key. If None, key will not be passphrase protected.",
+        "detail": "src.mcp_tools.gpg_github_tool.key_manager",
+        "documentation": {}
+    },
+    {
+        "label": "check_branch_name_policy",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.branch",
+        "description": "src.mcp_tools.pr_reviewer.policies.branch",
+        "peekOfCode": "def check_branch_name_policy(\n    branch_name: Optional[str],\n    policy: BranchNamingPolicy\n) -> List[str]:\n    \"\"\"\n    Checks if the branch name conforms to the configured pattern.\n    Args:\n        branch_name: The name of the branch to check. Can be None (e.g. detached HEAD).\n        policy: The BranchNamingPolicy configuration object.\n    Returns:",
+        "detail": "src.mcp_tools.pr_reviewer.policies.branch",
+        "documentation": {}
+    },
+    {
+        "label": "check_conventional_commit_format",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.commit",
+        "description": "src.mcp_tools.pr_reviewer.policies.commit",
+        "peekOfCode": "def check_conventional_commit_format(\n    commit_subject: str, # The first line of the commit message\n    commit_sha: str, # For context in violation messages\n    policy: ConventionalCommitPolicy\n) -> List[str]:\n    \"\"\"\n    Checks if the commit subject line adheres to Conventional Commits format.\n    Example: feat(scope)!: broadcast errors\n    Args:\n        commit_subject: The first line of the commit message.",
+        "detail": "src.mcp_tools.pr_reviewer.policies.commit",
+        "documentation": {}
+    },
+    {
+        "label": "check_commit_for_issue_number",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.commit",
+        "description": "src.mcp_tools.pr_reviewer.policies.commit",
+        "peekOfCode": "def check_commit_for_issue_number(\n    commit_message_body: str, # Full commit message body (excluding subject, or could be full message)\n    pr_title: Optional[str], # Placeholder for future use\n    pr_body: Optional[str],  # Placeholder for future use\n    commit_sha: str, # For context in violation messages\n    policy: RequireIssueNumberPolicy\n) -> List[str]:\n    \"\"\"\n    Checks if the commit message body (or future PR title/body) contains an issue number.\n    Args:",
+        "detail": "src.mcp_tools.pr_reviewer.policies.commit",
+        "documentation": {}
+    },
+    {
+        "label": "check_commit_message_policies",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.commit",
+        "description": "src.mcp_tools.pr_reviewer.policies.commit",
+        "peekOfCode": "def check_commit_message_policies(\n    commit_details: Dict, # As returned by GitUtils.get_commit_details\n    policy: CommitMessagePolicy,\n    # pr_title: Optional[str] = None, # For future PR context\n    # pr_body: Optional[str] = None   # For future PR context\n) -> List[str]:\n    \"\"\"\n    Runs all configured commit message policies for a single commit.\n    \"\"\"\n    violations: List[str] = []",
+        "detail": "src.mcp_tools.pr_reviewer.policies.commit",
+        "documentation": {}
+    },
+    {
+        "label": "CONVENTIONAL_COMMIT_REGEX",
+        "kind": 5,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.commit",
+        "description": "src.mcp_tools.pr_reviewer.policies.commit",
+        "peekOfCode": "CONVENTIONAL_COMMIT_REGEX = re.compile(r\"^(?P<type>[a-zA-Z_]+)(?:\\((?P<scope>[^\\)]+)\\))?(?P<breaking>!)?: (?P<subject>.+)$\")\ndef check_conventional_commit_format(\n    commit_subject: str, # The first line of the commit message\n    commit_sha: str, # For context in violation messages\n    policy: ConventionalCommitPolicy\n) -> List[str]:\n    \"\"\"\n    Checks if the commit subject line adheres to Conventional Commits format.\n    Example: feat(scope)!: broadcast errors\n    Args:",
+        "detail": "src.mcp_tools.pr_reviewer.policies.commit",
+        "documentation": {}
+    },
+    {
+        "label": "check_content_disallowed_patterns",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.file",
+        "description": "src.mcp_tools.pr_reviewer.policies.file",
+        "peekOfCode": "def check_content_disallowed_patterns(\n    filepath: str,\n    get_file_content: GetFileContentCallable, # Function to get content (e.g., from git_utils)\n    policy: DisallowedPatternsPolicy\n) -> List[str]:\n    \"\"\"\n    Checks file content for disallowed patterns.\n    Args:\n        filepath: Path of the file being checked.\n        get_file_content: A callable that takes filepath and returns its content as string or bytes.",
+        "detail": "src.mcp_tools.pr_reviewer.policies.file",
+        "documentation": {}
+    },
+    {
+        "label": "check_file_size_policy",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.file",
+        "description": "src.mcp_tools.pr_reviewer.policies.file",
+        "peekOfCode": "def check_file_size_policy(\n    filepath: str,\n    get_file_size: GetFileSizeCallable, # Function to get file size (e.g., from git_utils)\n    policy: FileSizePolicy\n) -> List[str]:\n    \"\"\"\n    Checks if the file size exceeds the configured maximum.\n    Args:\n        filepath: Path of the file being checked.\n        get_file_size: A callable that takes filepath and returns its size in bytes.",
+        "detail": "src.mcp_tools.pr_reviewer.policies.file",
+        "documentation": {}
+    },
+    {
+        "label": "GetFileContentCallable",
+        "kind": 5,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.file",
+        "description": "src.mcp_tools.pr_reviewer.policies.file",
+        "peekOfCode": "GetFileContentCallable = Callable[[str], Optional[AnyStr]] # Takes path, returns content or None\nGetFileSizeCallable = Callable[[str], Optional[int]] # Takes path, returns size or None\ndef check_content_disallowed_patterns(\n    filepath: str,\n    get_file_content: GetFileContentCallable, # Function to get content (e.g., from git_utils)\n    policy: DisallowedPatternsPolicy\n) -> List[str]:\n    \"\"\"\n    Checks file content for disallowed patterns.\n    Args:",
+        "detail": "src.mcp_tools.pr_reviewer.policies.file",
+        "documentation": {}
+    },
+    {
+        "label": "GetFileSizeCallable",
+        "kind": 5,
+        "importPath": "src.mcp_tools.pr_reviewer.policies.file",
+        "description": "src.mcp_tools.pr_reviewer.policies.file",
+        "peekOfCode": "GetFileSizeCallable = Callable[[str], Optional[int]] # Takes path, returns size or None\ndef check_content_disallowed_patterns(\n    filepath: str,\n    get_file_content: GetFileContentCallable, # Function to get content (e.g., from git_utils)\n    policy: DisallowedPatternsPolicy\n) -> List[str]:\n    \"\"\"\n    Checks file content for disallowed patterns.\n    Args:\n        filepath: Path of the file being checked.",
+        "detail": "src.mcp_tools.pr_reviewer.policies.file",
+        "documentation": {}
+    },
+    {
+        "label": "run_all_checks",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.cli",
+        "description": "src.mcp_tools.pr_reviewer.cli",
+        "peekOfCode": "def run_all_checks(config: PolicyConfig, git_utils: GitUtils, base_branch: str, head_branch: str) -> List[str]:\n    \"\"\"\n    Runs all configured policy checks.\n    Args:\n        config: The loaded PolicyConfig.\n        git_utils: An instance of GitUtils.\n        base_branch: The base branch for comparison (e.g., 'main').\n        head_branch: The head branch to check (e.g., current feature branch, 'HEAD').\n    Returns:\n        A list of all violation messages.",
+        "detail": "src.mcp_tools.pr_reviewer.cli",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.cli",
+        "description": "src.mcp_tools.pr_reviewer.cli",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"PR Policy Review Tool: Checks code changes against configured policies.\")\n    parser.add_argument(\"--base-branch\", default=\"main\",\n                        help=\"The base branch to compare against (e.g., main, develop). Default: 'main'.\")\n    parser.add_argument(\"--head-branch\", default=\"HEAD\",\n                        help=\"The head branch or revision to check (e.g., your feature branch, 'HEAD'). Default: 'HEAD'.\")\n    parser.add_argument(\"--config-file\", default=None,\n                        help=f\"Path to the policy configuration YAML file. Defaults to searching for '.pr-policy.yml'.\")\n    parser.add_argument(\"--repo-path\", default=None,\n                        help=\"Path to the Git repository. Defaults to current working directory.\")",
+        "detail": "src.mcp_tools.pr_reviewer.cli",
+        "documentation": {}
+    },
+    {
+        "label": "BranchNamingPolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class BranchNamingPolicy(BaseModel):\n    pattern: Optional[str] = \"^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$\"\n    enabled: bool = True\n    @field_validator('pattern', mode='before')\n    def compile_pattern_branch(cls, v):\n        if v is None: # Should hit default if not provided, so this might not be strictly needed unless explicitly set to None\n            # If it can be None after defaults, handle it. Pydantic v2 handles defaults before validators usually.\n            # For a default string pattern, this 'if v is None' might be less relevant.\n            # Let's assume it's possible it's passed as None in the YAML.\n            return None",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "ConventionalCommitPolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class ConventionalCommitPolicy(BaseModel):\n    enabled: bool = True\n    types: List[str] = Field(default_factory=lambda: [\"feat\", \"fix\", \"docs\", \"style\", \"refactor\", \"test\", \"chore\"])\nclass RequireIssueNumberPolicy(BaseModel):\n    pattern: Optional[str] = \"\\\\[[A-Z]+-[0-9]+\\\\]\" # Example: [PROJ-123]\n    in_commit_body: bool = True # Check commit message body\n    in_pr_title: bool = False # Placeholder for future PR title check\n    in_pr_body: bool = False  # Placeholder for future PR body check\n    enabled: bool = False\n    @field_validator('pattern', mode='before')",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "RequireIssueNumberPolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class RequireIssueNumberPolicy(BaseModel):\n    pattern: Optional[str] = \"\\\\[[A-Z]+-[0-9]+\\\\]\" # Example: [PROJ-123]\n    in_commit_body: bool = True # Check commit message body\n    in_pr_title: bool = False # Placeholder for future PR title check\n    in_pr_body: bool = False  # Placeholder for future PR body check\n    enabled: bool = False\n    @field_validator('pattern', mode='before')\n    def compile_pattern_issue(cls, v):\n        if v is None:\n            return None",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "CommitMessagePolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class CommitMessagePolicy(BaseModel):\n    conventional_commit: ConventionalCommitPolicy = Field(default_factory=ConventionalCommitPolicy)\n    require_issue_number: RequireIssueNumberPolicy = Field(default_factory=RequireIssueNumberPolicy)\n    enabled: bool = True\nclass DisallowedPatternItem(BaseModel):\n    pattern: str\n    message: Optional[str] = None\n    enabled: bool = True\n    @field_validator('pattern', mode='before')\n    def compile_pattern_disallowed(cls, v):",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternItem",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class DisallowedPatternItem(BaseModel):\n    pattern: str\n    message: Optional[str] = None\n    enabled: bool = True\n    @field_validator('pattern', mode='before')\n    def compile_pattern_disallowed(cls, v):\n        if v is None: # Pattern is not Optional here, so this check is for robustness if data is bad\n            raise ValueError(\"Pattern for DisallowedPatternItem cannot be None\")\n        try:\n            return re.compile(v)",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DisallowedPatternsPolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class DisallowedPatternsPolicy(BaseModel):\n    patterns: List[DisallowedPatternItem] = Field(default_factory=list)\n    enabled: bool = True\nclass FileSizePolicy(BaseModel):\n    max_bytes: int = 1048576  # 1MB\n    ignore_extensions: List[str] = Field(default_factory=list)\n    ignore_paths: List[str] = Field(default_factory=list) # Paths/patterns to ignore for file size checks\n    enabled: bool = True\n# --- Main Configuration Model ---\nclass PolicyConfig(BaseModel):",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "FileSizePolicy",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class FileSizePolicy(BaseModel):\n    max_bytes: int = 1048576  # 1MB\n    ignore_extensions: List[str] = Field(default_factory=list)\n    ignore_paths: List[str] = Field(default_factory=list) # Paths/patterns to ignore for file size checks\n    enabled: bool = True\n# --- Main Configuration Model ---\nclass PolicyConfig(BaseModel):\n    branch_naming: BranchNamingPolicy = Field(default_factory=BranchNamingPolicy)\n    commit_messages: CommitMessagePolicy = Field(default_factory=CommitMessagePolicy)\n    disallowed_patterns: DisallowedPatternsPolicy = Field(default_factory=DisallowedPatternsPolicy)",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "PolicyConfig",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "class PolicyConfig(BaseModel):\n    branch_naming: BranchNamingPolicy = Field(default_factory=BranchNamingPolicy)\n    commit_messages: CommitMessagePolicy = Field(default_factory=CommitMessagePolicy)\n    disallowed_patterns: DisallowedPatternsPolicy = Field(default_factory=DisallowedPatternsPolicy)\n    file_size: FileSizePolicy = Field(default_factory=FileSizePolicy)\n    # Future policies can be added here\n    # documentation_changes: Optional[dict] = None\n# --- Loading Function ---\ndef load_config(config_path: Optional[str] = None) -> PolicyConfig:\n    \"\"\"",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "kind": 2,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "def load_config(config_path: Optional[str] = None) -> PolicyConfig:\n    \"\"\"\n    Loads policy configuration from a YAML file.\n    If config_path is None, tries to load from '.pr-policy.yml' in the current or parent directories.\n    If no file is found, returns default configuration.\n    \"\"\"\n    if config_path:\n        if not os.path.exists(config_path):\n            raise FileNotFoundError(f\"Configuration file not found: {config_path}\")\n    else:",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_CONFIG_FILENAME",
+        "kind": 5,
+        "importPath": "src.mcp_tools.pr_reviewer.config",
+        "description": "src.mcp_tools.pr_reviewer.config",
+        "peekOfCode": "DEFAULT_CONFIG_FILENAME = \".pr-policy.yml\"\n# --- Policy Specific Models ---\nclass BranchNamingPolicy(BaseModel):\n    pattern: Optional[str] = \"^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$\"\n    enabled: bool = True\n    @field_validator('pattern', mode='before')\n    def compile_pattern_branch(cls, v):\n        if v is None: # Should hit default if not provided, so this might not be strictly needed unless explicitly set to None\n            # If it can be None after defaults, handle it. Pydantic v2 handles defaults before validators usually.\n            # For a default string pattern, this 'if v is None' might be less relevant.",
+        "detail": "src.mcp_tools.pr_reviewer.config",
+        "documentation": {}
+    },
+    {
+        "label": "GitRepoError",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.git_utils",
+        "description": "src.mcp_tools.pr_reviewer.git_utils",
+        "peekOfCode": "class GitRepoError(Exception):\n    \"\"\"Custom exception for Git repository errors.\"\"\"\n    pass\nclass GitUtils:\n    def __init__(self, repo_path: Optional[str] = None):\n        \"\"\"\n        Initializes GitUtils.\n        Args:\n            repo_path: Path to the Git repository. Defaults to the current working directory.\n        Raises:",
+        "detail": "src.mcp_tools.pr_reviewer.git_utils",
+        "documentation": {}
+    },
+    {
+        "label": "GitUtils",
+        "kind": 6,
+        "importPath": "src.mcp_tools.pr_reviewer.git_utils",
+        "description": "src.mcp_tools.pr_reviewer.git_utils",
+        "peekOfCode": "class GitUtils:\n    def __init__(self, repo_path: Optional[str] = None):\n        \"\"\"\n        Initializes GitUtils.\n        Args:\n            repo_path: Path to the Git repository. Defaults to the current working directory.\n        Raises:\n            GitRepoError: If the path is not a valid Git repository.\n        \"\"\"\n        try:",
+        "detail": "src.mcp_tools.pr_reviewer.git_utils",
+        "documentation": {}
+    },
+    {
+        "label": "temp_git_repo",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def temp_git_repo(tmp_path: Path):\n    \"\"\"\n    Fixture to create a temporary Git repository for testing.\n    Yields the path to the repository.\n    \"\"\"\n    repo_dir = tmp_path / \"test_repo\"\n    repo_dir.mkdir()\n    # Initialize Git repo\n    repo = git.Repo.init(repo_dir)\n    # Initial commit on main branch",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "run_cli",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def run_cli(repo_path: Path, args: list[str]) -> subprocess.CompletedProcess:\n    \"\"\"Helper function to run the CLI tool.\"\"\"\n    cmd = [\"python\", \"-m\", CLI_MODULE_PATH] + args\n    # print(f\"Running CLI: CWD={repo_path}, CMD={' '.join(cmd)}\")\n    return subprocess.run(cmd, capture_output=True, text=True, cwd=repo_path)\ndef create_policy_file(repo_path: Path, policy_content: dict):\n    \"\"\"Helper to create a .pr-policy.yml file in the repo.\"\"\"\n    with open(repo_path / DEFAULT_POLICY_FILENAME, 'w') as f:\n        yaml.dump(policy_content, f)\n# --- Basic CLI Tests ---",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "create_policy_file",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def create_policy_file(repo_path: Path, policy_content: dict):\n    \"\"\"Helper to create a .pr-policy.yml file in the repo.\"\"\"\n    with open(repo_path / DEFAULT_POLICY_FILENAME, 'w') as f:\n        yaml.dump(policy_content, f)\n# --- Basic CLI Tests ---\ndef test_cli_no_args_runs_with_defaults(temp_git_repo: Path):\n    \"\"\"Test running the CLI with no arguments in a simple repo. Expects defaults.\"\"\"\n    # Create a feature branch\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/good-branch\")",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_no_args_runs_with_defaults",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_no_args_runs_with_defaults(temp_git_repo: Path):\n    \"\"\"Test running the CLI with no arguments in a simple repo. Expects defaults.\"\"\"\n    # Create a feature branch\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/good-branch\")\n    (temp_git_repo / \"feature_file.txt\").write_text(\"Feature content\")\n    repo.index.add([\"feature_file.txt\"])\n    repo.index.commit(\"feat: add feature file\")\n    # Run CLI (should default to base=main, head=HEAD)\n    result = run_cli(temp_git_repo, [])",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_help_message",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_help_message():\n    \"\"\"Test if the CLI shows a help message.\"\"\"\n    # Run from anywhere, doesn't need a repo for --help\n    result = subprocess.run([\"python\", \"-m\", CLI_MODULE_PATH, \"--help\"], capture_output=True, text=True)\n    assert \"usage: cli.py\" in result.stdout # cli.py from argparse default prog name\n    assert \"--base-branch\" in result.stdout\n    assert result.returncode == 0\n# --- Policy Violation Tests ---\ndef test_cli_branch_name_violation(temp_git_repo: Path):\n    policy = {\"branch_naming\": {\"pattern\": \"^feature/.+$\", \"enabled\": True}}",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_branch_name_violation",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_branch_name_violation(temp_git_repo: Path):\n    policy = {\"branch_naming\": {\"pattern\": \"^feature/.+$\", \"enabled\": True}}\n    create_policy_file(temp_git_repo, policy)\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"badbranchname\") # Does not match \"feature/.+\"\n    (temp_git_repo / \"f.txt\").write_text(\"content\")\n    repo.index.add([\"f.txt\"])\n    repo.index.commit(\"feat: some commit\")\n    result = run_cli(temp_git_repo, [\"--base-branch\", \"main\", \"--head-branch\", \"badbranchname\"])\n    # print(\"STDOUT:\", result.stdout)",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_commit_message_conventional_type_violation",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_commit_message_conventional_type_violation(temp_git_repo: Path):\n    policy = {\"commit_messages\": {\"conventional_commit\": {\"types\": [\"feat\", \"fix\"], \"enabled\": True}, \"enabled\": True}}\n    create_policy_file(temp_git_repo, policy)\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/test-conv-commit\")\n    (temp_git_repo / \"f.txt\").write_text(\"content\")\n    repo.index.add([\"f.txt\"])\n    repo.index.commit(\"docs: this type is not allowed by policy\") # 'docs' not in types\n    result = run_cli(temp_git_repo, [\"--base-branch\", \"main\", \"--head-branch\", \"feature/test-conv-commit\"])\n    # print(\"STDOUT:\", result.stdout)",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_commit_message_missing_issue_violation",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_commit_message_missing_issue_violation(temp_git_repo: Path):\n    policy = {\n        \"commit_messages\": {\n            \"require_issue_number\": {\"pattern\": \"TASK-\\\\d+\", \"in_commit_body\": True, \"enabled\": True},\n            \"enabled\": True\n        }\n    }\n    create_policy_file(temp_git_repo, policy)\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/test-issue\")",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_disallowed_pattern_violation",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_disallowed_pattern_violation(temp_git_repo: Path):\n    policy = {\n        \"disallowed_patterns\": {\n            \"patterns\": [{\"pattern\": \"DO_NOT_COMMIT\", \"message\": \"Found forbidden string\", \"enabled\": True}],\n            \"enabled\": True\n        }\n    }\n    create_policy_file(temp_git_repo, policy)\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/disallowed\")",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_file_size_violation",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_file_size_violation(temp_git_repo: Path):\n    policy = {\"file_size\": {\"max_bytes\": 100, \"enabled\": True}} # Max 100 bytes\n    create_policy_file(temp_git_repo, policy)\n    repo = git.Repo(temp_git_repo)\n    repo.git.checkout(\"-b\", \"feature/large-file\")\n    # Create a file larger than 100 bytes\n    large_content = \"a\" * 200\n    (temp_git_repo / \"large_file.txt\").write_text(large_content)\n    repo.index.add([\"large_file.txt\"])\n    repo.index.commit(\"feat: add large file\")",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_multiple_violations",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_multiple_violations(temp_git_repo: Path):\n    policy = {\n        \"branch_naming\": {\"pattern\": \"^feature/.+$\", \"enabled\": True},\n        \"commit_messages\": {\n            \"conventional_commit\": {\"types\": [\"feat\"], \"enabled\": True},\n            \"enabled\": True\n        },\n        \"file_size\": {\"max_bytes\": 50, \"enabled\": True}\n    }\n    create_policy_file(temp_git_repo, policy)",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_no_new_commits",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_no_new_commits(temp_git_repo: Path):\n    \"\"\" Test behavior when there are no new commits between base and head.\"\"\"\n    create_policy_file(temp_git_repo, {}) # Default policy\n    repo = git.Repo(temp_git_repo)\n    # main branch is already HEAD here as it's the only commit\n    result = run_cli(temp_git_repo, [\"--base-branch\", \"main\", \"--head-branch\", \"main\"])\n    # print(\"STDOUT:\", result.stdout)\n    # print(\"STDERR:\", result.stderr)\n    assert \"No new commits found between main and main.\" in result.stdout\n    assert \"ALL CHECKS PASSED\" in result.stdout # No commits means no commit/file violations",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_non_existent_config_file",
+        "kind": 2,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "def test_cli_non_existent_config_file(temp_git_repo: Path):\n    result = run_cli(temp_git_repo, [\"--config-file\", \"non_existent.yml\"])\n    # print(\"STDOUT:\", result.stdout)\n    # print(\"STDERR:\", result.stderr)\n    assert result.returncode != 0 # Should be 3 based on cli.py\n    assert \"Configuration file not found: non_existent.yml\" in result.stderr # Error message to stderr\n# More tests could include:\n# - Invalid repo path\n# - Invalid base/head branch names\n# - Config file with invalid YAML structure",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "CLI_MODULE_PATH",
+        "kind": 5,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "CLI_MODULE_PATH = \"src.mcp_tools.pr_reviewer.cli\"\nDEFAULT_POLICY_FILENAME = \".pr-policy.yml\"\n@pytest.fixture\ndef temp_git_repo(tmp_path: Path):\n    \"\"\"\n    Fixture to create a temporary Git repository for testing.\n    Yields the path to the repository.\n    \"\"\"\n    repo_dir = tmp_path / \"test_repo\"\n    repo_dir.mkdir()",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_POLICY_FILENAME",
+        "kind": 5,
+        "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "description": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "peekOfCode": "DEFAULT_POLICY_FILENAME = \".pr-policy.yml\"\n@pytest.fixture\ndef temp_git_repo(tmp_path: Path):\n    \"\"\"\n    Fixture to create a temporary Git repository for testing.\n    Yields the path to the repository.\n    \"\"\"\n    repo_dir = tmp_path / \"test_repo\"\n    repo_dir.mkdir()\n    # Initialize Git repo",
+        "detail": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
+        "documentation": {}
+    },
+    {
+        "label": "clear_context_store_after_each_test",
+        "kind": 2,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "def clear_context_store_after_each_test():\n    \"\"\"\n    Fixture to clear the CONTEXT_STORE after each test.\n    \"\"\"\n    CONTEXT_STORE.clear()\n    yield\n    CONTEXT_STORE.clear()\ndef test_echo_endpoint_direct():\n    \"\"\"\n    Test the /v1/tools/echo endpoint directly using TestClient.",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "test_echo_endpoint_direct",
+        "kind": 2,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "def test_echo_endpoint_direct():\n    \"\"\"\n    Test the /v1/tools/echo endpoint directly using TestClient.\n    \"\"\"\n    test_message = \"Hello, مباشر!\" # \"Hello, direct!\" in Arabic\n    payload = {\"message\": test_message}\n    response = client.post(\"/v1/tools/echo\", json=payload)\n    assert response.status_code == 200\n    assert response.json() == {\"echoed_message\": test_message, \"context_id\": None}\ndef test_echo_endpoint_direct_with_context():",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "test_echo_endpoint_direct_with_context",
+        "kind": 2,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "def test_echo_endpoint_direct_with_context():\n    \"\"\"\n    Test the /v1/tools/echo endpoint directly with a context_id.\n    \"\"\"\n    test_message = \"Hello, context!\"\n    context_id = \"test-context-123\"\n    # Optionally create the context first if the tool logic requires it\n    # client.post(\"/v1/contexts\", json={\"context_id\": context_id})\n    payload = {\"message\": test_message, \"context_id\": context_id}\n    response = client.post(\"/v1/tools/echo\", json=payload)",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "test_echo_tool_client_function",
+        "kind": 2,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "def test_echo_tool_client_function(monkeypatch):\n    \"\"\"\n    Test the call_echo_tool client function against the TestClient.\n    This is an integration test for the client utility.\n    \"\"\"\n    test_message = \"Hello, client function!\"\n    # The client function expects a full URL. TestClient doesn't run a live server on a port by default.\n    # We can use the TestClient's base_url or mock httpx.post to direct to the TestClient.\n    # For a true integration test of the client against the app, it's simpler to use TestClient as the server.\n    # Method 1: Use TestClient as if it were a server (requires client to be adaptable or server to be live)",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "test_echo_tool_client_function_with_context",
+        "kind": 2,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "def test_echo_tool_client_function_with_context(monkeypatch):\n    \"\"\"\n    Test the call_echo_tool client function with context_id against the TestClient.\n    \"\"\"\n    test_message = \"Client to context!\"\n    context_id = \"client-context-456\"\n    # client.post(f\"{client.base_url}/v1/contexts\", json={\"context_id\": context_id}) # Create context if necessary for tool\n    echo_response = call_echo_tool(\n        server_url=client.base_url,\n        message=test_message,",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "tests.integration.test_echo_tool",
+        "description": "tests.integration.test_echo_tool",
+        "peekOfCode": "client = TestClient(app)\n@pytest.fixture(autouse=True)\ndef clear_context_store_after_each_test():\n    \"\"\"\n    Fixture to clear the CONTEXT_STORE after each test.\n    \"\"\"\n    CONTEXT_STORE.clear()\n    yield\n    CONTEXT_STORE.clear()\ndef test_echo_endpoint_direct():",
+        "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "temp_config_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def temp_config_file(tmp_path):\n    \"\"\"Fixture to create a temporary config file and clean it up.\"\"\"\n    file_path = tmp_path / DEFAULT_CONFIG_FILENAME\n    def _create_config(content_dict):\n        with open(file_path, 'w') as f:\n            yaml.dump(content_dict, f)\n        return file_path\n    yield _create_config\n    # No explicit cleanup needed for tmp_path, pytest handles it\ndef test_load_config_default_values():",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_default_values",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_default_values():\n    \"\"\"Test loading config when no file exists, should return defaults.\"\"\"\n    config = load_config(config_path=\"non_existent_file.yml\") # Should trigger default loading path if not found\n    assert isinstance(config, PolicyConfig)\n    assert config.branch_naming.enabled is True\n    assert config.branch_naming.pattern.pattern == \"^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$\"\n    assert config.commit_messages.enabled is True\n    assert config.file_size.max_bytes == 1048576\ndef test_load_config_from_file(temp_config_file):\n    \"\"\"Test loading a valid configuration from a YAML file.\"\"\"",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_from_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_from_file(temp_config_file):\n    \"\"\"Test loading a valid configuration from a YAML file.\"\"\"\n    custom_config_data = {\n        \"branch_naming\": {\"pattern\": \"^custom/.+$\", \"enabled\": True},\n        \"commit_messages\": {\n            \"conventional_commit\": {\"types\": [\"task\", \"bugfix\"]},\n            \"require_issue_number\": {\"enabled\": True, \"pattern\": \"TASK-\\\\d+\"},\n            \"enabled\": True\n        },\n        \"disallowed_patterns\": {",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_empty_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_empty_file(temp_config_file):\n    \"\"\"Test loading an empty YAML file, should use defaults.\"\"\"\n    config_file_path = temp_config_file({}) # Empty dict makes an empty YAML file\n    original_cwd = os.getcwd()\n    os.chdir(config_file_path.parent)\n    try:\n        config = load_config()\n    finally:\n        os.chdir(original_cwd)\n    assert isinstance(config, PolicyConfig)",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_partial_config",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_partial_config(temp_config_file):\n    \"\"\"Test loading a file with only some sections defined.\"\"\"\n    partial_data = {\n        \"branch_naming\": {\"enabled\": False}\n    }\n    config_file_path = temp_config_file(partial_data)\n    original_cwd = os.getcwd()\n    os.chdir(config_file_path.parent)\n    try:\n        config = load_config()",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_invalid_yaml",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_invalid_yaml(temp_config_file):\n    \"\"\"Test loading a file with invalid YAML content.\"\"\"\n    file_path = temp_config_file(None) # Create empty file first\n    with open(file_path, 'w') as f:\n        f.write(\"branch_naming: {pattern: 'foo', enabled: true\") # Missing closing }\n    original_cwd = os.getcwd()\n    os.chdir(file_path.parent)\n    with pytest.raises(ValueError, match=\"Error parsing YAML configuration file\"):\n        try:\n            load_config()",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_config_validation_error",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_load_config_validation_error(temp_config_file):\n    \"\"\"Test loading a file with valid YAML but data that fails Pydantic validation.\"\"\"\n    invalid_data = {\n        \"file_size\": {\"max_bytes\": \"not-an-integer\"}\n    }\n    config_file_path = temp_config_file(invalid_data)\n    original_cwd = os.getcwd()\n    os.chdir(config_file_path.parent)\n    with pytest.raises(ValueError, match=\"Configuration validation error\"):\n        try:",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_regex_compilation_in_models",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_regex_compilation_in_models():\n    \"\"\"Test that regex patterns are compiled correctly in Pydantic models.\"\"\"\n    bn_policy = BranchNamingPolicy(pattern=\"^test/.+$\")\n    assert isinstance(bn_policy.pattern, re.Pattern)\n    assert bn_policy.pattern.pattern == \"^test/.+$\"\n    ri_policy = RequireIssueNumberPolicy(pattern=\"^T-\\\\d+$\", enabled=True)\n    assert isinstance(ri_policy.pattern, re.Pattern)\n    assert ri_policy.pattern.pattern == \"^T-\\\\d+$\"\n    dp_item = DisallowedPatternItem(pattern=\"secret\")\n    assert isinstance(dp_item.pattern, re.Pattern)",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_regex_pattern_in_models",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_invalid_regex_pattern_in_models():\n    \"\"\"Test that invalid regex patterns raise ValueError during model instantiation.\"\"\"\n    with pytest.raises(ValidationError): # Pydantic wraps it in ValidationError\n        BranchNamingPolicy(pattern=\"*invalidregex\")\n    with pytest.raises(ValidationError):\n        RequireIssueNumberPolicy(pattern=\"[\", enabled=True)\n    with pytest.raises(ValidationError):\n        DisallowedPatternItem(pattern=\"(?<invalid)\")\ndef test_default_config_file_search_logic(tmp_path):\n    \"\"\"Test the search logic for the default config file.\"\"\"",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_default_config_file_search_logic",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_default_config_file_search_logic(tmp_path):\n    \"\"\"Test the search logic for the default config file.\"\"\"\n    # Setup: create a .pr-policy.yml in a subdirectory\n    project_root = tmp_path\n    sub_dir = project_root / \"subdir1\" / \"subdir2\"\n    sub_dir.mkdir(parents=True)\n    config_content = {\"branch_naming\": {\"pattern\": \"^search_logic_test/.+$\"}}\n    with open(sub_dir / DEFAULT_CONFIG_FILENAME, 'w') as f:\n        yaml.dump(config_content, f)\n    # Test 1: Run from a deeper directory, should find the file in parent",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_branch_naming_policy_defaults",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_branch_naming_policy_defaults():\n    policy = BranchNamingPolicy()\n    assert policy.enabled is True\n    assert policy.pattern.pattern == \"^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$\"\ndef test_conventional_commit_policy_defaults():\n    policy = ConventionalCommitPolicy()\n    assert policy.enabled is True\n    assert policy.types == [\"feat\", \"fix\", \"docs\", \"style\", \"refactor\", \"test\", \"chore\"]\ndef test_require_issue_number_policy_defaults():\n    policy = RequireIssueNumberPolicy()",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_conventional_commit_policy_defaults",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_conventional_commit_policy_defaults():\n    policy = ConventionalCommitPolicy()\n    assert policy.enabled is True\n    assert policy.types == [\"feat\", \"fix\", \"docs\", \"style\", \"refactor\", \"test\", \"chore\"]\ndef test_require_issue_number_policy_defaults():\n    policy = RequireIssueNumberPolicy()\n    assert policy.enabled is False\n    assert policy.pattern.pattern == \"\\\\[[A-Z]+-[0-9]+\\\\]\"\n    assert policy.in_commit_body is True\ndef test_disallowed_patterns_policy_defaults():",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_require_issue_number_policy_defaults",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_require_issue_number_policy_defaults():\n    policy = RequireIssueNumberPolicy()\n    assert policy.enabled is False\n    assert policy.pattern.pattern == \"\\\\[[A-Z]+-[0-9]+\\\\]\"\n    assert policy.in_commit_body is True\ndef test_disallowed_patterns_policy_defaults():\n    policy = DisallowedPatternsPolicy()\n    assert policy.enabled is True\n    assert policy.patterns == []\ndef test_file_size_policy_defaults():",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_disallowed_patterns_policy_defaults",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_disallowed_patterns_policy_defaults():\n    policy = DisallowedPatternsPolicy()\n    assert policy.enabled is True\n    assert policy.patterns == []\ndef test_file_size_policy_defaults():\n    policy = FileSizePolicy()\n    assert policy.enabled is True\n    assert policy.max_bytes == 1048576\n    assert policy.ignore_extensions == []\n    assert policy.ignore_paths == []",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_file_size_policy_defaults",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_config",
+        "description": "tests.unit.test_pr_reviewer.test_config",
+        "peekOfCode": "def test_file_size_policy_defaults():\n    policy = FileSizePolicy()\n    assert policy.enabled is True\n    assert policy.max_bytes == 1048576\n    assert policy.ignore_extensions == []\n    assert policy.ignore_paths == []",
+        "detail": "tests.unit.test_pr_reviewer.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_branch_name_policy_valid",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_branch_name_policy_valid():\n    policy = BranchNamingPolicy(pattern=\"^(feat|fix)/[a-z0-9-]+$\", enabled=True)\n    assert branch_policies.check_branch_name_policy(\"feat/new-stuff-123\", policy) == []\ndef test_check_branch_name_policy_invalid():\n    pattern_str = \"^(feat|fix)/[a-z0-9-]+$\"\n    policy = BranchNamingPolicy(pattern=pattern_str, enabled=True)\n    violations = branch_policies.check_branch_name_policy(\"Feature/InvalidName\", policy)\n    assert len(violations) == 1\n    assert f\"does not match the required pattern: '{pattern_str}'\" in violations[0]\ndef test_check_branch_name_policy_disabled():",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_branch_name_policy_invalid",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_branch_name_policy_invalid():\n    pattern_str = \"^(feat|fix)/[a-z0-9-]+$\"\n    policy = BranchNamingPolicy(pattern=pattern_str, enabled=True)\n    violations = branch_policies.check_branch_name_policy(\"Feature/InvalidName\", policy)\n    assert len(violations) == 1\n    assert f\"does not match the required pattern: '{pattern_str}'\" in violations[0]\ndef test_check_branch_name_policy_disabled():\n    policy = BranchNamingPolicy(pattern=\"^valid/.+$\", enabled=False)\n    assert branch_policies.check_branch_name_policy(\"anything/goes\", policy) == []\ndef test_check_branch_name_policy_detached_head():",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_branch_name_policy_disabled",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_branch_name_policy_disabled():\n    policy = BranchNamingPolicy(pattern=\"^valid/.+$\", enabled=False)\n    assert branch_policies.check_branch_name_policy(\"anything/goes\", policy) == []\ndef test_check_branch_name_policy_detached_head():\n    policy = BranchNamingPolicy(pattern=\"^valid/.+$\", enabled=True)\n    violations = branch_policies.check_branch_name_policy(None, policy)\n    assert len(violations) == 1\n    assert \"Branch name could not be determined\" in violations[0]\n# --- Tests for commit policies ---\n@pytest.mark.parametrize(\"subject, types, is_valid\", [",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_branch_name_policy_detached_head",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_branch_name_policy_detached_head():\n    policy = BranchNamingPolicy(pattern=\"^valid/.+$\", enabled=True)\n    violations = branch_policies.check_branch_name_policy(None, policy)\n    assert len(violations) == 1\n    assert \"Branch name could not be determined\" in violations[0]\n# --- Tests for commit policies ---\n@pytest.mark.parametrize(\"subject, types, is_valid\", [\n    (\"feat: add new feature\", [\"feat\", \"fix\"], True),\n    (\"fix(scope): resolve bug\", [\"feat\", \"fix\"], True),\n    (\"docs!: update README with breaking change\", [\"docs\", \"feat\"], True),",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_conventional_commit_format",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_conventional_commit_format(subject, types, is_valid):\n    policy = ConventionalCommitPolicy(enabled=True, types=types)\n    violations = commit_policies.check_conventional_commit_format(subject, \"sha123\", policy)\n    if is_valid:\n        assert not violations, f\"Expected no violations for '{subject}' with types {types}\"\n    else:\n        assert violations, f\"Expected violations for '{subject}' with types {types}\"\ndef test_check_conventional_commit_format_disabled():\n    policy = ConventionalCommitPolicy(enabled=False, types=[\"feat\"])\n    violations = commit_policies.check_conventional_commit_format(\"anything goes\", \"sha123\", policy)",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_conventional_commit_format_disabled",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_conventional_commit_format_disabled():\n    policy = ConventionalCommitPolicy(enabled=False, types=[\"feat\"])\n    violations = commit_policies.check_conventional_commit_format(\"anything goes\", \"sha123\", policy)\n    assert not violations\n@pytest.mark.parametrize(\"body, pattern_str, pr_title, pr_body, in_commit_body, expected_violations_count\", [\n    (\"Fixes TICKET-123\", r\"TICKET-\\d+\", None, None, True, 0),\n    (\"Related to task [PROJ-001]\", r\"\\[PROJ-\\d+\\]\", None, None, True, 0),\n    (\"No ticket here.\", r\"TICKET-\\d+\", None, None, True, 1),\n    (\"Body has TICKET-123\", r\"TICKET-\\d+\", None, None, False, 0), # Policy check for body disabled\n    # Future tests for PR title/body would go here",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_commit_for_issue_number",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_commit_for_issue_number(body, pattern_str, pr_title, pr_body, in_commit_body, expected_violations_count):\n    policy = RequireIssueNumberPolicy(pattern=pattern_str, in_commit_body=in_commit_body, enabled=True)\n    violations = commit_policies.check_commit_for_issue_number(body, pr_title, pr_body, \"sha123\", policy)\n    assert len(violations) == expected_violations_count\ndef test_check_commit_for_issue_number_disabled():\n    policy = RequireIssueNumberPolicy(pattern=r\"TICKET-\\d+\", enabled=False)\n    violations = commit_policies.check_commit_for_issue_number(\"No ticket needed\", None, None, \"sha123\", policy)\n    assert not violations\ndef test_check_commit_message_policies_orchestration():\n    commit_details = {",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_commit_for_issue_number_disabled",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_commit_for_issue_number_disabled():\n    policy = RequireIssueNumberPolicy(pattern=r\"TICKET-\\d+\", enabled=False)\n    violations = commit_policies.check_commit_for_issue_number(\"No ticket needed\", None, None, \"sha123\", policy)\n    assert not violations\ndef test_check_commit_message_policies_orchestration():\n    commit_details = {\n        \"sha\": \"testsha\",\n        \"message_subject\": \"badtype: this is a test\",\n        \"message_body\": \"This commit has no ticket reference.\"\n    }",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_commit_message_policies_orchestration",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_commit_message_policies_orchestration():\n    commit_details = {\n        \"sha\": \"testsha\",\n        \"message_subject\": \"badtype: this is a test\",\n        \"message_body\": \"This commit has no ticket reference.\"\n    }\n    policy = CommitMessagePolicy(\n        conventional_commit=ConventionalCommitPolicy(enabled=True, types=[\"feat\", \"fix\"]),\n        require_issue_number=RequireIssueNumberPolicy(pattern=r\"TICKET-\\d+\", in_commit_body=True, enabled=True),\n        enabled=True",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "mock_get_file_content",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def mock_get_file_content(filepath: str) -> Optional[AnyStr]:\n    return mock_file_contents.get(filepath)\n@pytest.mark.parametrize(\"filepath, patterns_config, expected_violations_count, expected_messages_contain\", [\n    (\"secrets.py\", [DisallowedPatternItem(pattern=\"API_KEY\\\\s*=\", enabled=True)], 1, [\"API_KEY\"]),\n    (\"secrets.py\", [DisallowedPatternItem(pattern=\"PASSWORD\\\\s*=\", enabled=True)], 1, [\"PASSWORD\"]),\n    (\"secrets.py\", [\n        DisallowedPatternItem(pattern=\"API_KEY\\\\s*=\", enabled=True),\n        DisallowedPatternItem(pattern=\"PASSWORD\\\\s*=\", enabled=True)\n    ], 2, [\"API_KEY\", \"PASSWORD\"]),\n    (\"clean.txt\", [DisallowedPatternItem(pattern=\"SECRET\", enabled=True)], 0, []),",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_content_disallowed_patterns",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_content_disallowed_patterns(filepath, patterns_config, expected_violations_count, expected_messages_contain):\n    policy = DisallowedPatternsPolicy(patterns=patterns_config, enabled=True)\n    violations = file_policies.check_content_disallowed_patterns(filepath, mock_get_file_content, policy)\n    assert len(violations) == expected_violations_count\n    for msg_part in expected_messages_contain:\n        assert any(msg_part in v for v in violations), f\"Expected part '{msg_part}' not in violations: {violations}\"\ndef test_check_content_disallowed_patterns_disabled():\n    policy = DisallowedPatternsPolicy(patterns=[DisallowedPatternItem(pattern=\"SECRET\", enabled=True)], enabled=False)\n    violations = file_policies.check_content_disallowed_patterns(\"secrets.py\", mock_get_file_content, policy)\n    assert not violations",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_content_disallowed_patterns_disabled",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_content_disallowed_patterns_disabled():\n    policy = DisallowedPatternsPolicy(patterns=[DisallowedPatternItem(pattern=\"SECRET\", enabled=True)], enabled=False)\n    violations = file_policies.check_content_disallowed_patterns(\"secrets.py\", mock_get_file_content, policy)\n    assert not violations\n# Mock file size getter for size tests\nmock_file_sizes = {\n    \"small.txt\": 100,\n    \"large.exe\": 2000000,\n    \"ignored.log\": 5000000,\n    \"vendor/big_lib.js\": 3000000,",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "mock_get_file_size",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def mock_get_file_size(filepath: str) -> Optional[int]:\n    return mock_file_sizes.get(filepath)\n@pytest.mark.parametrize(\"filepath, max_bytes, ignore_ext, ignore_paths, expected_violations_count\", [\n    (\"small.txt\", 1000, [], [], 0),\n    (\"large.exe\", 1000000, [], [], 1), # Exceeds 1MB\n    (\"ignored.log\", 100, [\".log\"], [], 0), # Ignored by extension\n    (\"vendor/big_lib.js\", 1000, [], [\"vendor/*\"], 0), # Ignored by path\n    (\"docs/image.png\", 1000, [], [], 1), # Exceeds 1000 bytes (not 1KB)\n    (\"not_found.txt\", 1000, [], [], 0), # Size unknown, skipped\n])",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_file_size_policy",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_file_size_policy(filepath, max_bytes, ignore_ext, ignore_paths, expected_violations_count):\n    policy = FileSizePolicy(max_bytes=max_bytes, ignore_extensions=ignore_ext, ignore_paths=ignore_paths, enabled=True)\n    violations = file_policies.check_file_size_policy(filepath, mock_get_file_size, policy)\n    assert len(violations) == expected_violations_count\ndef test_check_file_size_policy_disabled():\n    policy = FileSizePolicy(max_bytes=10, enabled=False)\n    violations = file_policies.check_file_size_policy(\"large.exe\", mock_get_file_size, policy)\n    assert not violations",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_file_size_policy_disabled",
+        "kind": 2,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "def test_check_file_size_policy_disabled():\n    policy = FileSizePolicy(max_bytes=10, enabled=False)\n    violations = file_policies.check_file_size_policy(\"large.exe\", mock_get_file_size, policy)\n    assert not violations",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "mock_file_contents",
+        "kind": 5,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "mock_file_contents = {\n    \"secrets.py\": \"API_KEY = '12345'\\nPASSWORD = \\\"secret\\\"\\nOTHER_VAR='ok'\",\n    \"clean.txt\": \"This file is clean.\",\n    \"binary.data\": b\"\\x00\\x01\\x02SECRET_KEY\", # Will be skipped by content check\n    \"utf8_error.txt\": b\"Invalid \\xff UTF-8\" # Will be skipped\n}\ndef mock_get_file_content(filepath: str) -> Optional[AnyStr]:\n    return mock_file_contents.get(filepath)\n@pytest.mark.parametrize(\"filepath, patterns_config, expected_violations_count, expected_messages_contain\", [\n    (\"secrets.py\", [DisallowedPatternItem(pattern=\"API_KEY\\\\s*=\", enabled=True)], 1, [\"API_KEY\"]),",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "mock_file_sizes",
+        "kind": 5,
+        "importPath": "tests.unit.test_pr_reviewer.test_policies",
+        "description": "tests.unit.test_pr_reviewer.test_policies",
+        "peekOfCode": "mock_file_sizes = {\n    \"small.txt\": 100,\n    \"large.exe\": 2000000,\n    \"ignored.log\": 5000000,\n    \"vendor/big_lib.js\": 3000000,\n    \"docs/image.png\": 1024, # 1KB\n    \"not_found.txt\": None\n}\ndef mock_get_file_size(filepath: str) -> Optional[int]:\n    return mock_file_sizes.get(filepath)",
+        "detail": "tests.unit.test_pr_reviewer.test_policies",
+        "documentation": {}
+    },
+    {
+        "label": "test_health_check",
+        "kind": 2,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "def test_health_check():\n    \"\"\"\n    Test the /health endpoint.\n    It should return a 200 OK status and a JSON response with {\"status\": \"ok\"}.\n    \"\"\"\n    response = client.get(\"/health\")\n    assert response.status_code == 200\n    assert response.json() == {\"status\": \"ok\"}\ndef test_create_context_success():\n    \"\"\"",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_context_success",
+        "kind": 2,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "def test_create_context_success():\n    \"\"\"\n    Test successful context creation.\n    \"\"\"\n    context_id = \"test_context_01\"\n    response = client.post(\"/v1/contexts\", json={\"context_id\": context_id})\n    assert response.status_code == 201\n    assert response.json() == {\"message\": \"Context created successfully\", \"context_id\": context_id}\n    # Verify it's in the store (optional, depends on how much you want to test internal state)\n    # This requires access to CONTEXT_STORE or a way to inspect it.",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_context_conflict",
+        "kind": 2,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "def test_create_context_conflict():\n    \"\"\"\n    Test creating a context that already exists.\n    \"\"\"\n    context_id = \"test_context_conflict\"\n    # Create it once\n    client.post(\"/v1/contexts\", json={\"context_id\": context_id})\n    # Try to create it again\n    response = client.post(\"/v1/contexts\", json={\"context_id\": context_id})\n    assert response.status_code == 409",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_context_not_found",
+        "kind": 2,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "def test_get_context_not_found():\n    \"\"\"\n    Test retrieving a context that does not exist.\n    \"\"\"\n    response = client.get(\"/v1/contexts/non_existent_context\")\n    assert response.status_code == 404\n    assert response.json() == {\"detail\": \"Context not found\"}\n# Clean up contexts created during tests to ensure test isolation if needed\n# For simple in-memory store, this might not be strictly necessary if TestClient re-initializes state,\n# but good practice for more complex scenarios.",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "clear_context_store_after_each_test",
+        "kind": 2,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "def clear_context_store_after_each_test():\n    \"\"\"\n    Fixture to clear the CONTEXT_STORE after each test that might modify it.\n    \"\"\"\n    # Setup:\n    # Could backup CONTEXT_STORE here if needed\n    yield # This is where the test runs\n    # Teardown: Clear the CONTEXT_STORE\n    from src.mcp_server.main import CONTEXT_STORE\n    CONTEXT_STORE.clear()",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "tests.unit.test_server",
+        "description": "tests.unit.test_server",
+        "peekOfCode": "client = TestClient(app)\ndef test_health_check():\n    \"\"\"\n    Test the /health endpoint.\n    It should return a 200 OK status and a JSON response with {\"status\": \"ok\"}.\n    \"\"\"\n    response = client.get(\"/health\")\n    assert response.status_code == 200\n    assert response.json() == {\"status\": \"ok\"}\ndef test_create_context_success():",
+        "detail": "tests.unit.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    print(\"Hello from app!\")\nif __name__ == \"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    }
+]
