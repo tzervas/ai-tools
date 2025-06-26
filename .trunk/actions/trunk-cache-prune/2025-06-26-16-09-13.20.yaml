@@ -1,0 +1,15 @@
+action_id: trunk-cache-prune
+date: 2025-06-26 16:09:13
+run: trunk cache prune --allow-daemon-start=false
+run_from: ""
+trigger: schedule 24h
+result:
+  exit_code: 1
+  out: ""
+  err: Exception occurred while executing 'trunk-cache-prune'. See .trunk\out\uuXPu.yaml for details.
+  error_path: C:\Users\tyler\Documents\devel\github\projects\ai-tools\.trunk\out\uuXPu.yaml
+timestamp: 1750954153
+full_timestamp:
+  nanos: 20235000
+  seconds: 1750954153
+trunk_version: 1.24.0

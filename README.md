@@ -78,7 +78,7 @@ The project includes:
         └── test_config_optimizer/
             ├── test_optimizer_config.py
             ├── test_ec2_optimizer.py
-            └── test_s3_optimizer.py
+            └── test_s3_optimizer.py=
         └── test_iac_doc_generator/
             ├── test_terraform_hcl_parser.py
             └── test_markdown_renderer.py
