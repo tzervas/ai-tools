@@ -40,6 +40,7 @@ The project includes:
 └── tests/                # Tests
     ├── integration/      # Integration tests
     │   ├── test_echo_tool.py
+<<<<<<< HEAD
     │   └── test_pr_reviewer/
     │       └── test_pr_reviewer_cli.py
     └── unit/             # Unit tests
@@ -47,6 +48,21 @@ The project includes:
         └── test_pr_reviewer/
             ├── test_config.py
             └── test_policies.py
+=======
+    │   ├── test_pr_reviewer/
+    │   │   └── test_pr_reviewer_cli.py
+    │   └── test_iac_drift_detector/
+    │       └── test_iac_drift_cli.py
+    └── unit/             # Unit tests
+        ├── test_server.py
+        ├── test_pr_reviewer/
+        │   ├── test_config.py
+        │   └── test_policies.py
+        └── test_iac_drift_detector/
+            ├── test_terraform_parser.py
+            ├── test_drift_engine.py
+            └── test_remediation.py
+>>>>>>> d7c10cf0d9f1de2b00ac81850d9c2aa2a2b7ba40
 ```
 
 ## Getting Started
@@ -349,3 +365,86 @@ file_size:
 *   The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other non-zero codes for errors (e.g., Git issues, configuration problems).
 ```
 This tool helps maintain code quality and consistency across your project by automating common pre-PR checks.
+<<<<<<< HEAD
+=======
+
+## Tool: IaC Drift Detector
+
+The IaC (Infrastructure as Code) Drift Detector (`src/mcp_tools/iac_drift_detector/cli.py`) is a command-line tool to identify differences (drift) between your infrastructure's desired state (defined in IaC files) and its actual state in the cloud or other environments. It also provides suggestions for remediation.
+
+### Current Features (Initial Version)
+
+*   **IaC Support:**
+    *   **Terraform:** Parses desired state from `.tfstate` files.
+*   **Actual State Source:**
+    *   **Mock Connector:** Uses a built-in mock data source to simulate actual cloud resources. This is useful for testing the tool's logic without live cloud access. (Future: AWS, GCP, Azure connectors).
+*   **Drift Detection:**
+    *   **Missing Resources:** Identifies resources defined in IaC but not found in the actual state.
+    *   **Unmanaged Resources:** Identifies resources found in the actual state but not defined (tracked) in the IaC state.
+    *   **Modified Resources:** Compares attributes of resources that exist in both states and flags differences. Includes basic support for ignoring common noisy attributes (e.g., ARNs, dynamic IPs for certain resource types) and special handling for `tags`.
+*   **Remediation Suggestions:** Provides human-readable suggestions for each detected drift (e.g., `terraform apply`, `terraform import`, or manual review).
+*   **CLI Interface:** Allows specifying IaC type, state file, and actual state source.
+
+### Usage
+
+1.  **Prepare your IaC files:**
+    *   For Terraform, ensure you have a relevant `.tfstate` file representing the desired state of your infrastructure.
+2.  **Run the tool from the root of your repository (or provide paths):**
+
+    ```bash
+    python -m src.mcp_tools.iac_drift_detector.cli --iac-type terraform --tf-state-file /path/to/your/terraform.tfstate --actual-state-source mock
+    ```
+
+    **Arguments:**
+    *   `--iac-type <type>`: The IaC tool used (default/currently only: `terraform`).
+    *   `--tf-state-file <path>`: Path to the Terraform state file. **Required for Terraform.**
+    *   `--actual-state-source <source>`: Source for actual state (default/currently only: `mock`).
+        *   *(Future: `--aws-profile`, `--aws-region` for an AWS connector, etc.)*
+
+### Example Output Interpretation
+
+The tool will output:
+1.  Initialization messages (loading state, connector type).
+2.  A summary of the comparison process.
+3.  If drifts are detected:
+    *   A header indicating the number of drifts.
+    *   For each drift:
+        *   Drift type (e.g., `MODIFIED`, `MISSING_IN_ACTUAL`, `UNMANAGED_IN_ACTUAL`).
+        *   Resource type, logical name, and ID.
+        *   For `MODIFIED` drifts, a list of differing attributes with their IaC and actual values.
+        *   Suggested remediation actions.
+4.  An exit code:
+    *   `0`: No drift detected.
+    *   `1`: Drifts detected.
+    *   Other non-zero codes for errors (e.g., file not found, parsing issues).
+
+**Example of a `MODIFIED` drift output:**
+```
+Drift 1/X: MODIFIED
+  Resource Type: aws_instance
+  Resource Name: my_web_server
+  Resource ID:   i-012345abcdef
+  Attribute Differences:
+    - 'instance_type': IaC = 't2.micro', Actual = 't3.small'
+    - 'tags.Environment': IaC = 'dev', Actual = 'staging'
+  Suggested Remediation:
+    - Resource aws_instance.my_web_server (ID: i-012345abcdef) has modified attributes.
+    -   - Attribute 'instance_type':
+    -     - IaC expects: 't2.micro'
+    -     - Actual is:   't3.small'
+    -   - Attribute 'tags.Environment':
+    -     - IaC expects: 'dev'
+    -     - Actual is:   'staging'
+    -   - Suggestion: Review the differences. If IaC is the source of truth, run 'terraform apply' to align the actual state.
+    -     If changes in actual state are intentional and desired, update your Terraform code to match, then plan and apply.
+```
+
+### Current Limitations & Future Enhancements
+
+*   **Mock Only:** The initial version only supports a mock connector for the actual state. Real cloud provider connectors (AWS, GCP, Azure) are planned.
+*   **Terraform State Only:** Currently focuses on `.tfstate` for desired state. Parsing HCL directly or using plan files more extensively for drift could be added.
+*   **Basic Attribute Comparison:** The attribute diffing logic is basic and may need refinement for complex nested attributes or specific resource types. Configuration for ignored attributes is currently via a default dictionary in code.
+*   **Limited IaC Tool Support:** Only Terraform is supported.
+```
+This tool aims to help you keep your infrastructure aligned with its definition in code, reducing unexpected changes and improving stability.
+>>>>>>> d7c10cf0d9f1de2b00ac81850d9c2aa2a2b7ba40
