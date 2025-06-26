@@ -9,6 +9,8 @@ Requires-Dist: fastapi<0.116.0,>=0.115.0
 Requires-Dist: uvicorn[standard]<0.35.0,>=0.34.0
 Requires-Dist: httpx<0.28.0,>=0.27.0
 Requires-Dist: python-gnupg<0.6.0,>=0.5.0
+Requires-Dist: PyYAML<7.0,>=6.0
+Requires-Dist: GitPython<3.2.0,>=3.1.0
 Provides-Extra: dev
 Requires-Dist: pytest<9.0.0,>=8.0.0; extra == "dev"
 Requires-Dist: httpx<0.28.0,>=0.27.0; extra == "dev"
@@ -197,3 +199,73 @@ Key points:
 *   Write tests for all new features and bug fixes using Pytest.
 *   Use feature branches for development.
 *   Ensure commits are signed (see script above if needed).
+
+## Agentic GPG Key Management and Signed Commits
+
+This project provides tools and guidance for enabling AI agents (or automated processes) to manage GPG keys and make GPG-signed commits.
+
+### Tool: GPG Key Generation and GitHub Addition (`key_manager.py`)
+
+The script `src/mcp_tools/gpg_github_tool/key_manager.py` helps automate:
+1.  Generation of a new GPG key pair (optionally with a short expiry and no passphrase, suitable for agentic use).
+2.  Addition of the public GPG key to your GitHub account using a Personal Access Token.
+3.  Secure output of the private GPG key for import into the agent's GPG environment.
+
+**Usage Example:**
+```bash
+# Ensure GITHUB_TOKEN environment variable is set
+export GITHUB_TOKEN="your_github_pat_with_write:gpg_key_scope"
+
+python src/mcp_tools/gpg_github_tool/key_manager.py \
+    --name "My Agent Bot" \
+    --email "agent@example.com" \
+    --expiry "7d" # Key valid for 7 days
+    # --passphrase "optional-passphrase-if-needed"
+    # --output-private-key-file ./agent_private.key
+```
+Follow the script's output for instructions on importing the private key.
+
+### Workflow for Agentic Signed Commits
+
+Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the agent's GPG environment, and Git is configured, an agent can make signed commits as follows:
+
+1.  **Configure Git (one-time setup per environment, or per repository):**
+    The `key_manager.py` script provides these instructions upon successful key generation.
+    *   Set the GPG signing key for Git:
+        ```bash
+        git config user.signingkey <YOUR_KEY_ID>
+        ```
+    *   Tell Git to sign all commits automatically:
+        ```bash
+        git config commit.gpgsign true
+        ```
+    *   Ensure Git user name and email match the GPG key identity:
+        ```bash
+        git config user.name "Your Agent Name"
+        git config user.email "your-agent-email@example.com"
+        ```
+    These can be set globally (`--global`) or per repository.
+
+2.  **Agent's Commit Workflow:**
+    *   **Make code changes:** The agent modifies files in the repository.
+    *   **Stage changes:**
+        ```bash
+        git add <file1> <file2> ...
+        # or
+        git add .
+        ```
+    *   **Commit changes:**
+        ```bash
+        git commit -m "Automated commit message describing changes"
+        ```
+        If Git is configured as above, this commit will be automatically GPG-signed. If the GPG key has a passphrase, `gpg-agent` must be configured to provide it, or the key should be passphrase-less (recommended for short-lived agent keys).
+    *   **Push changes (to a feature branch):**
+        ```bash
+        git push origin <feature-branch-name>
+        ```
+
+**Security for Agentic Commits:**
+*   **Short-lived GPG keys:** Use keys with a defined, short expiration date (e.g., 1-7 days) for agents. Regenerate and replace them regularly using `key_manager.py`.
+*   **Passphrase-less keys:** For fully automated agents, passphrase-less GPG keys are often necessary. This makes secure storage and handling of the private key even more critical.
+*   **Scoped GitHub Tokens:** The GitHub Personal Access Token used by `key_manager.py` needs `write:gpg_key`. Tokens used by agents for pushing code should only have `repo` scope and ideally be fine-grained tokens restricted to specific repositories.
+*   **Branch Protection:** Protect your `main` (or other important) branches on GitHub to prevent direct pushes by agents. Agents should push to feature branches and create Pull Requests. Merging PRs should remain a human-supervised process.

@@ -27,13 +27,26 @@ The project includes:
 │   ├── mcp_server/       # MCP Server implementation
 │   │   └── main.py
 │   └── mcp_tools/        # Client tools interacting with MCP
-│       └── echo_tool/
-│           └── client.py
+│       ├── echo_tool/
+│       │   └── client.py
+│       └── pr_reviewer/  # Automated PR Review Helper tool
+│           ├── cli.py
+│           ├── config.py
+│           ├── git_utils.py
+│           └── policies/
+│               ├── branch.py
+│               ├── commit.py
+│               └── file.py
 └── tests/                # Tests
     ├── integration/      # Integration tests
-    │   └── test_echo_tool.py
+    │   ├── test_echo_tool.py
+    │   └── test_pr_reviewer/
+    │       └── test_pr_reviewer_cli.py
     └── unit/             # Unit tests
-        └── test_server.py
+        ├── test_server.py
+        └── test_pr_reviewer/
+            ├── test_config.py
+            └── test_policies.py
 ```
 
 ## Getting Started
@@ -251,3 +264,88 @@ Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the
 *   **Passphrase-less keys:** For fully automated agents, passphrase-less GPG keys are often necessary. This makes secure storage and handling of the private key even more critical.
 *   **Scoped GitHub Tokens:** The GitHub Personal Access Token used by `key_manager.py` needs `write:gpg_key`. Tokens used by agents for pushing code should only have `repo` scope and ideally be fine-grained tokens restricted to specific repositories.
 *   **Branch Protection:** Protect your `main` (or other important) branches on GitHub to prevent direct pushes by agents. Agents should push to feature branches and create Pull Requests. Merging PRs should remain a human-supervised process.
+
+## Tool: Automated PR Review Helper
+
+The Automated PR Review Helper (`src/mcp_tools/pr_reviewer/cli.py`) is a command-line tool designed to check your current branch's changes against a defined set of policies before you create a Pull Request or push your changes. This helps ensure code quality, consistency, and adherence to project standards.
+
+### Features
+
+*   **Configurable Policies:** Define policies in a `.pr-policy.yml` file in your repository root.
+*   **Checks Performed:**
+    *   **Branch Naming:** Verifies if the current branch name matches a specified regex pattern.
+    *   **Commit Messages:**
+        *   Checks for Conventional Commit format (e.g., `feat: ...`, `fix(scope): ...`).
+        *   Ensures commit messages include an issue/ticket number (configurable pattern).
+    *   **Disallowed Content:** Scans changed files for disallowed regex patterns (e.g., `TODO FIXME` without issue, basic secret detection).
+    *   **File Size:** Checks if any changed files exceed a maximum size limit.
+*   **Local Execution:** Run it locally on your feature branch before pushing.
+*   **CI Integration:** Can be incorporated into CI/CD pipelines to automate checks on Pull Requests.
+
+### Usage
+
+1.  **Ensure you are on your feature branch.**
+2.  **Run the tool from the root of your repository:**
+
+    ```bash
+    python -m src.mcp_tools.pr_reviewer.cli --base-branch <your_main_branch> --head-branch HEAD
+    ```
+    Or, if your feature branch is named `my-feature-branch` and base is `develop`:
+    ```bash
+    python -m src.mcp_tools.pr_reviewer.cli --base-branch develop --head-branch my-feature-branch
+    ```
+
+    **Arguments:**
+    *   `--base-branch <branch>`: The base branch to compare against (default: `main`).
+    *   `--head-branch <branch_or_rev>`: The head branch or revision to check (default: `HEAD`).
+    *   `--config-file <path>`: Path to the policy configuration YAML file (default: searches for `.pr-policy.yml` in repo root and parent directories).
+    *   `--repo-path <path>`: Path to the Git repository (default: current directory).
+
+### Configuration (`.pr-policy.yml`)
+
+Create a `.pr-policy.yml` file in the root of your repository to customize policies. If not found, default policies will be applied.
+
+**Example `.pr-policy.yml`:**
+
+```yaml
+branch_naming:
+  pattern: "^(feature|fix|chore|docs|refactor|test)/[a-zA-Z0-9_.-]+$" # Stricter: only lowercase after slash
+  enabled: true
+
+commit_messages:
+  conventional_commit:
+    enabled: true
+    types: ["feat", "fix", "docs", "style", "refactor", "test", "chore", "ci", "build", "perf"] # Extended list
+  require_issue_number:
+    pattern: "\\[(JIRA|TASK|ISSUE)-[0-9]+\\]" # e.g., [JIRA-123]
+    in_commit_body: true # Check in commit message body
+    enabled: true
+  enabled: true
+
+disallowed_patterns:
+  patterns:
+    - pattern: "console\\.log"
+      message: "Found 'console.log'. Please remove debug statements."
+      enabled: true
+    - pattern: "(SECRET|PASSWORD|API_KEY)\\s*[:=]\\s*['\\\"]?[^\\s'\\\"]+"
+      message: "Potential hardcoded secret detected. Ensure this is intentional and secure."
+      enabled: true
+    - pattern: "TODO(?!\\s*:\\s*\\[(JIRA|TASK|ISSUE)-[0-9]+\\])" # TODO without a linked issue
+      message: "Found 'TODO' without a linked issue (e.g., TODO: [JIRA-123] Description)."
+      enabled: true
+  enabled: true
+
+file_size:
+  max_bytes: 2097152 # 2MB
+  ignore_extensions: [".lock", ".mp4", ".zip"]
+  ignore_paths: ["vendor/*", "dist/*", "build/*", "*.log"] # Wildcards supported
+  enabled: true
+```
+
+### Interpreting Output
+
+*   The tool will print the policies being checked and the results.
+*   If violations are found, they will be listed with details (e.g., file path, line number, commit SHA).
+*   The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other non-zero codes for errors (e.g., Git issues, configuration problems).
+```
+This tool helps maintain code quality and consistency across your project by automating common pre-PR checks.

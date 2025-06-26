@@ -8,7 +8,10 @@ dependencies = [
     "fastapi>=0.115.0,<0.116.0",
     "uvicorn[standard]>=0.34.0,<0.35.0",
     "httpx>=0.27.0,<0.28.0", # Adding httpx as a core dependency
-    "python-gnupg>=0.5.0,<0.6.0"
+    "python-gnupg>=0.5.0,<0.6.0",
+    "PyYAML>=6.0,<7.0",
+    "GitPython>=3.1.0,<3.2.0",
+    "pydantic>=2.0,<3.0"
 ]
 
 [project.optional-dependencies]
