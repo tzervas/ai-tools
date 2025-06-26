@@ -1,8 +1,27 @@
 """
-Commit message policy checks for PR reviewer tool.
-Provides functions to validate commit messages against configured policies.
+Policies for validating commit messages in PR Reviewer tools.
+
+This module provides functions to check commit messages for compliance with Conventional Commits
+and issue number requirements, as well as utilities for integrating with future PR context features.
 """
 
+# flake8: noqa
+from typing import List, Pattern, Optional, Dict, Tuple  # noqa: F401,F403 # pylint: disable=W0611
+
+try:
+    # Relative import for development and when run as part of a package
+    from ..config import (
+        CommitMessagePolicy,
+        ConventionalCommitPolicy,
+        RequireIssueNumberPolicy,
+    )
+except ImportError:
+    # Fallback to absolute import for packaged/production use
+    from mcp_tools.pr_reviewer.policies.config import (
+        CommitMessagePolicy,
+        ConventionalCommitPolicy,
+        RequireIssueNumberPolicy,
+    )
 import re
 from typing import Dict, List, Optional, Pattern, Tuple
 
@@ -14,6 +33,10 @@ CONVENTIONAL_COMMIT_REGEX = re.compile(
     r"(?:\((?P<scope>[^\)]+)\))?"
     r"(?P<breaking>!)?: "
     r"(?P<subject>.+)$"
+)
+
+CONVENTIONAL_COMMIT_REGEX = re.compile(
+    r"^(?P<type>[a-zA-Z_]+)(?:\((?P<scope>[^\)]+)\))?(?P<breaking>!)?: (?P<subject>.+)$"
 )
 
 
@@ -52,7 +75,6 @@ def check_conventional_commit_format(
             f"Commit {commit_sha[:7]}: Type '{commit_type}' is not one of the allowed types: "
             f"{', '.join(policy.types)}."
         )
-
     # Could add more checks: scope format, subject length,
     # presence of body for breaking change, etc.
     # For now, focusing on type and basic structure.
@@ -61,10 +83,10 @@ def check_conventional_commit_format(
 
 
 def check_commit_for_issue_number(
-    commit_message_body: str,
-    pr_title: Optional[str],
-    pr_body: Optional[str],
-    commit_sha: str,
+    commit_message_body: str,  # Full commit message body (excluding subject, or full message)
+    pr_title: Optional[str],  # Placeholder for future use  # noqa: ARG001
+    pr_body: Optional[str],  # Placeholder for future use  # noqa: ARG001
+    commit_sha: str,  # For context in violation messages
     policy: RequireIssueNumberPolicy,
 ) -> List[str]:
     """
@@ -148,7 +170,7 @@ def check_commit_message_policies(
     if policy.require_issue_number.enabled:
         violations.extend(
             check_commit_for_issue_number(
-                commit_message_body=commit_body,
+                commit_message_body=commit_body,  # commit_details.get("message", "") for full msg
                 pr_title=None,  # Placeholder
                 pr_body=None,  # Placeholder
                 commit_sha=commit_sha,
