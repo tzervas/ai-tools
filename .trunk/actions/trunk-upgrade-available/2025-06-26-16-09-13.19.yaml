@@ -1,0 +1,15 @@
+action_id: trunk-upgrade-available
+date: 2025-06-26 16:09:13
+run: trunk upgrade --notify --allow-daemon-start=false
+run_from: ""
+trigger: schedule 1h
+result:
+  exit_code: 1
+  out: ""
+  err: Exception occurred while executing 'trunk-upgrade-available'. See .trunk\out\gKuVc.yaml for details.
+  error_path: C:\Users\tyler\Documents\devel\github\projects\ai-tools\.trunk\out\gKuVc.yaml
+timestamp: 1750954153
+full_timestamp:
+  nanos: 19370000
+  seconds: 1750954153
+trunk_version: 1.24.0

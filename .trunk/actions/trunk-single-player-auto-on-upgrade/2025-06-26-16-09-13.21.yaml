@@ -1,0 +1,15 @@
+action_id: trunk-single-player-auto-on-upgrade
+date: 2025-06-26 16:09:13
+run: trunk on-upgrade --single-player-only -n --no-progress --allow-daemon-start=false --print-summary --scope=check,plugins,runtimes,tools
+run_from: ""
+trigger: schedule 24h+5m
+result:
+  exit_code: 1
+  out: ""
+  err: Exception occurred while executing 'trunk-single-player-auto-on-upgrade'. See .trunk\out\6YMeO.yaml for details.
+  error_path: C:\Users\tyler\Documents\devel\github\projects\ai-tools\.trunk\out\6YMeO.yaml
+timestamp: 1750954153
+full_timestamp:
+  nanos: 21478000
+  seconds: 1750954153
+trunk_version: 1.24.0
