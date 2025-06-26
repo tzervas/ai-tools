@@ -1,10 +1,14 @@
 import pytest
-import httpx # <--- Import httpx
+import httpx  # <--- Import httpx
 from fastapi.testclient import TestClient
-from src.mcp_server.main import app, CONTEXT_STORE  # Import the FastAPI app and context store
-from src.mcp_tools.echo_tool.client import call_echo_tool # Import the client function
+from src.mcp_server.main import (
+    app,
+    CONTEXT_STORE,
+)  # Import the FastAPI app and context store
+from src.mcp_tools.echo_tool.client import call_echo_tool  # Import the client function
 
 client = TestClient(app)
+
 
 @pytest.fixture(autouse=True)
 def clear_context_store_after_each_test():
@@ -15,15 +19,17 @@ def clear_context_store_after_each_test():
     yield
     CONTEXT_STORE.clear()
 
+
 def test_echo_endpoint_direct():
     """
     Test the /v1/tools/echo endpoint directly using TestClient.
     """
-    test_message = "Hello, مباشر!" # "Hello, direct!" in Arabic
+    test_message = "Hello, مباشر!"  # "Hello, direct!" in Arabic
     payload = {"message": test_message}
     response = client.post("/v1/tools/echo", json=payload)
     assert response.status_code == 200
     assert response.json() == {"echoed_message": test_message, "context_id": None}
+
 
 def test_echo_endpoint_direct_with_context():
     """
@@ -40,6 +46,7 @@ def test_echo_endpoint_direct_with_context():
     assert response.json() == {"echoed_message": test_message, "context_id": context_id}
     # If the echo tool were to modify the context, we could assert that here:
     # assert CONTEXT_STORE[context_id]['echo_history'] == [test_message]
+
 
 def test_echo_tool_client_function(monkeypatch):
     """
@@ -58,11 +65,12 @@ def test_echo_tool_client_function(monkeypatch):
 
     # Pass the FastAPI TestClient instance directly
     echo_response = call_echo_tool(
-        server_url=client.base_url, # Used by call_echo_tool to construct endpoint
+        server_url=client.base_url,  # Used by call_echo_tool to construct endpoint
         message=test_message,
-        http_client=client # Pass the TestClient instance
+        http_client=client,  # Pass the TestClient instance
     )
     assert echo_response == {"echoed_message": test_message, "context_id": None}
+
 
 def test_echo_tool_client_function_with_context(monkeypatch):
     """
@@ -77,9 +85,10 @@ def test_echo_tool_client_function_with_context(monkeypatch):
         server_url=client.base_url,
         message=test_message,
         context_id=context_id,
-        http_client=client # Pass the TestClient instance
+        http_client=client,  # Pass the TestClient instance
     )
     assert echo_response == {"echoed_message": test_message, "context_id": context_id}
+
 
 # We could also add a test for the command-line interface of client.py,
 # but that would involve subprocess calls and capturing stdout, which is more involved.

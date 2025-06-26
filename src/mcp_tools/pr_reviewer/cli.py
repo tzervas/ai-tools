@@ -40,9 +40,11 @@ def run_all_checks(
 
     Notes:
         - If head_branch is specified and different from current, this logic might need adjustment.
-        - For now, we assume we're checking the currently checked-out branch if it matches head_branch.
+        - For now, we assume we're checking the currently checked-out branch if it matches
+        head_branch.
         - A more robust approach might be to derive branch name from head_ref if it's a branch ref.
-        - If head_branch is 'HEAD', current_branch_name is fine. If head_branch is a specific branch name, use that.
+        - If head_branch is 'HEAD', current_branch_name is fine. If head_branch is a specific
+          branch name, use that.
         - If we can't get commits, we can't do commit/file checks based on them.
         - TODO: update to logging via DynEL
     """
@@ -54,13 +56,6 @@ def run_all_checks(
     if config.branch_naming.enabled:
         print("\nChecking branch naming policy...")
         current_branch_name = git_utils.get_current_branch_name()
-        """
-        If head_branch is specified and different from current, this logic might need adjustment.
-        For now, let's assume we're checking the currently checked-out branch if it matches head_branch.
-        A more robust approach might be to derive branch name from head_ref if it's a branch ref.
-        For now, if head_branch is 'HEAD', current_branch_name is fine.
-        If head_branch is a specific branch name, use that.
-        """
         branch_to_check = head_branch
         if head_branch.upper() == "HEAD":
             branch_to_check = current_branch_name
@@ -81,7 +76,8 @@ def run_all_checks(
         commits_to_check = git_utils.get_commits_between(base_branch, head_branch)
         if not commits_to_check:
             print(
-                f"\nNo new commits found between {base_branch} and {head_branch}. Skipping commit and file checks."
+                f"\nNo new commits found between {base_branch} and {head_branch}. "
+                "Skipping commit and file checks."
             )
         else:
             print(f"\nFound {len(commits_to_check)} new commit(s) to analyze.")
@@ -198,12 +194,18 @@ def main() -> None:
     parser.add_argument(
         "--head-branch",
         default="HEAD",
-        help="The head branch or revision to check (e.g., your feature branch, 'HEAD'). Default: 'HEAD'.",
+        help=(
+            "The head branch or revision to check (e.g., your feature branch, 'HEAD'). "
+            "Default: 'HEAD'."
+        ),
     )
     parser.add_argument(
         "--config-file",
         default=None,
-        help="Path to the policy configuration YAML file. Defaults to searching for '.pr-policy.yml'.",
+        help=(
+            "Path to the policy configuration YAML file. "
+            "Defaults to searching for '.pr-policy.yml'."
+        ),
     )
     parser.add_argument(
         "--repo-path",
@@ -246,7 +248,8 @@ if __name__ == "__main__":
     2. Create a feature branch with some commits off 'main' (or your default base).
        Try violating some policies (e.g., bad commit message, large file, disallowed pattern).
     3. Optionally create a .pr-policy.yml file.
-    4. Run: python -m src.mcp_tools.pr_reviewer.cli --base-branch main --head-branch your-feature-branch
+    4. Run:
+       python -m src.mcp_tools.pr_reviewer.cli --base-branch main --head-branch your-feature-branch
        (Adjust base/head branches as needed for your test repo)
        If src is in PYTHONPATH or you install the package, you might run it as a script.
     """

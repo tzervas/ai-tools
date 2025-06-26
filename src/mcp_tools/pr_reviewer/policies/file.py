@@ -1,17 +1,19 @@
 from typing import List, Optional, Callable, AnyStr
 from ..config import DisallowedPatternsPolicy, FileSizePolicy, DisallowedPatternItem
 import os
-import fnmatch # For wildcard path matching if needed for ignore_paths
+import fnmatch  # For wildcard path matching if needed for ignore_paths
 
 # Type alias for a function that gets file content
-GetFileContentCallable = Callable[[str], Optional[AnyStr]] # Takes path, returns content or None
-GetFileSizeCallable = Callable[[str], Optional[int]] # Takes path, returns size or None
+GetFileContentCallable = Callable[
+    [str], Optional[AnyStr]
+]  # Takes path, returns content or None
+GetFileSizeCallable = Callable[[str], Optional[int]]  # Takes path, returns size or None
 
 
 def check_content_disallowed_patterns(
     filepath: str,
-    get_file_content: GetFileContentCallable, # Function to get content (e.g., from git_utils)
-    policy: DisallowedPatternsPolicy
+    get_file_content: GetFileContentCallable,  # Function to get content (e.g., from git_utils)
+    policy: DisallowedPatternsPolicy,
 ) -> List[str]:
     """
     Checks file content for disallowed patterns.
@@ -42,13 +44,12 @@ def check_content_disallowed_patterns(
     file_content_str: str
     if isinstance(file_content_any, bytes):
         try:
-            file_content_str = file_content_any.decode('utf-8')
+            file_content_str = file_content_any.decode("utf-8")
         except UnicodeDecodeError:
             # print(f"Warning: Could not decode '{filepath}' as UTF-8. Skipping disallowed pattern check.", file=sys.stderr)
-            return violations # Skip if not valid UTF-8
-    else: # Assume it's already a string
+            return violations  # Skip if not valid UTF-8
+    else:  # Assume it's already a string
         file_content_str = file_content_any
-
 
     for item in policy.patterns:
         if not item.enabled:
@@ -59,7 +60,10 @@ def check_content_disallowed_patterns(
         for line_num, line in enumerate(file_content_str.splitlines(), 1):
             match = item.pattern.search(line)
             if match:
-                custom_message = item.message or f"Disallowed pattern '{item.pattern.pattern}' found."
+                custom_message = (
+                    item.message
+                    or f"Disallowed pattern '{item.pattern.pattern}' found."
+                )
                 violations.append(
                     f"File '{filepath}', line {line_num}: {custom_message} (Matched: '{match.group(0)}')"
                 )
@@ -68,8 +72,8 @@ def check_content_disallowed_patterns(
 
 def check_file_size_policy(
     filepath: str,
-    get_file_size: GetFileSizeCallable, # Function to get file size (e.g., from git_utils)
-    policy: FileSizePolicy
+    get_file_size: GetFileSizeCallable,  # Function to get file size (e.g., from git_utils)
+    policy: FileSizePolicy,
 ) -> List[str]:
     """
     Checks if the file size exceeds the configured maximum.
@@ -89,13 +93,15 @@ def check_file_size_policy(
 
     # Check against ignore_extensions
     _, extension = os.path.splitext(filepath)
-    if extension and extension.lower() in [ext.lower() for ext in policy.ignore_extensions]:
-        return violations # Ignored by extension
+    if extension and extension.lower() in [
+        ext.lower() for ext in policy.ignore_extensions
+    ]:
+        return violations  # Ignored by extension
 
     # Check against ignore_paths (simple wildcard matching)
     for ignore_pattern in policy.ignore_paths:
         if fnmatch.fnmatch(filepath, ignore_pattern):
-            return violations # Ignored by path pattern
+            return violations  # Ignored by path pattern
 
     file_size = get_file_size(filepath)
 
@@ -111,7 +117,7 @@ def check_file_size_policy(
     return violations
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Example Usage
     from ..config import DisallowedPatternsPolicy, FileSizePolicy, DisallowedPatternItem
     import re
@@ -119,8 +125,10 @@ if __name__ == '__main__':
     # --- Test Disallowed Patterns ---
     print("--- Testing Disallowed Content Patterns ---")
     pattern_list = [
-        DisallowedPatternItem(pattern="SECRET_KEY", message="Found hardcoded secret key.", enabled=True),
-        DisallowedPatternItem(pattern="TODO: FIXME", enabled=True) # Default message
+        DisallowedPatternItem(
+            pattern="SECRET_KEY", message="Found hardcoded secret key.", enabled=True
+        ),
+        DisallowedPatternItem(pattern="TODO: FIXME", enabled=True),  # Default message
     ]
     disallowed_policy = DisallowedPatternsPolicy(patterns=pattern_list, enabled=True)
 
@@ -128,15 +136,17 @@ if __name__ == '__main__':
         "safe.py": "print('hello world')\n#This is fine",
         "secrets.txt": "API_TOKEN=123\nSECRET_KEY = 'abcdef'\nAnother line",
         "fixme.py": "# TODO: Fix this later\n# TODO: FIXME this critical bug",
-        "binary_file.bin": b"\x00\x01\x02\x03SECRET_KEY", # Test binary content
-        "utf8_error.txt": b"Hello \xff world" # Test bad utf-8
+        "binary_file.bin": b"\x00\x01\x02\x03SECRET_KEY",  # Test binary content
+        "utf8_error.txt": b"Hello \xff world",  # Test bad utf-8
     }
 
     def mock_get_content(path: str) -> Optional[AnyStr]:
         return mock_files_content.get(path)
 
     for f_path in mock_files_content.keys():
-        violations = check_content_disallowed_patterns(f_path, mock_get_content, disallowed_policy)
+        violations = check_content_disallowed_patterns(
+            f_path, mock_get_content, disallowed_policy
+        )
         if violations:
             print(f"Violations for '{f_path}':")
             for v in violations:
@@ -146,7 +156,12 @@ if __name__ == '__main__':
 
     # --- Test File Size ---
     print("\n--- Testing File Size Policy ---")
-    size_policy = FileSizePolicy(max_bytes=100, ignore_extensions=[".log"], ignore_paths=["vendor/*", "*.tmp"], enabled=True)
+    size_policy = FileSizePolicy(
+        max_bytes=100,
+        ignore_extensions=[".log"],
+        ignore_paths=["vendor/*", "*.tmp"],
+        enabled=True,
+    )
 
     mock_files_sizes = {
         "small.txt": 50,
@@ -154,7 +169,7 @@ if __name__ == '__main__':
         "ignored.log": 200,
         "temp.tmp": 300,
         "vendor/lib.js": 1000,
-        "unknown_size_file.dat": None # Simulate file not found or size unavailable
+        "unknown_size_file.dat": None,  # Simulate file not found or size unavailable
     }
 
     def mock_get_size(path: str) -> Optional[int]:
@@ -171,5 +186,9 @@ if __name__ == '__main__':
 
     # Test disabled policy
     disabled_size_policy = FileSizePolicy(max_bytes=10, enabled=False)
-    violations_disabled = check_file_size_policy("large.doc", mock_get_size, disabled_size_policy)
-    print(f"Violations for large.doc (policy disabled): {violations_disabled}") # Expected: []
+    violations_disabled = check_file_size_policy(
+        "large.doc", mock_get_size, disabled_size_policy
+    )
+    print(
+        f"Violations for large.doc (policy disabled): {violations_disabled}"
+    )  # Expected: []

@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project is a collection of tools and servers related to the Anthropic Model Context Protocol (MCP). It aims to provide useful utilities for AI-assisted Research & Development, Machine Learning, AI, Software, and IT engineering tasks.
+This project is a collection of tools and servers related to the Anthropic Model Context Protocol
+(MCP). It aims to provide useful utilities for AI-assisted Research & Development, Machine Learning,
+AI, Software, and IT engineering tasks.
 
 The project includes:
 
@@ -121,7 +123,10 @@ The project includes:
     Open the cloned repository folder in VS Code.
 
 3. **Reopen in Container:**
-    VS Code should prompt you to "Reopen in Container". Click it. This will build the Docker image defined in `Dockerfile` and configure the development environment as specified in `.devcontainer/devcontainer.json`. Dependencies listed in `pyproject.toml` will be installed automatically.
+    VS Code should prompt you to "Reopen in Container". Click it. This will build the Docker image
+    defined in `Dockerfile` and configure the development environment as specified in
+    `.devcontainer/devcontainer.json`. Dependencies listed in `pyproject.toml` will be installed
+    automatically.
 
 ### Manual Setup (without Devcontainer)
 
@@ -177,7 +182,8 @@ Tests are written using `pytest`.
 
 ### Echo Tool
 
-The Echo Tool is a simple client that sends a message to the MCP server's echo endpoint and prints the response.
+The Echo Tool is a simple client that sends a message to the MCP server's echo endpoint and prints
+the response.
 
 - **Usage (assuming server is running and venv is active or in devcontainer):**
 
@@ -197,14 +203,18 @@ The Echo Tool is a simple client that sends a message to the MCP server's echo e
 
 ## Commit Author Amendment and Signing Script
 
-A utility script `scripts/git-amend-author-and-sign.sh` is provided to help amend the author of a series of commits on a branch and prepare them for GPG signing. This is useful for ensuring commits adhere to specific authorship requirements and are properly signed.
+A utility script `scripts/git-amend-author-and-sign.sh` is provided to help amend the author of a
+series of commits on a branch and prepare them for GPG signing. This is useful for ensuring commits
+adhere to specific authorship requirements and are properly signed.
 
 ### Purpose
 
-When contributing code, especially if changes were initially made by an AI agent or under a different Git configuration, this script helps to:
+When contributing code, especially if changes were initially made by an AI agent or under a
+different Git configuration, this script helps to:
 
 1. Standardize the commit author to a designated name and email.
-2. Guide the user through an interactive rebase to sign each commit individually with their GPG key.
+2. Guide the user through an interactive rebase to sign each commit individually with their GPG
+   key.
 
 ### Prerequisites for the Script
 
@@ -219,7 +229,8 @@ When contributing code, especially if changes were initially made by an AI agent
 ```
 
 - `<branch-name>`: The local feature branch whose commits you want to amend and sign.
-- `<base-branch>`: The base branch (e.g., `main`, `develop`) against which to find the commits to process.
+- `<base-branch>`: The base branch (e.g., `main`, `develop`) against which to find the commits to
+  process.
 
 **Example:**
 If you have a branch named `feature/new-tool` that was based off `main`:
@@ -244,18 +255,23 @@ chmod +x scripts/git-amend-author-and-sign.sh # Make it executable first
         - **Continue Rebase:** After amending and/or signing, run `git rebase --continue`.
     - Repeat these steps for each commit.
 5. **Completion:**
-    - After the rebase is successfully completed, the commits on `<branch-name>` will have the new author and will be signed.
-    - The script will remind you to force-push the changes: `git push --force-with-lease origin <branch-name>`. **Always verify your changes locally before force-pushing.**
+    - After the rebase is successfully completed, the commits on `<branch-name>` will have the new
+      author and will be signed.
+    - The script will remind you to force-push the changes: `git push --force-with-lease origin
+      <branch-name>`. **Always verify your changes locally before force-pushing.**
 
 **Important Notes for the Script:**
 
-- If any conflicts occur during the rebase, you will need to resolve them manually, then `git add <resolved-files>`, and `git rebase --continue`.
+- If any conflicts occur during the rebase, you will need to resolve them manually, then `git add
+  <resolved-files>`, and `git rebase --continue`.
 - To abort the entire rebase process at any time, use `git rebase --abort`.
-- The target author (`Tyler Zervas <tz-dev@vectorwieght.com>`) is currently hardcoded in the script. This can be modified if needed.
+- The target author (`Tyler Zervas <tz-dev@vectorwieght.com>`) is currently hardcoded in the
+  script. This can be modified if needed.
 
 ## Contributing
 
-Please refer to `AGENTS.md` for guidelines on contributing to this project, especially if you are an AI agent.
+Please refer to `AGENTS.md` for guidelines on contributing to this project, especially if you are
+an AI agent.
 Key points:
 
 - Follow PEP 8 for Python code.
@@ -265,13 +281,15 @@ Key points:
 
 ## Agentic GPG Key Management and Signed Commits
 
-This project provides tools and guidance for enabling AI agents (or automated processes) to manage GPG keys and make GPG-signed commits.
+This project provides tools and guidance for enabling AI agents (or automated processes) to manage
+GPG keys and make GPG-signed commits.
 
 ### Tool: GPG Key Generation and GitHub Addition (`key_manager.py`)
 
 The script `src/mcp_tools/gpg_github_tool/key_manager.py` helps automate:
 
-1. Generation of a new GPG key pair (optionally with a short expiry and no passphrase, suitable for agentic use).
+1. Generation of a new GPG key pair (optionally with a short expiry and no passphrase, suitable for
+   agentic use).
 2. Addition of the public GPG key to your GitHub account using a Personal Access Token.
 3. Secure output of the private GPG key for import into the agent's GPG environment.
 
@@ -293,7 +311,8 @@ Follow the script's output for instructions on importing the private key.
 
 ### Workflow for Agentic Signed Commits
 
-Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the agent's GPG environment, and Git is configured, an agent can make signed commits as follows:
+Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the agent's GPG
+environment, and Git is configured, an agent can make signed commits as follows:
 
 1. **Configure Git (one-time setup per environment, or per repository):**
     The `key_manager.py` script provides these instructions upon successful key generation.
@@ -334,7 +353,9 @@ Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the
         git commit -m "Automated commit message describing changes"
         ```
 
-        If Git is configured as above, this commit will be automatically GPG-signed. If the GPG key has a passphrase, `gpg-agent` must be configured to provide it, or the key should be passphrase-less (recommended for short-lived agent keys).
+        If Git is configured as above, this commit will be automatically GPG-signed. If the GPG key
+        has a passphrase, `gpg-agent` must be configured to provide it, or the key should be
+        passphrase-less (recommended for short-lived agent keys).
     - **Push changes (to a feature branch):**
 
         ```bash
@@ -343,14 +364,23 @@ Once a GPG key is generated (e.g., using `key_manager.py`) and imported into the
 
 **Security for Agentic Commits:**
 
-- **Short-lived GPG keys:** Use keys with a defined, short expiration date (e.g., 1-7 days) for agents. Regenerate and replace them regularly using `key_manager.py`.
-- **Passphrase-less keys:** For fully automated agents, passphrase-less GPG keys are often necessary. This makes secure storage and handling of the private key even more critical.
-- **Scoped GitHub Tokens:** The GitHub Personal Access Token used by `key_manager.py` needs `write:gpg_key`. Tokens used by agents for pushing code should only have `repo` scope and ideally be fine-grained tokens restricted to specific repositories.
-- **Branch Protection:** Protect your `main` (or other important) branches on GitHub to prevent direct pushes by agents. Agents should push to feature branches and create Pull Requests. Merging PRs should remain a human-supervised process.
+- **Short-lived GPG keys:** Use keys with a defined, short expiration date (e.g., 1-7 days) for
+  agents. Regenerate and replace them regularly using `key_manager.py`.
+- **Passphrase-less keys:** For fully automated agents, passphrase-less GPG keys are often
+  necessary. This makes secure storage and handling of the private key even more critical.
+- **Scoped GitHub Tokens:** The GitHub Personal Access Token used by `key_manager.py` needs
+  `write:gpg_key`. Tokens used by agents for pushing code should only have `repo` scope and
+  ideally be fine-grained tokens restricted to specific repositories.
+- **Branch Protection:** Protect your `main` (or other important) branches on GitHub to prevent
+  direct pushes by agents. Agents should push to feature branches and create Pull Requests.
+  Merging PRs should remain a human-supervised process.
 
 ## Tool: Automated PR Review Helper
 
-The Automated PR Review Helper (`src/mcp_tools/pr_reviewer/cli.py`) is a command-line tool designed to check your current branch's changes against a defined set of policies before you create a Pull Request or push your changes. This helps ensure code quality, consistency, and adherence to project standards.
+The Automated PR Review Helper (`src/mcp_tools/pr_reviewer/cli.py`) is a command-line tool designed
+to check your current branch's changes against a defined set of policies before you create a Pull
+Request or push your changes. This helps ensure code quality, consistency, and adherence to
+project standards.
 
 ### Features
 
@@ -360,7 +390,8 @@ The Automated PR Review Helper (`src/mcp_tools/pr_reviewer/cli.py`) is a command
   - **Commit Messages:**
     - Checks for Conventional Commit format (e.g., `feat: ...`, `fix(scope): ...`).
     - Ensures commit messages include an issue/ticket number (configurable pattern).
-  - **Disallowed Content:** Scans changed files for disallowed regex patterns (e.g., `TODO FIXME` without issue, basic secret detection).
+  - **Disallowed Content:** Scans changed files for disallowed regex patterns (e.g., `TODO FIXME`
+    without issue, basic secret detection).
   - **File Size:** Checks if any changed files exceed a maximum size limit.
 - **Local Execution:** Run it locally on your feature branch before pushing.
 - **CI Integration:** Can be incorporated into CI/CD pipelines to automate checks on Pull Requests.
@@ -383,12 +414,14 @@ The Automated PR Review Helper (`src/mcp_tools/pr_reviewer/cli.py`) is a command
     **Arguments:**
     - `--base-branch <branch>`: The base branch to compare against (default: `main`).
     - `--head-branch <branch_or_rev>`: The head branch or revision to check (default: `HEAD`).
-    - `--config-file <path>`: Path to the policy configuration YAML file (default: searches for `.pr-policy.yml` in repo root and parent directories).
+    - `--config-file <path>`: Path to the policy configuration YAML file (default: searches for
+      `.pr-policy.yml` in repo root and parent directories).
     - `--repo-path <path>`: Path to the Git repository (default: current directory).
 
 ### Configuration (`.pr-policy.yml`)
 
-Create a `.pr-policy.yml` file in the root of your repository to customize policies. If not found, default policies will be applied.
+Create a `.pr-policy.yml` file in the root of your repository to customize policies. If not
+found, default policies will be applied.
 
 **Example `.pr-policy.yml`:**
 
@@ -430,14 +463,20 @@ file_size:
 ### Interpreting Output
 
 - The tool will print the policies being checked and the results.
-- If violations are found, they will be listed with details (e.g., file path, line number, commit SHA).
-- The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other non-zero codes for errors (e.g., Git issues, configuration problems).
+- If violations are found, they will be listed with details (e.g., file path, line number, commit
+  SHA).
+- The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other
+  non-zero codes for errors (e.g., Git issues, configuration problems).
 
-This tool helps maintain code quality and consistency across your project by automating common pre-PR checks.
+This tool helps maintain code quality and consistency across your project by automating common
+pre-PR checks.
 
 ## Tool: IaC Drift Detector
 
-The IaC (Infrastructure as Code) Drift Detector (`src/mcp_tools/iac_drift_detector/cli.py`) is a command-line tool to identify differences (drift) between your infrastructure's desired state (defined in IaC files) and its actual state in the cloud or other environments. It also provides suggestions for remediation.
+The IaC (Infrastructure as Code) Drift Detector (`src/mcp_tools/iac_drift_detector/cli.py`) is a
+command-line tool to identify differences (drift) between your infrastructure's desired state
+(defined in IaC files) and its actual state in the cloud or other environments. It also provides
+suggestions for remediation.
 
 ### Current Features (Initial Version) - IaC Drift Detector
 
@@ -445,20 +484,27 @@ The IaC (Infrastructure as Code) Drift Detector (`src/mcp_tools/iac_drift_detect
   - **Terraform:** Parses desired state from `.tfstate` files.
 
 - **Actual State Source:**
-  - **Mock Connector:** Uses a built-in mock data source to simulate actual cloud resources. This is useful for testing the tool's logic without live cloud access. (Future: AWS, GCP, Azure connectors).
+  - **Mock Connector:** Uses a built-in mock data source to simulate actual cloud resources. This is
+    useful for testing the tool's logic without live cloud access. (Future: AWS, GCP, Azure
+    connectors).
 
 - **Drift Detection:**
   - **Missing Resources:** Identifies resources defined in IaC but not found in the actual state.
-  - **Unmanaged Resources:** Identifies resources found in the actual state but not defined (tracked) in the IaC state.
-  - **Modified Resources:** Compares attributes of resources that exist in both states and flags differences. Includes basic support for ignoring common noisy attributes (e.g., ARNs, dynamic IPs for certain resource types) and special handling for `tags`.
+  - **Unmanaged Resources:** Identifies resources found in the actual state but not defined (tracked)
+    in the IaC state.
+  - **Modified Resources:** Compares attributes of resources that exist in both states and flags
+    differences. Includes basic support for ignoring common noisy attributes (e.g., ARNs, dynamic
+    IPs for certain resource types) and special handling for `tags`.
 
-- **Remediation Suggestions:** Provides human-readable suggestions for each detected drift (e.g., `terraform apply`, `terraform import`, or manual review).
+- **Remediation Suggestions:** Provides human-readable suggestions for each detected drift (e.g.,
+  `terraform apply`, `terraform import`, or manual review).
 - **CLI Interface:** Allows specifying IaC type, state file, and actual state source.
 
 ### Usage - IaC Drift Detector
 
 1. **Prepare your IaC files:**
-    - For Terraform, ensure you have a relevant `.tfstate` file representing the desired state of your infrastructure.
+    - For Terraform, ensure you have a relevant `.tfstate` file representing the desired state of
+      your infrastructure.
 
 2. **Run the tool from the root of your repository (or provide paths):**
 
@@ -514,18 +560,26 @@ Drift 1/X: MODIFIED
 
 ### Current Limitations & Future Enhancements - IaC Drift Detector
 
-- **Mock Only:** The initial version only supports a mock connector for the actual state. Real cloud provider connectors (AWS, GCP, Azure) are planned.
-- **Terraform State Only:** Currently focuses on `.tfstate` for desired state. Parsing HCL directly or using plan files more extensively for drift could be added.
-- **Basic Attribute Comparison:** The attribute diffing logic is basic and may need refinement for complex nested attributes or specific resource types. Configuration for ignored attributes is currently via a default dictionary in code.
+- **Mock Only:** The initial version only supports a mock connector for the actual state. Real cloud
+  provider connectors (AWS, GCP, Azure) are planned.
+- **Terraform State Only:** Currently focuses on `.tfstate` for desired state. Parsing HCL directly or
+  using plan files more extensively for drift could be added.
+- **Basic Attribute Comparison:** The attribute diffing logic is basic and may need refinement for
+  complex nested attributes or specific resource types. Configuration for ignored attributes is
+  currently via a default dictionary in code.
 - **Limited IaC Tool Support:** Only Terraform is supported.
 
 ---
 
-This tool aims to help you keep your infrastructure aligned with its definition in code, reducing unexpected changes and improving stability.
+This tool aims to help you keep your infrastructure aligned with its definition in code, reducing
+unexpected changes and improving stability.
 
 ## Tool: Configuration Optimization Recommender
 
-The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.py`) is a command-line tool that analyzes your Infrastructure as Code (IaC) configurations (initially Terraform state files) and provides recommendations for cost, performance, security, and reliability improvements.
+The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.py`) is a
+command-line tool that analyzes your Infrastructure as Code (IaC) configurations (initially
+Terraform state files) and provides recommendations for cost, performance, security, and
+reliability improvements.
 
 ### Current Features (Initial Version) - Configuration Optimization Recommender
 
@@ -533,13 +587,15 @@ The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.
   - **Terraform:** Analyzes resources parsed from `.tfstate` files.
 - **Focus Areas (AWS):**
   - **EC2 Instances:**
-    - Suggests upgrading to newer instance generations (e.g., T2 to T3, M4 to M5) based on a configurable map.
+    - Suggests upgrading to newer instance generations (e.g., T2 to T3, M4 to M5) based on a
+      configurable map.
     - Flags usage of very large instance types, prompting for justification.
   - **S3 Buckets:**
     - Checks if server-side encryption (SSE) is enabled (optionally requiring SSE-KMS).
     - Checks if object versioning is enabled.
     - Verifies if all S3 Public Access Block settings are enabled.
-- **Configurable Rules:** Define optimization rules and their parameters in a `.config-optimizer-rules.yml` file.
+- **Configurable Rules:** Define optimization rules and their parameters in a `.config-optimizer-rules.yml`
+  file.
 - **CLI Interface:** Allows specifying the IaC source file and a custom rules file.
 
 ### Usage: Configuration Optimization Recommender
@@ -547,7 +603,8 @@ The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.
 1. **Prepare your IaC files:**
     - For Terraform, have a relevant `.tfstate` file.
 2. **Optionally, create a custom rules file:**
-    - Create a `.config-optimizer-rules.yml` in your repository root or specify a path to a custom rules YAML file if you want to override default checks or parameters.
+    - Create a `.config-optimizer-rules.yml` in your repository root or specify a path to a custom
+      rules YAML file if you want to override default checks or parameters.
 3. **Run the tool from the root of your repository (or provide paths):**
 
     ```bash
@@ -563,7 +620,8 @@ The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.
     **Arguments:**
     - `--iac-type <type>`: The IaC tool source (default/currently only: `terraform`).
     - `--tf-state-file <path>`: Path to the Terraform state file. **Required for Terraform.**
-    - `--rules-file <path>`: Optional path to the optimization rules YAML file (default: searches for `.config-optimizer-rules.yml`).
+    - `--rules-file <path>`: Optional path to the optimization rules YAML file (default: searches
+      for `.config-optimizer-rules.yml`).
 
 ### Interpreting Output: Configuration Optimization Recommender
 
@@ -612,7 +670,9 @@ aws_s3:
 
 ## Tool: Automated IaC Documentation Generator
 
-The Automated IaC Documentation Generator (`src/mcp_tools/iac_doc_generator/cli.py`) analyzes your Terraform HCL code (`.tf` files) and generates Markdown documentation detailing the resources, variables, outputs, and modules defined within a Terraform module.
+The Automated IaC Documentation Generator (`src/mcp_tools/iac_doc_generator/cli.py`) analyzes your
+Terraform HCL code (`.tf` files) and generates Markdown documentation detailing the resources,
+variables, outputs, and modules defined within a Terraform module.
 
 ### Current Features (Initial Version) - Automated IaC Documentation Generator
 
@@ -620,12 +680,14 @@ The Automated IaC Documentation Generator (`src/mcp_tools/iac_doc_generator/cli.
   - **Terraform:** Parses HCL code from `.tf` files directly using `python-hcl2`.
 - **Information Extracted:**
   - **Providers:** Name and alias.
-  - **Variables:** Name, description (if provided in the variable block), type, default value, and sensitive status.
+  - **Variables:** Name, description (if provided in the variable block), type, default value, and
+    sensitive status.
   - **Outputs:** Name, description, and sensitive status.
   - **Managed Resources:** Type and logical name (e.g., `aws_instance.web_server`).
   - **Module Calls:** Logical name of the module instance and its source path/URL.
 - **Output Format:** Markdown (`.md`). Documentation is structured per file within the module.
-- **CLI Interface:** Allows specifying the input directory (Terraform module path) and an output file or directory.
+- **CLI Interface:** Allows specifying the input directory (Terraform module path) and an output file
+  or directory.
 
 ### Usage: Automated IaC Documentation Generator
 
@@ -653,7 +715,8 @@ The Automated IaC Documentation Generator (`src/mcp_tools/iac_doc_generator/cli.
 
     **Arguments:**
     - `input_dir`: (Positional) Path to the directory containing the Terraform module.
-    - `--output-file` (`-o`): Optional path for the output Markdown file. If a directory is given, `README.md` is created inside. If omitted, output goes to STDOUT.
+    - `--output-file` (`-o`): Optional path for the output Markdown file. If a directory is given,
+      `README.md` is created inside. If omitted, output goes to STDOUT.
 
 ### Example Output Structure (Snippet)
 
@@ -707,37 +770,53 @@ The generated Markdown will typically include:
 
 ### Current Limitations & Future Enhancements - Automated IaC Documentation Generator
 
-- **Comment Parsing:** Extraction of descriptions primarily relies on `description` attributes within `variable` and `output` blocks. Associating arbitrary HCL comments with specific blocks is complex and currently very basic.
+- **Comment Parsing:** Extraction of descriptions primarily relies on `description` attributes
+  within `variable` and `output` blocks. Associating arbitrary HCL comments with specific blocks
+  is complex and currently very basic.
 - **Terraform HCL Only:** Initial version focuses on Terraform.
-- **Basic Structure:** The Markdown output structure is currently fixed. Template-based rendering could be added for customization.
-- **No Cross-File Resolution:** Does not yet resolve dependencies or references between files or modules in-depth (e.g., to pull descriptions for module inputs from the module's own variables).
-- **Limited Detail for Resources/Modules:** Currently lists resources and module calls by name/type and source. Could be expanded to include key arguments or attributes.
+- **Basic Structure:** The Markdown output structure is currently fixed. Template-based rendering
+  could be added for customization.
+- **No Cross-File Resolution:** Does not yet resolve dependencies or references between files or
+  modules in-depth (e.g., to pull descriptions for module inputs from the module's own variables).
+- **Limited Detail for Resources/Modules:** Currently lists resources and module calls by name/type
+  and source. Could be expanded to include key attributes or arguments.
 
 ---
 
-This tool helps automate the creation of baseline documentation for your Terraform modules, making it easier to understand their components and usage.
+This tool helps automate the creation of baseline documentation for your Terraform modules, making
+it easier to understand their components and usage.
 
 ## Tool: Git Compliance Analyzer
 
-The Git Compliance Analyzer (`src/mcp_tools/git_compliance_analyzer/cli.py`) is a command-line tool that scans a local Git repository against a configurable set of compliance rules. It helps ensure that repository content, commit history, and potentially IaC configurations adhere to defined standards.
+The Git Compliance Analyzer (`src/mcp_tools/git_compliance_analyzer/cli.py`) is a command-line tool
+that scans a local Git repository against a configurable set of compliance rules. It helps ensure
+that repository content, commit history, and potentially IaC configurations adhere to defined
+standards.
 
 ### Current Features (Initial Version) - Git Compliance Analyzer
 
 - **Configurable Rules:** Define compliance policies in a `.compliance-rules.yml` file.
 - **Checks Performed:**
-  - **File Existence:** Verify that specific files must exist (e.g., `LICENSE`) or must *not* exist based on glob patterns (e.g., `*.pem`).
-  - **File Content:** Scan files (matching a path regex) for required or forbidden regex patterns within their content.
+  - **File Existence:** Verify that specific files must exist (e.g., `LICENSE`) or must *not* exist
+    based on glob patterns (e.g., `*.pem`).
+  - **File Content:** Scan files (matching a path regex) for required or forbidden regex patterns
+    within their content.
   - **Commit History:**
-    - Analyze commit messages (on the current branch compared to a base branch) for Conventional Commit format compliance.
+    - Analyze commit messages (on the current branch compared to a base branch) for Conventional
+      Commit format compliance.
   - **IaC Validation (Basic):**
-    - Wrapper to run `terraform validate` in specified directories within the repository. (Requires `terraform` CLI in PATH).
-- **CLI Interface:** Specify repository path, branch to analyze, base branch for commit history, and a custom rules file.
-- **Reporting:** Outputs a list of compliance findings with severity, messages, and relevant context (file paths, commit SHAs).
+    - Wrapper to run `terraform validate` in specified directories within the repository. (Requires
+      `terraform` CLI in PATH).
+- **CLI Interface:** Specify repository path, branch to analyze, base branch for commit history, and
+  a custom rules file.
+- **Reporting:** Outputs a list of compliance findings with severity, messages, and relevant context
+  (file paths, commit SHAs).
 
 ### Usage: Git Compliance Analyzer
 
 1. **Ensure you have a local clone of the Git repository you want to analyze.**
-2. **Optionally, create a `.compliance-rules.yml` file in the repository root** to define your specific compliance rules. If not found, default checks (which are minimal) will apply.
+2. **Optionally, create a `.compliance-rules.yml` file in the repository root** to define your
+   specific compliance rules. If not found, default checks (which are minimal) will apply.
 3. **Run the tool from your project root (or ensure `src` is in `PYTHONPATH`):**
 
     ```bash
@@ -750,9 +829,12 @@ The Git Compliance Analyzer (`src/mcp_tools/git_compliance_analyzer/cli.py`) is 
 
     **Arguments:**
     - `repo_path`: (Positional, Optional) Path to the Git repository (default: current directory).
-    - `--branch <branch/rev>` (`-b`): Branch, tag, or commit SHA to analyze the state of (default: `HEAD`).
-    - `--base-branch <branch>`: Base branch for commit history comparison (default: `None`, skips history checks that need a base).
-    - `--rules-file <path>`: Optional path to the compliance rules YAML file (default: searches for `.compliance-rules.yml`).
+    - `--branch <branch/rev>` (`-b`): Branch, tag, or commit SHA to analyze the state of (default:
+      `HEAD`).
+    - `--base-branch <branch>`: Base branch for commit history comparison (default: `None`, skips
+      history checks that need a base).
+    - `--rules-file <path>`: Optional path to the compliance rules YAML file (default: searches for
+      `.compliance-rules.yml`).
 
 ### Interpreting Output: Git Compliance Analyzer
 
@@ -760,7 +842,8 @@ The Git Compliance Analyzer (`src/mcp_tools/git_compliance_analyzer/cli.py`) is 
 - It lists different checks being performed.
 - If compliance findings (violations) are discovered:
   - A summary indicates the total number of findings.
-  - Each finding is detailed with its severity, rule ID, a descriptive message, and context (e.g., file path, line number, commit SHA).
+  - Each finding is detailed with its severity, rule ID, a descriptive message, and context (e.g.,
+    file path, line number, commit SHA).
 - An exit code:
   - `0`: All checks passed (or no relevant rules triggered findings).
   - `1`: Compliance findings were reported.
@@ -769,10 +852,14 @@ The Git Compliance Analyzer (`src/mcp_tools/git_compliance_analyzer/cli.py`) is 
 ### Current Limitations & Future Enhancements - Git Compliance Analyzer
 
 - **Local Execution Only:** Currently analyzes local Git repository clones.
-- **Limited IaC Tooling:** `iac_validation_checks` is basic (e.g., `terraform validate`). Could be expanded for more tools (Terrascan, Checkov) and richer output parsing.
-- **Comment/Contextual Understanding:** Deeper understanding of comments or code context for more intelligent pattern matching is a future goal.
-- **Remediation:** Currently only reports findings. Future versions could suggest or (with caution) attempt automated remediation for some issues.
+- **Limited IaC Tooling:** `iac_validation_checks` is basic (e.g., `terraform validate`). Could be
+  expanded for more tools (Terrascan, Checkov) and richer output parsing.
+- **Comment/Contextual Understanding:** Deeper understanding of comments or code context for more
+  intelligent pattern matching is a future goal.
+- **Remediation:** Currently only reports findings. Future versions could suggest or (with caution)
+  attempt automated remediation for some issues.
 
 ---
 
-This tool helps enforce coding standards, security practices, and project conventions within your Git repositories.
+This tool helps enforce coding standards, security practices, and project conventions within your
+Git repositories.

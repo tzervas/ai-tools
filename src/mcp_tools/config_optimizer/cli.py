@@ -9,11 +9,11 @@ from ..iac_drift_detector.parsers.terraform_parser import parse_terraform_state_
 
 from .config import load_optimizer_rules, OptimizerRuleConfig
 from .models import Recommendation
-from .aws import ec2_optimizer, s3_optimizer # Import the AWS optimizer modules
+from .aws import ec2_optimizer, s3_optimizer  # Import the AWS optimizer modules
+
 
 def run_optimization_checks(
-    iac_resources: List[ParsedResource],
-    rules_config: OptimizerRuleConfig
+    iac_resources: List[ParsedResource], rules_config: OptimizerRuleConfig
 ) -> List[Recommendation]:
     """
     Runs all configured optimization checks on the provided IaC resources.
@@ -23,7 +23,9 @@ def run_optimization_checks(
     print("\n--- Running Configuration Optimization Checks ---")
 
     for resource in iac_resources:
-        provider = resource.provider_name.lower() # Assuming provider_name is like "aws", "gcp"
+        provider = (
+            resource.provider_name.lower()
+        )  # Assuming provider_name is like "aws", "gcp"
 
         if provider == "aws":
             if resource.type == "aws_instance" and rules_config.aws_ec2.enabled:
@@ -38,9 +40,10 @@ def run_optimization_checks(
             elif resource.type == "aws_s3_bucket" and rules_config.aws_s3.enabled:
                 # S3 Encryption
                 if rules_config.aws_s3.encryption.enabled:
-                     all_recommendations.extend(
-                        s3_optimizer.check_s3_bucket_optimizations( # This function checks all its sub-rules
-                            resource, rules_config.aws_s3 # Pass the parent AWSS3Rules object
+                    all_recommendations.extend(
+                        s3_optimizer.check_s3_bucket_optimizations(  # This function checks all its sub-rules
+                            resource,
+                            rules_config.aws_s3,  # Pass the parent AWSS3Rules object
                         )
                     )
                 # Note: s3_optimizer.check_s3_bucket_optimizations internally checks sub-rules like versioning, pab
@@ -55,25 +58,40 @@ def run_optimization_checks(
             #     ...
 
         # elif provider == "gcp":
-            # Add GCP checks here
-            # ...
+        # Add GCP checks here
+        # ...
 
     return all_recommendations
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Configuration Optimization Recommendations Tool.")
-    parser.add_argument("--iac-type", type=str, default="terraform", choices=["terraform"],
-                        help="Type of Infrastructure as Code tool source (default: terraform).")
+    parser = argparse.ArgumentParser(
+        description="Configuration Optimization Recommendations Tool."
+    )
+    parser.add_argument(
+        "--iac-type",
+        type=str,
+        default="terraform",
+        choices=["terraform"],
+        help="Type of Infrastructure as Code tool source (default: terraform).",
+    )
 
-    tf_group = parser.add_argument_group('Terraform Options (if --iac-type is terraform)')
-    tf_group.add_argument("--tf-state-file", type=str,
-                          help="Path to the Terraform state file (.tfstate) for IaC data.")
+    tf_group = parser.add_argument_group(
+        "Terraform Options (if --iac-type is terraform)"
+    )
+    tf_group.add_argument(
+        "--tf-state-file",
+        type=str,
+        help="Path to the Terraform state file (.tfstate) for IaC data.",
+    )
 
-    parser.add_argument("--rules-file", default=None,
-                        help="Path to the optimization rules configuration YAML file. Defaults to searching for '.config-optimizer-rules.yml'.")
+    parser.add_argument(
+        "--rules-file",
+        default=None,
+        help="Path to the optimization rules configuration YAML file. Defaults to searching for '.config-optimizer-rules.yml'.",
+    )
     # parser.add_argument("--repo-path", default=None, # If needed for context, not used currently
     #                     help="Path to the Git repository. Defaults to current working directory.")
-
 
     args = parser.parse_args()
     print("--- Configuration Optimizer Initializing ---")
@@ -84,16 +102,30 @@ def main():
         if args.tf_state_file:
             print(f"Loading IaC data from Terraform state file: {args.tf_state_file}")
             if not os.path.exists(args.tf_state_file):
-                 print(f"Error: Terraform state file {args.tf_state_file} not found.", file=sys.stderr)
-                 sys.exit(2)
-            iac_resources = parse_terraform_state_file(args.tf_state_file) # From iac_drift_detector
-            if not iac_resources and os.path.exists(args.tf_state_file): # File exists but no resources parsed
-                print(f"Warning: No managed resources found or parsed from {args.tf_state_file}.")
+                print(
+                    f"Error: Terraform state file {args.tf_state_file} not found.",
+                    file=sys.stderr,
+                )
+                sys.exit(2)
+            iac_resources = parse_terraform_state_file(
+                args.tf_state_file
+            )  # From iac_drift_detector
+            if not iac_resources and os.path.exists(
+                args.tf_state_file
+            ):  # File exists but no resources parsed
+                print(
+                    f"Warning: No managed resources found or parsed from {args.tf_state_file}."
+                )
         else:
-            print("Error: For Terraform, --tf-state-file must be provided.", file=sys.stderr)
+            print(
+                "Error: For Terraform, --tf-state-file must be provided.",
+                file=sys.stderr,
+            )
             sys.exit(2)
     else:
-        print(f"Error: IaC type '{args.iac_type}' is not yet supported.", file=sys.stderr)
+        print(
+            f"Error: IaC type '{args.iac_type}' is not yet supported.", file=sys.stderr
+        )
         sys.exit(2)
 
     if not iac_resources:
@@ -103,35 +135,48 @@ def main():
     print(f"Loaded {len(iac_resources)} resources from IaC source.")
 
     # 2. Load Optimizer Rules
-    print(f"Loading optimization rules (file: {args.rules_file or 'auto-detect .config-optimizer-rules.yml'})...")
+    print(
+        f"Loading optimization rules (file: {args.rules_file or 'auto-detect .config-optimizer-rules.yml'})..."
+    )
     try:
         rules_config = load_optimizer_rules(config_path=args.rules_file)
-    except (FileNotFoundError, ValueError) as e: # Catch errors from load_optimizer_rules
+    except (
+        FileNotFoundError,
+        ValueError,
+    ) as e:  # Catch errors from load_optimizer_rules
         print(f"Error loading rules configuration: {e}", file=sys.stderr)
         sys.exit(3)
     except Exception as e:
         print(f"An unexpected error occurred while loading rules: {e}", file=sys.stderr)
         sys.exit(3)
 
-
     # 3. Run Optimization Checks
     recommendations = run_optimization_checks(iac_resources, rules_config)
 
     # 4. Report Recommendations
     if not recommendations:
-        print("\n--- Result: NO OPTIMIZATION RECOMMENDATIONS FOUND (based on current rules) ---")
+        print(
+            "\n--- Result: NO OPTIMIZATION RECOMMENDATIONS FOUND (based on current rules) ---"
+        )
         sys.exit(0)
 
-    print(f"\n--- Result: {len(recommendations)} OPTIMIZATION RECOMMENDATION(S) FOUND ---")
+    print(
+        f"\n--- Result: {len(recommendations)} OPTIMIZATION RECOMMENDATION(S) FOUND ---"
+    )
     # Group recommendations by rule or severity? For now, just list them.
     for i, rec in enumerate(recommendations, 1):
-        print(f"\nRecommendation {i}/{len(recommendations)}: [{rec.severity}|{rec.rule_id}]")
-        print(f"  Resource: {rec.resource_type} '{rec.resource_name}' (ID: {rec.resource_id or 'N/A'})")
+        print(
+            f"\nRecommendation {i}/{len(recommendations)}: [{rec.severity}|{rec.rule_id}]"
+        )
+        print(
+            f"  Resource: {rec.resource_type} '{rec.resource_name}' (ID: {rec.resource_id or 'N/A'})"
+        )
         print(f"  Message:  {rec.message}")
         if rec.details:
             print(f"  Details:  {rec.details}")
 
-    sys.exit(1) # Exit with non-zero code if recommendations are found
+    sys.exit(1)  # Exit with non-zero code if recommendations are found
+
 
 if __name__ == "__main__":
     # To test this CLI:

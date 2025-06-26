@@ -4,17 +4,23 @@ from pathlib import Path
 from typing import List, Optional, Callable, Pattern
 
 from ..models import ComplianceFinding
-from ..config import FileExistenceRules, FileContentRules, FileExistenceRuleItem, FilePatternRuleItem, FileContentRuleItem
-from ...common.git_utils import GitUtils # Assuming GitUtils is now common
+from ..config import (
+    FileExistenceRules,
+    FileContentRules,
+    FileExistenceRuleItem,
+    FilePatternRuleItem,
+    FileContentRuleItem,
+)
+from ...common.git_utils import GitUtils  # Assuming GitUtils is now common
 
 # Type alias for a function that gets file content from GitUtils
-GetFileContentCallable = Callable[[str, str], Optional[str]] # (filepath, revision) -> content
+GetFileContentCallable = Callable[
+    [str, str], Optional[str]
+]  # (filepath, revision) -> content
 
 
 def check_file_existence(
-    git_utils: GitUtils,
-    target_revision: str,
-    rules: FileExistenceRules
+    git_utils: GitUtils, target_revision: str, rules: FileExistenceRules
 ) -> List[ComplianceFinding]:
     """
     Checks for file existence (must_exist, must_not_exist_patterns) in the repo.
@@ -26,22 +32,27 @@ def check_file_existence(
     try:
         all_repo_files = set(git_utils.list_files_at_revision(revision=target_revision))
     except Exception as e:
-        findings.append(ComplianceFinding(
-            rule_id="GIT_LIST_FILES_ERROR",
-            severity="High",
-            message=f"Error listing files in repository at revision '{target_revision}': {e}",
-        ))
+        findings.append(
+            ComplianceFinding(
+                rule_id="GIT_LIST_FILES_ERROR",
+                severity="High",
+                message=f"Error listing files in repository at revision '{target_revision}': {e}",
+            )
+        )
         return findings
 
     # Must Exist Checks
     for rule_item in rules.must_exist:
         if rule_item.path not in all_repo_files:
-            findings.append(ComplianceFinding(
-                rule_id="FILE_MUST_EXIST_MISSING",
-                severity=rule_item.severity,
-                message=rule_item.message or f"Required file '{rule_item.path}' is missing.",
-                file_path=rule_item.path
-            ))
+            findings.append(
+                ComplianceFinding(
+                    rule_id="FILE_MUST_EXIST_MISSING",
+                    severity=rule_item.severity,
+                    message=rule_item.message
+                    or f"Required file '{rule_item.path}' is missing.",
+                    file_path=rule_item.path,
+                )
+            )
 
     # Must Not Exist Patterns Checks
     for rule_item in rules.must_not_exist_patterns:
@@ -52,19 +63,20 @@ def check_file_existence(
         # For now, iterate and match:
         for repo_file_path_str in all_repo_files:
             if Path(repo_file_path_str).match(rule_item.pattern):
-                findings.append(ComplianceFinding(
-                    rule_id="FILE_MUST_NOT_EXIST_PRESENT",
-                    severity=rule_item.severity,
-                    message=rule_item.message or f"File '{repo_file_path_str}' matches forbidden pattern '{rule_item.pattern}' and should not exist.",
-                    file_path=repo_file_path_str
-                ))
+                findings.append(
+                    ComplianceFinding(
+                        rule_id="FILE_MUST_NOT_EXIST_PRESENT",
+                        severity=rule_item.severity,
+                        message=rule_item.message
+                        or f"File '{repo_file_path_str}' matches forbidden pattern '{rule_item.pattern}' and should not exist.",
+                        file_path=repo_file_path_str,
+                    )
+                )
     return findings
 
 
 def check_file_content(
-    git_utils: GitUtils,
-    target_revision: str,
-    rules: FileContentRules
+    git_utils: GitUtils, target_revision: str, rules: FileContentRules
 ) -> List[ComplianceFinding]:
     """
     Checks file content for specified patterns.
@@ -87,12 +99,14 @@ def check_file_content(
             # This could be optimized if all_repo_files is fetched once per run
             all_repo_files = git_utils.list_files_at_revision(revision=target_revision)
         except Exception as e:
-            findings.append(ComplianceFinding(
-                rule_id="GIT_LIST_FILES_ERROR_CONTENT_CHECK",
-                severity="High",
-                message=f"Error listing files for content check at revision '{target_revision}': {e}",
-            ))
-            continue # Skip this rule if we can't list files
+            findings.append(
+                ComplianceFinding(
+                    rule_id="GIT_LIST_FILES_ERROR_CONTENT_CHECK",
+                    severity="High",
+                    message=f"Error listing files for content check at revision '{target_revision}': {e}",
+                )
+            )
+            continue  # Skip this rule if we can't list files
 
         files_to_check_for_this_rule: List[str] = []
         for repo_file_path_str in all_repo_files:
@@ -101,24 +115,35 @@ def check_file_content(
 
         for filepath_to_check in files_to_check_for_this_rule:
             content = get_content_func(filepath_to_check, target_revision)
-            if content is None: # Binary, unreadable, or not found (shouldn't be not found if listed)
+            if (
+                content is None
+            ):  # Binary, unreadable, or not found (shouldn't be not found if listed)
                 # Optionally log a warning if content is None for a matched file
                 # print(f"Warning: Could not read content for {filepath_to_check} for content pattern checks.", file=sys.stderr)
                 continue
 
             # Must Contain Pattern
-            if rule_item.must_contain_pattern and rule_item.must_contain_pattern.enabled:
+            if (
+                rule_item.must_contain_pattern
+                and rule_item.must_contain_pattern.enabled
+            ):
                 mc_rule = rule_item.must_contain_pattern
                 if not mc_rule.pattern.search(content):
-                    findings.append(ComplianceFinding(
-                        rule_id="FILE_CONTENT_MUST_CONTAIN_MISSING",
-                        severity=mc_rule.severity,
-                        message=mc_rule.message or f"File '{filepath_to_check}' does not contain required pattern: '{mc_rule.pattern.pattern}'.",
-                        file_path=filepath_to_check
-                    ))
+                    findings.append(
+                        ComplianceFinding(
+                            rule_id="FILE_CONTENT_MUST_CONTAIN_MISSING",
+                            severity=mc_rule.severity,
+                            message=mc_rule.message
+                            or f"File '{filepath_to_check}' does not contain required pattern: '{mc_rule.pattern.pattern}'.",
+                            file_path=filepath_to_check,
+                        )
+                    )
 
             # Must Not Contain Pattern
-            if rule_item.must_not_contain_pattern and rule_item.must_not_contain_pattern.enabled:
+            if (
+                rule_item.must_not_contain_pattern
+                and rule_item.must_not_contain_pattern.enabled
+            ):
                 mnc_rule = rule_item.must_not_contain_pattern
                 match = mnc_rule.pattern.search(content)
                 if match:
@@ -127,22 +152,25 @@ def check_file_content(
                     try:
                         # Find the line number of the first occurrence
                         start_index = match.start()
-                        line_num = content.count('\n', 0, start_index) + 1
+                        line_num = content.count("\n", 0, start_index) + 1
                     except Exception:
-                        pass # Keep line_num as None if error
+                        pass  # Keep line_num as None if error
 
-                    findings.append(ComplianceFinding(
-                        rule_id="FILE_CONTENT_MUST_NOT_CONTAIN_PRESENT",
-                        severity=mnc_rule.severity,
-                        message=mnc_rule.message or f"File '{filepath_to_check}' contains forbidden pattern: '{mnc_rule.pattern.pattern}'. Matched: '{match.group(0)}'",
-                        file_path=filepath_to_check,
-                        line_number=line_num,
-                        details={"matched_text": match.group(0)}
-                    ))
+                    findings.append(
+                        ComplianceFinding(
+                            rule_id="FILE_CONTENT_MUST_NOT_CONTAIN_PRESENT",
+                            severity=mnc_rule.severity,
+                            message=mnc_rule.message
+                            or f"File '{filepath_to_check}' contains forbidden pattern: '{mnc_rule.pattern.pattern}'. Matched: '{match.group(0)}'",
+                            file_path=filepath_to_check,
+                            line_number=line_num,
+                            details={"matched_text": match.group(0)},
+                        )
+                    )
     return findings
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # This block would require a more complex setup with a live Git repo
     # or extensive mocking of GitUtils. Unit tests for these checkers
     # will be more effective in their dedicated test files.
