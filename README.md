@@ -29,26 +29,34 @@ The project includes:
 │   └── mcp_tools/        # Client tools interacting with MCP
 │       ├── echo_tool/
 │       │   └── client.py
-│       └── pr_reviewer/  # Automated PR Review Helper tool
+│       ├── pr_reviewer/  # Automated PR Review Helper tool
+│       │   ├── cli.py
+│       │   ├── config.py
+│       │   ├── git_utils.py
+│       │   └── policies/
+│       │       ├── branch.py
+│       │       ├── commit.py
+│       │       └── file.py
+│       └── iac_drift_detector/ # IaC Drift Detector tool
 │           ├── cli.py
+│           ├── models.py
+│           ├── parsers/
+│           │   └── terraform_parser.py
+│           ├── connectors/
+│           │   └── mock_connector.py
+│           └── core_logic/
+│               ├── drift_engine.py
+│               └── remediation.py
+│       └── config_optimizer/ # Configuration Optimization Recommender tool
+│           ├── cli.py
+│           ├── models.py
 │           ├── config.py
-│           ├── git_utils.py
-│           └── policies/
-│               ├── branch.py
-│               ├── commit.py
-│               └── file.py
+│           └── aws/
+│               ├── ec2_optimizer.py
+│               └── s3_optimizer.py
 └── tests/                # Tests
     ├── integration/      # Integration tests
     │   ├── test_echo_tool.py
-<<<<<<< HEAD
-    │   └── test_pr_reviewer/
-    │       └── test_pr_reviewer_cli.py
-    └── unit/             # Unit tests
-        ├── test_server.py
-        └── test_pr_reviewer/
-            ├── test_config.py
-            └── test_policies.py
-=======
     │   ├── test_pr_reviewer/
     │   │   └── test_pr_reviewer_cli.py
     │   └── test_iac_drift_detector/
@@ -62,7 +70,10 @@ The project includes:
             ├── test_terraform_parser.py
             ├── test_drift_engine.py
             └── test_remediation.py
->>>>>>> d7c10cf0d9f1de2b00ac81850d9c2aa2a2b7ba40
+        └── test_config_optimizer/
+            ├── test_optimizer_config.py
+            ├── test_ec2_optimizer.py
+            └── test_s3_optimizer.py
 ```
 
 ## Getting Started
@@ -365,8 +376,6 @@ file_size:
 *   The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other non-zero codes for errors (e.g., Git issues, configuration problems).
 ```
 This tool helps maintain code quality and consistency across your project by automating common pre-PR checks.
-<<<<<<< HEAD
-=======
 
 ## Tool: IaC Drift Detector
 
@@ -447,4 +456,108 @@ Drift 1/X: MODIFIED
 *   **Limited IaC Tool Support:** Only Terraform is supported.
 ```
 This tool aims to help you keep your infrastructure aligned with its definition in code, reducing unexpected changes and improving stability.
->>>>>>> d7c10cf0d9f1de2b00ac81850d9c2aa2a2b7ba40
+
+## Tool: Configuration Optimization Recommender
+
+The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.py`) is a command-line tool that analyzes your Infrastructure as Code (IaC) configurations (initially Terraform state files) and provides recommendations for cost, performance, security, and reliability improvements.
+
+### Current Features (Initial Version)
+
+*   **IaC Support:**
+    *   **Terraform:** Analyzes resources parsed from `.tfstate` files.
+*   **Focus Areas (AWS):**
+    *   **EC2 Instances:**
+        *   Suggests upgrading to newer instance generations (e.g., T2 to T3, M4 to M5) based on a configurable map.
+        *   Flags usage of very large instance types, prompting for justification.
+    *   **S3 Buckets:**
+        *   Checks if server-side encryption (SSE) is enabled (optionally requiring SSE-KMS).
+        *   Checks if object versioning is enabled.
+        *   Verifies if all S3 Public Access Block settings are enabled.
+*   **Configurable Rules:** Define optimization rules and their parameters in a `.config-optimizer-rules.yml` file.
+*   **CLI Interface:** Allows specifying the IaC source file and a custom rules file.
+
+### Usage
+
+1.  **Prepare your IaC files:**
+    *   For Terraform, have a relevant `.tfstate` file.
+2.  **Optionally, create a custom rules file:**
+    *   Create a `.config-optimizer-rules.yml` in your repository root or specify a path to a custom rules YAML file if you want to override default checks or parameters.
+3.  **Run the tool from the root of your repository (or provide paths):**
+
+    ```bash
+    python -m src.mcp_tools.config_optimizer.cli --tf-state-file /path/to/your/terraform.tfstate
+    ```
+    To use a custom rules file:
+    ```bash
+    python -m src.mcp_tools.config_optimizer.cli --tf-state-file /path/to/your/terraform.tfstate --rules-file /path/to/custom-rules.yml
+    ```
+
+    **Arguments:**
+    *   `--iac-type <type>`: The IaC tool source (default/currently only: `terraform`).
+    *   `--tf-state-file <path>`: Path to the Terraform state file. **Required for Terraform.**
+    *   `--rules-file <path>`: Optional path to the optimization rules YAML file (default: searches for `.config-optimizer-rules.yml`).
+
+### Configuration (`.config-optimizer-rules.yml`)
+
+Customize checks by creating a `.config-optimizer-rules.yml` file. If not found, default rules (defined in code) are applied.
+
+**Example `.config-optimizer-rules.yml`:**
+```yaml
+aws_ec2:
+  enabled: true # Enable/disable all EC2 checks
+  instance_type_optimization:
+    enabled: true
+    suggest_newer_generations: true
+    generation_map: # Override or extend default map
+      t2: t3 # Example: ensure t2 maps to t3 specifically
+      # m3: m5 # Add custom mappings
+    large_instance_types_to_flag: # Override default list
+      - "m5.16xlarge"
+      - "c5.12xlarge"
+    # flag_large_types_without_tag: # Future: more complex tag-based exemption
+    #   criticality!: ["high"]
+
+aws_s3:
+  enabled: true # Enable/disable all S3 checks
+  encryption:
+    enabled: true
+    require_sse_kms: true # Stricter: require KMS, not just any SSE
+  versioning:
+    enabled: true # Ensure versioning is checked
+  public_access_block:
+    enabled: true
+    require_all_blocks_true: true # Ensure all PAB settings are true
+```
+
+### Interpreting Output
+
+*   The tool will print messages about loading IaC data and rules.
+*   If recommendations are found:
+    *   A summary indicating the number of recommendations.
+    *   For each recommendation:
+        *   Severity (e.g., "High", "Medium", "Low").
+        *   A unique rule ID.
+        *   The affected resource (type, name, ID).
+        *   A descriptive message explaining the potential optimization.
+        *   Any relevant details (e.g., current vs. suggested instance type).
+*   An exit code:
+    *   `0`: No recommendations generated (all checks passed or no relevant resources/rules).
+    *   `1`: Recommendations found.
+    *   Other non-zero codes for errors.
+
+**Example of a Recommendation Output:**
+```
+Recommendation 1/X: [Low|AWS_EC2_NEWER_GENERATION_MAPPED]
+  Resource: aws_instance 'old_gen_server' (ID: i-012345abcdef)
+  Message:  Instance type 't2.medium' is an older generation. Consider upgrading to a newer generation like 't3.medium' from the same family for potential cost/performance benefits. Verify compatibility and pricing.
+  Details:  {'current_type': 't2.medium', 'suggested_type_example': 't3.medium'}
+```
+
+### Current Limitations & Future Enhancements
+
+*   **Terraform State Focus:** Primarily analyzes `.tfstate` files. Direct HCL parsing or richer plan file analysis would provide more context.
+*   **AWS Focus:** Initial checks are for AWS EC2 and S3. Support for more AWS services and other cloud providers (GCP, Azure) is planned.
+*   **Basic Rule Logic:** Some recommendation logic (e.g., instance right-sizing, "newer generation" mapping) is currently based on simple heuristics or predefined maps. More advanced analysis (e.g., using actual utilization metrics) is a future goal.
+*   **Limited Configuration for Rules:** While rules can be enabled/disabled and some parameters tweaked, the core logic of each rule is in code. More dynamic rule definitions could be explored.
+```
+This tool helps identify potential areas to optimize your cloud configurations for better cost, performance, security, and reliability.
