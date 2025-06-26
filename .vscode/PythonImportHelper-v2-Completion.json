@@ -420,6 +420,158 @@
         "documentation": {}
     },
     {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Pattern",
         "importPath": "typing",
         "description": "typing",
@@ -564,6 +716,38 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -645,6 +829,22 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "field_validator",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -696,6 +896,14 @@
         "documentation": {}
     },
     {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
         "label": "fnmatch",
         "kind": 6,
         "isExtraImport": true,
@@ -732,12 +940,11 @@
         "documentation": {}
     },
     {
-        "label": "shutil",
-        "kind": 6,
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
         "isExtraImport": true,
-        "importPath": "shutil",
-        "description": "shutil",
-        "detail": "shutil",
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -746,6 +953,23 @@
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
         "documentation": {}
     },
     {
@@ -794,6 +1018,126 @@
         "description": "src.mcp_tools.echo_tool.client",
         "isExtraImport": true,
         "detail": "src.mcp_tools.echo_tool.client",
+        "documentation": {}
+    },
+    {
+        "label": "ParsedResource",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftInfo",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftType",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "AttributeDrift",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftInfo",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftType",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "AttributeDrift",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "ParsedResource",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "ParsedResource",
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "compare_states",
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "compare_attributes",
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_IGNORED_ATTRIBUTES",
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "suggest_remediation",
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "documentation": {}
+    },
+    {
+        "label": "parse_terraform_state_file",
+        "importPath": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "description": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_terraform_plan_json_file",
+        "importPath": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "description": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "isExtraImport": true,
+        "detail": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
         "documentation": {}
     },
     {
@@ -2235,6 +2579,105 @@
         "documentation": {}
     },
     {
+        "label": "MockActualStateConnector",
+        "kind": 6,
+        "importPath": "src.mcp_tools.iac_drift_detector.connectors.mock_connector",
+        "description": "src.mcp_tools.iac_drift_detector.connectors.mock_connector",
+        "peekOfCode": "class MockActualStateConnector:\n    \"\"\"\n    Simulates fetching actual infrastructure state.\n    \"\"\"\n    def __init__(self, mock_data: Optional[List[Dict[str, Any]]] = None):\n        \"\"\"\n        Initializes the mock connector.\n        Args:\n            mock_data: A list of dictionaries, where each dictionary represents\n                       an actual resource's properties. If None, default mock data is used.",
+        "detail": "src.mcp_tools.iac_drift_detector.connectors.mock_connector",
+        "documentation": {}
+    },
+    {
+        "label": "compare_attributes",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "peekOfCode": "def compare_attributes(\n    iac_attrs: Dict[str, Any],\n    actual_attrs: Dict[str, Any],\n    resource_type: str, # For type-specific ignore rules\n    ignored_attributes_config: Optional[Dict[str, List[str]]] = None\n) -> List[AttributeDrift]:\n    \"\"\"\n    Compares attributes of two resource states (IaC vs Actual).\n    Args:\n        iac_attrs: Attributes from the IaC definition.",
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "compare_states",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "peekOfCode": "def compare_states(\n    iac_resources: List[ParsedResource],\n    actual_resources: List[ParsedResource],\n    ignored_attributes_config: Optional[Dict[str, List[str]]] = None\n) -> List[DriftInfo]:\n    \"\"\"\n    Compares the desired state (from IaC) with the actual state (from cloud).\n    Args:\n        iac_resources: List of resources defined in IaC.\n        actual_resources: List of resources found in the actual environment.",
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "suggest_remediation",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "description": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "peekOfCode": "def suggest_remediation(drift_info: DriftInfo, iac_tool: str = \"terraform\") -> List[str]:\n    \"\"\"\n    Generates human-readable remediation suggestions for a given drift.\n    Args:\n        drift_info: A DriftInfo object describing the detected drift.\n        iac_tool: The IaC tool in use (e.g., \"terraform\", \"pulumi\"). This helps tailor\n                  suggestions to specific commands.\n    Returns:\n        A list of strings, where each string is a suggested remediation action or comment.\n    \"\"\"",
+        "detail": "src.mcp_tools.iac_drift_detector.core_logic.remediation",
+        "documentation": {}
+    },
+    {
+        "label": "parse_terraform_state_file",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "description": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "peekOfCode": "def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:\n    \"\"\"\n    Parses a Terraform state file (.tfstate) and extracts resources.\n    Args:\n        file_path: Path to the .tfstate file.\n    Returns:\n        A list of ParsedResource objects.\n        Returns an empty list if parsing fails or no resources are found.\n    \"\"\"\n    try:",
+        "detail": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_terraform_plan_json_file",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "description": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "peekOfCode": "def parse_terraform_plan_json_file(file_path: str) -> List[Dict[str, Any]]:\n    \"\"\"\n    Parses a Terraform plan file (JSON output from `terraform show -json <planfile>`)\n    and extracts planned changes. This is more about *changes* than current state.\n    For drift detection, we are usually more interested in the state file for \"desired state\".\n    However, a plan can show what *would* change if applied, which can indicate drift\n    if the plan is generated against an out-of-sync state.\n    This function will extract a list of resource changes for now.\n    A more sophisticated drift tool might use this to predict drift resolution.\n    Args:",
+        "detail": "src.mcp_tools.iac_drift_detector.parsers.terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.mcp_tools.iac_drift_detector.cli",
+        "description": "src.mcp_tools.iac_drift_detector.cli",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"IaC Drift Detection and Remediation Suggestion Tool.\")\n    parser.add_argument(\"--iac-type\", type=str, default=\"terraform\", choices=[\"terraform\"],\n                        help=\"Type of Infrastructure as Code tool being used (default: terraform).\")\n    # Terraform specific arguments\n    tf_group = parser.add_argument_group('Terraform Options')\n    tf_group.add_argument(\"--tf-state-file\", type=str,\n                          help=\"Path to the Terraform state file (.tfstate) for desired state.\")\n    # tf_group.add_argument(\"--tf-plan-file\", type=str, # For future use with plan-based drift\n    #                       help=\"Path to a Terraform plan JSON file (from 'terraform show -json plan.out').\")",
+        "detail": "src.mcp_tools.iac_drift_detector.cli",
+        "documentation": {}
+    },
+    {
+        "label": "ParsedResource",
+        "kind": 6,
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "peekOfCode": "class ParsedResource(BaseModel):\n    \"\"\"Standardized representation of an IaC resource or an actual cloud resource.\"\"\"\n    id: str # The primary identifier of the resource within its provider\n    type: str # e.g., \"aws_instance\", \"aws_s3_bucket\" (Terraform type or equivalent)\n    name: str # The logical name (from IaC) or a descriptive name (if actual)\n    provider_name: str # e.g., \"aws\", \"google\", \"mock\"\n    module: Optional[str] = None # Module path if from IaC\n    attributes: Dict[str, Any] = Field(default_factory=dict) # Key-value pairs of resource attributes\n    # Additional field to distinguish source, could be useful\n    # source: str # e.g., \"terraform_state\", \"actual_cloud\", \"terraform_plan\"",
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftType",
+        "kind": 6,
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "peekOfCode": "class DriftType(str, Enum):\n    MISSING_IN_ACTUAL = \"missing_in_actual\"      # Defined in IaC, not found in actual state\n    UNMANAGED_IN_ACTUAL = \"unmanaged_in_actual\"  # Found in actual state, not defined in IaC\n    MODIFIED = \"modified\"                      # Resource exists in both, but attributes differ\n    # NO_DRIFT = \"no_drift\" # Could be used for explicit non-drift reporting\nclass AttributeDrift(BaseModel):\n    attribute_name: str\n    iac_value: Any\n    actual_value: Any\nclass DriftInfo(BaseModel):",
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "AttributeDrift",
+        "kind": 6,
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "peekOfCode": "class AttributeDrift(BaseModel):\n    attribute_name: str\n    iac_value: Any\n    actual_value: Any\nclass DriftInfo(BaseModel):\n    drift_type: DriftType\n    resource_type: str\n    resource_name: str # Logical name from IaC if available, or a descriptive name\n    resource_id: Optional[str] = None # Actual ID if available\n    iac_resource: Optional[ParsedResource] = None # The resource as defined in IaC",
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
+        "label": "DriftInfo",
+        "kind": 6,
+        "importPath": "src.mcp_tools.iac_drift_detector.models",
+        "description": "src.mcp_tools.iac_drift_detector.models",
+        "peekOfCode": "class DriftInfo(BaseModel):\n    drift_type: DriftType\n    resource_type: str\n    resource_name: str # Logical name from IaC if available, or a descriptive name\n    resource_id: Optional[str] = None # Actual ID if available\n    iac_resource: Optional[ParsedResource] = None # The resource as defined in IaC\n    actual_resource: Optional[ParsedResource] = None # The resource as found in actual state\n    attribute_drifts: List[AttributeDrift] = Field(default_factory=list) # For MODIFIED type\n    message: Optional[str] = None # General message about the drift\n    # Custom validator or logic could generate the message based on other fields.",
+        "detail": "src.mcp_tools.iac_drift_detector.models",
+        "documentation": {}
+    },
+    {
         "label": "check_branch_name_policy",
         "kind": 2,
         "importPath": "src.mcp_tools.pr_reviewer.policies.branch",
@@ -2442,6 +2885,78 @@
         "documentation": {}
     },
     {
+        "label": "temp_tfstate_file",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def temp_tfstate_file(tmp_path: Path) -> Path:\n    \"\"\"Fixture to create a temporary .tfstate file for testing.\"\"\"\n    file_path = tmp_path / \"test.tfstate\"\n    # Update instance_type in tfstate to ensure it's different from mock for a clear drift\n    # tfstate_content_for_test = SAMPLE_TFSTATE_CONTENT.copy()\n    # tfstate_content_for_test[\"resources\"][0][\"instances\"][0][\"attributes\"][\"instance_type\"] = \"t2.small\"\n    # No, let's rely on the tags difference from the default mock data.\n    # And the S3 ACL difference.\n    with open(file_path, 'w') as f:\n        json.dump(SAMPLE_TFSTATE_CONTENT, f)",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "run_iac_cli",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def run_iac_cli(repo_path: Path, args: list[str]) -> subprocess.CompletedProcess:\n    \"\"\"Helper function to run the IaC Drift Detector CLI tool.\"\"\"\n    cmd = [\"python\", \"-m\", CLI_MODULE_PATH] + args\n    return subprocess.run(cmd, capture_output=True, text=True, cwd=repo_path) # Run from tmp_path itself or a sub-repo if needed\n# --- CLI Tests ---\ndef test_cli_help_message_iac():\n    \"\"\"Test if the IaC Drift CLI shows a help message.\"\"\"\n    result = subprocess.run([\"python\", \"-m\", CLI_MODULE_PATH, \"--help\"], capture_output=True, text=True)\n    assert \"usage: cli.py\" in result.stdout\n    assert \"--tf-state-file\" in result.stdout",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_help_message_iac",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def test_cli_help_message_iac():\n    \"\"\"Test if the IaC Drift CLI shows a help message.\"\"\"\n    result = subprocess.run([\"python\", \"-m\", CLI_MODULE_PATH, \"--help\"], capture_output=True, text=True)\n    assert \"usage: cli.py\" in result.stdout\n    assert \"--tf-state-file\" in result.stdout\n    assert \"--actual-state-source\" in result.stdout\n    assert result.returncode == 0\ndef test_cli_no_tfstate_file_error(tmp_path: Path):\n    \"\"\"Test CLI exits with error if --tf-state-file is required but not provided or not found.\"\"\"\n    result = run_iac_cli(tmp_path, [\"--iac-type\", \"terraform\"]) # No --tf-state-file",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_no_tfstate_file_error",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def test_cli_no_tfstate_file_error(tmp_path: Path):\n    \"\"\"Test CLI exits with error if --tf-state-file is required but not provided or not found.\"\"\"\n    result = run_iac_cli(tmp_path, [\"--iac-type\", \"terraform\"]) # No --tf-state-file\n    # print(\"STDOUT:\", result.stdout)\n    # print(\"STDERR:\", result.stderr)\n    assert result.returncode != 0 # Should be 2 based on cli.py\n    assert \"Error: For Terraform, either --tf-state-file must be provided.\" in result.stderr\n    result_not_found = run_iac_cli(tmp_path, [\"--iac-type\", \"terraform\", \"--tf-state-file\", \"nonexistent.tfstate\"])\n    # print(\"STDOUT:\", result_not_found.stdout)\n    # print(\"STDERR:\", result_not_found.stderr)",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_drift_detection_with_mock_connector",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def test_cli_drift_detection_with_mock_connector(temp_tfstate_file: Path, tmp_path: Path):\n    \"\"\"\n    Test end-to-end drift detection using a sample tfstate and the default mock connector.\n    \"\"\"\n    tfstate_file_abs_path = str(temp_tfstate_file.resolve())\n    args = [\n        \"--iac-type\", \"terraform\",\n        \"--tf-state-file\", tfstate_file_abs_path,\n        \"--actual-state-source\", \"mock\"\n    ]",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_no_drift_scenario",
+        "kind": 2,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "def test_cli_no_drift_scenario(tmp_path: Path):\n    \"\"\"Test a scenario where desired and (mocked) actual states match.\"\"\"\n    # Create a tfstate file that perfectly matches a subset of the default mock data\n    # For simplicity, let's use only the S3 bucket part of the mock data, but make it match\n    no_drift_tfstate_content = {\n        \"version\": 4, \"resources\": [\n            {\n                \"mode\": \"managed\", \"type\": \"aws_s3_bucket\", \"name\": \"perfect_match_bucket\",\n                \"provider\": \"provider[\\\"registry.terraform.io/hashicorp/aws\\\"]\",\n                \"instances\": [{\"attributes\": {",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "CLI_MODULE_PATH",
+        "kind": 5,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "CLI_MODULE_PATH = \"src.mcp_tools.iac_drift_detector.cli\"\n# Sample Terraform state content (from terraform_parser.py's example)\n# This represents the \"desired state\"\nSAMPLE_TFSTATE_CONTENT = {\n    \"version\": 4, \"terraform_version\": \"1.0.0\", \"serial\": 1, \"lineage\": \"some-uuid\", \"outputs\": {},\n    \"resources\": [\n        { # Will match mock actual, but with different attributes -> MODIFIED\n            \"mode\": \"managed\", \"type\": \"aws_instance\", \"name\": \"example_ec2\",\n            \"provider\": \"provider[\\\"registry.terraform.io/hashicorp/aws\\\"]\",\n            \"instances\": [{\"schema_version\": 1, \"attributes\": {",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
+        "label": "SAMPLE_TFSTATE_CONTENT",
+        "kind": 5,
+        "importPath": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "description": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "peekOfCode": "SAMPLE_TFSTATE_CONTENT = {\n    \"version\": 4, \"terraform_version\": \"1.0.0\", \"serial\": 1, \"lineage\": \"some-uuid\", \"outputs\": {},\n    \"resources\": [\n        { # Will match mock actual, but with different attributes -> MODIFIED\n            \"mode\": \"managed\", \"type\": \"aws_instance\", \"name\": \"example_ec2\",\n            \"provider\": \"provider[\\\"registry.terraform.io/hashicorp/aws\\\"]\",\n            \"instances\": [{\"schema_version\": 1, \"attributes\": {\n                \"id\": \"i-12345abcdef\", \"ami\": \"ami-0c55b31ad29f52962\",\n                \"instance_type\": \"t2.micro\", \"tags\": {\"Name\": \"example-instance\"}}}]\n        },",
+        "detail": "tests.integration.test_iac_drift_detector.test_iac_drift_cli",
+        "documentation": {}
+    },
+    {
         "label": "temp_git_repo",
         "kind": 2,
         "importPath": "tests.integration.test_pr_reviewer.test_pr_reviewer_cli",
@@ -2628,6 +3143,267 @@
         "description": "tests.integration.test_echo_tool",
         "peekOfCode": "client = TestClient(app)\n@pytest.fixture(autouse=True)\ndef clear_context_store_after_each_test():\n    \"\"\"\n    Fixture to clear the CONTEXT_STORE after each test.\n    \"\"\"\n    CONTEXT_STORE.clear()\n    yield\n    CONTEXT_STORE.clear()\ndef test_echo_endpoint_direct():",
         "detail": "tests.integration.test_echo_tool",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_attributes",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_attributes(iac_attrs, actual_attrs, resource_type, ignored_config, expected_drifts_count, expected_drift_details):\n    drifts = compare_attributes(iac_attrs, actual_attrs, resource_type, ignored_config)\n    assert len(drifts) == expected_drifts_count\n    for i, (attr_name, iac_val, act_val) in enumerate(expected_drift_details):\n        found_drift = next((d for d in drifts if d.attribute_name == attr_name), None)\n        assert found_drift is not None, f\"Expected drift for attribute '{attr_name}' not found.\"\n        assert found_drift.iac_value == iac_val\n        assert found_drift.actual_value == act_val\n# --- Test compare_states ---\ndef test_compare_states_modified_missing_unmanaged():",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_modified_missing_unmanaged",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_modified_missing_unmanaged():\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-instance-01\", type=\"vm\", name=\"web_server_iac\", provider_name=\"mock\", attributes={\"size\": \"medium\", \"image\": \"ubuntu-20.04\", \"tags\": {\"env\": \"prod\"}}),\n        ParsedResource(id=\"id-db-01\", type=\"database\", name=\"main_db_iac\", provider_name=\"mock\", attributes={\"version\": \"12\", \"storage\": \"100GB\"}), # Missing\n    ]\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-instance-01\", type=\"vm\", name=\"web_server_actual\", provider_name=\"mock\", attributes={\"size\": \"large\", \"image\": \"ubuntu-20.04\", \"tags\": {\"env\": \"prod\", \"extra_tag\": \"hello\"}}), # Modified size\n        ParsedResource(id=\"id-disk-unmanaged\", type=\"disk\", name=\"orphan_disk_actual\", provider_name=\"mock\", attributes={\"size\": \"50GB\"}), # Unmanaged\n    ]\n    drifts = compare_states(iac_state, actual_state)",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_no_drift",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_no_drift():\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-100\", type=\"vm\", name=\"app_server\", provider_name=\"mock\", attributes={\"image\": \"centos8\", \"cpu\": 2}),\n    ]\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-100\", type=\"vm\", name=\"app_server_live\", provider_name=\"mock\", attributes={\"image\": \"centos8\", \"cpu\": 2}),\n    ]\n    drifts = compare_states(iac_state, actual_state)\n    assert not drifts, f\"Expected no drift, but got: {drifts}\"\ndef test_compare_states_ignored_attributes():",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_ignored_attributes",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_ignored_attributes():\n    custom_ignored = {\"vm\": [\"last_updated_time\", \"dynamic_ip\"]}\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-200\", type=\"vm\", name=\"worker\", provider_name=\"mock\",\n                    attributes={\"image\": \"debian\", \"ram\": \"4GB\", \"last_updated_time\": \"ts1\", \"tags\": {\"managed_by\": \"iac\"}}),\n    ]\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-200\", type=\"vm\", name=\"worker_live\", provider_name=\"mock\",\n                       attributes={\"image\": \"debian\", \"ram\": \"4GB\", \"last_updated_time\": \"ts2\", \"dynamic_ip\": \"1.2.3.4\", \"tags\": {\"managed_by\": \"iac\", \"status\": \"running\"}}),\n    ]",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_tag_value_modified",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_tag_value_modified():\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-300\", type=\"vm\", name=\"tagged_vm\", provider_name=\"mock\",\n                    attributes={\"tags\": {\"env\": \"staging\", \"owner\": \"team-a\"}}),\n    ]\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-vm-300\", type=\"vm\", name=\"tagged_vm_live\", provider_name=\"mock\",\n                       attributes={\"tags\": {\"env\": \"prod\", \"owner\": \"team-a\", \"new_tag\": \"val\"}}),\n    ]\n    drifts = compare_states(iac_state, actual_state)",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_type_mismatch_on_same_id",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_type_mismatch_on_same_id():\n    \"\"\" Test scenario where same ID has different resource types (should be rare, but possible if IDs are not universally unique).\"\"\"\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-shared-01\", type=\"vm\", name=\"resource_a\", provider_name=\"mock\", attributes={})\n    ]\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-shared-01\", type=\"disk\", name=\"resource_b_actual\", provider_name=\"mock\", attributes={})\n    ]\n    drifts = compare_states(iac_state, actual_state)\n    assert len(drifts) == 1 # Should be one MODIFIED drift indicating type mismatch",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_empty_iac_all_unmanaged",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_empty_iac_all_unmanaged():\n    iac_state: List[ParsedResource] = []\n    actual_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-unmanaged-1\", type=\"vm\", name=\"vm1\", provider_name=\"mock\", attributes={}),\n        ParsedResource(id=\"id-unmanaged-2\", type=\"disk\", name=\"disk1\", provider_name=\"mock\", attributes={}),\n    ]\n    drifts = compare_states(iac_state, actual_state)\n    assert len(drifts) == 2\n    assert all(d.drift_type == DriftType.UNMANAGED_IN_ACTUAL for d in drifts)\ndef test_compare_states_empty_actual_all_missing():",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_empty_actual_all_missing",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_empty_actual_all_missing():\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=\"id-missing-1\", type=\"vm\", name=\"vm_iac_1\", provider_name=\"mock\", attributes={}),\n        ParsedResource(id=\"id-missing-2\", type=\"disk\", name=\"disk_iac_1\", provider_name=\"mock\", attributes={}),\n    ]\n    actual_state: List[ParsedResource] = []\n    drifts = compare_states(iac_state, actual_state)\n    assert len(drifts) == 2\n    assert all(d.drift_type == DriftType.MISSING_IN_ACTUAL for d in drifts)\ndef test_compare_states_no_ids_in_iac_resources():",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_compare_states_no_ids_in_iac_resources",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "description": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "peekOfCode": "def test_compare_states_no_ids_in_iac_resources():\n    \"\"\" Test how it handles IaC resources that might be missing 'id' (e.g. malformed state). \"\"\"\n    iac_state: List[ParsedResource] = [\n        ParsedResource(id=None, type=\"vm\", name=\"vm_no_id\", provider_name=\"mock\", attributes={}) # type: ignore\n    ]\n    actual_state: List[ParsedResource] = [\n         ParsedResource(id=\"id-actual-1\", type=\"vm\", name=\"vm_actual_1\", provider_name=\"mock\", attributes={})\n    ]\n    # Current implementation of compare_states uses `iac_by_id = {res.id: res for res in iac_resources if res.id}`\n    # So, iac_resource without id will be skipped for MODIFIED/MISSING checks based on ID.",
+        "detail": "tests.unit.test_iac_drift_detector.test_drift_engine",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_missing_in_actual_terraform",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_missing_in_actual_terraform():\n    drift = DriftInfo(\n        drift_type=DriftType.MISSING_IN_ACTUAL,\n        resource_type=\"aws_instance\",\n        resource_name=\"web_server_01\",\n        iac_resource=ParsedResource(id=\"i-expected123\", type=\"aws_instance\", name=\"web_server_01\", provider_name=\"aws\", attributes={})\n    )\n    suggestions = suggest_remediation(drift, iac_tool=\"terraform\")\n    assert len(suggestions) >= 2\n    assert f\"Resource aws_instance.web_server_01 (Expected IaC ID: i-expected123) is defined in IaC but MISSING\" in suggestions[0]",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_missing_in_actual_with_module_terraform",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_missing_in_actual_with_module_terraform():\n    drift = DriftInfo(\n        drift_type=DriftType.MISSING_IN_ACTUAL,\n        resource_type=\"aws_instance\",\n        resource_name=\"web_server_module\",\n        iac_resource=ParsedResource(id=\"i-expected456\", type=\"aws_instance\", name=\"web_server_module\", provider_name=\"aws\", module=\"module.my_module\", attributes={})\n    )\n    suggestions = suggest_remediation(drift, iac_tool=\"terraform\")\n    assert len(suggestions) >= 3\n    assert \"(Resource is in module: module.my_module)\" in suggestions[2]",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_unmanaged_in_actual_terraform",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_unmanaged_in_actual_terraform():\n    drift = DriftInfo(\n        drift_type=DriftType.UNMANAGED_IN_ACTUAL,\n        resource_type=\"aws_s3_bucket\",\n        resource_name=\"manual-bucket-007\",\n        resource_id=\"manual-bucket-007-id\",\n        actual_resource=ParsedResource(id=\"manual-bucket-007-id\", type=\"aws_s3_bucket\", name=\"manual-bucket-007\", provider_name=\"aws\", attributes={})\n    )\n    suggestions = suggest_remediation(drift, iac_tool=\"terraform\")\n    assert len(suggestions) >= 4 # Main message + 3 suggestions",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_modified_terraform",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_modified_terraform():\n    attr_drifts = [\n        AttributeDrift(attribute_name=\"instance_type\", iac_value=\"t2.micro\", actual_value=\"t3.small\"),\n        AttributeDrift(attribute_name=\"monitoring\", iac_value=None, actual_value=True)\n    ]\n    drift = DriftInfo(\n        drift_type=DriftType.MODIFIED,\n        resource_type=\"aws_instance\",\n        resource_name=\"app_server_main\",\n        resource_id=\"i-actual456\",",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_unknown_drift_type",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_unknown_drift_type():\n    # Create a dummy DriftType or mock it if Enum doesn't allow easy extension for tests\n    class MockUnknownDriftType:\n        value = \"very_unknown_drift\"\n    drift = DriftInfo(\n        drift_type=MockUnknownDriftType(), # type: ignore\n        resource_type=\"some_type\",\n        resource_name=\"some_name\",\n        resource_id=\"some_id\"\n    )",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "test_suggest_remediation_generic_iac_tool",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_remediation",
+        "description": "tests.unit.test_iac_drift_detector.test_remediation",
+        "peekOfCode": "def test_suggest_remediation_generic_iac_tool():\n    drift_missing = DriftInfo(\n        drift_type=DriftType.MISSING_IN_ACTUAL,\n        resource_type=\"generic_resource\",\n        resource_name=\"test_res\",\n        iac_resource=ParsedResource(id=\"gen-id-123\", type=\"generic_resource\", name=\"test_res\", provider_name=\"any\", attributes={})\n    )\n    suggestions = suggest_remediation(drift_missing, iac_tool=\"pulumi\") # Example other tool\n    assert len(suggestions) >= 2\n    assert \"Use your IaC tool to apply the configuration and create the resource.\" in suggestions[1]",
+        "detail": "tests.unit.test_iac_drift_detector.test_remediation",
+        "documentation": {}
+    },
+    {
+        "label": "sample_tfstate_content",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def sample_tfstate_content() -> dict:\n    return {\n        \"version\": 4,\n        \"terraform_version\": \"1.1.0\",\n        \"resources\": [\n            {\n                \"mode\": \"managed\",\n                \"type\": \"aws_instance\",\n                \"name\": \"web_server\",\n                \"provider\": \"provider[\\\"registry.terraform.io/hashicorp/aws\\\"]\",",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "temp_tfstate_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def temp_tfstate_file(tmp_path: Path, sample_tfstate_content: dict) -> Path:\n    file_path = tmp_path / \"test.tfstate\"\n    with open(file_path, 'w') as f:\n        json.dump(sample_tfstate_content, f)\n    return file_path\n@pytest.fixture\ndef sample_tfplan_json_content() -> dict:\n    return {\n        \"format_version\": \"1.0\",\n        \"resource_changes\": [",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "sample_tfplan_json_content",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def sample_tfplan_json_content() -> dict:\n    return {\n        \"format_version\": \"1.0\",\n        \"resource_changes\": [\n            {\n                \"address\": \"aws_instance.web_server_new\",\n                \"type\": \"aws_instance\", \"name\": \"web_server_new\",\n                \"change\": {\"actions\": [\"create\"], \"after\": {\"instance_type\": \"t3.micro\"}}\n            },\n            {",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "temp_tfplan_json_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def temp_tfplan_json_file(tmp_path: Path, sample_tfplan_json_content: dict) -> Path:\n    file_path = tmp_path / \"test_plan.json\"\n    with open(file_path, 'w') as f:\n        json.dump(sample_tfplan_json_content, f)\n    return file_path\n# --- Tests for parse_terraform_state_file ---\ndef test_parse_tfstate_valid_file(temp_tfstate_file: Path):\n    resources = parse_terraform_state_file(str(temp_tfstate_file))\n    assert len(resources) == 3 # 2 managed resources + 1 null_resource, data source ignored\n    instance_res = next((r for r in resources if r.type == \"aws_instance\"), None)",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_valid_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_valid_file(temp_tfstate_file: Path):\n    resources = parse_terraform_state_file(str(temp_tfstate_file))\n    assert len(resources) == 3 # 2 managed resources + 1 null_resource, data source ignored\n    instance_res = next((r for r in resources if r.type == \"aws_instance\"), None)\n    assert instance_res is not None\n    assert instance_res.id == \"i-0123456789abcdef0\"\n    assert instance_res.name == \"web_server\"\n    assert instance_res.provider_name == \"aws\"\n    assert instance_res.attributes[\"instance_type\"] == \"t2.micro\"\n    assert instance_res.attributes[\"tags\"] == {\"Name\": \"web-server-prod\"}",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_empty_resources",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_empty_resources():\n    empty_tfstate = {\"version\": 4, \"resources\": []}\n    # Use Path object from tmp_path for writing\n    file_path = Path(Path(__file__).parent / \"empty.tfstate\") # Not ideal, should use tmp_path\n    with open(file_path, 'w') as f:\n        json.dump(empty_tfstate, f)\n    resources = parse_terraform_state_file(str(file_path))\n    assert len(resources) == 0\n    file_path.unlink() # Clean up\ndef test_parse_tfstate_no_resources_key(tmp_path: Path):",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_no_resources_key",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_no_resources_key(tmp_path: Path):\n    no_res_key_tfstate = {\"version\": 4} # Missing 'resources' key\n    file_path = tmp_path / \"no_res.tfstate\"\n    with open(file_path, 'w') as f:\n        json.dump(no_res_key_tfstate, f)\n    resources = parse_terraform_state_file(str(file_path))\n    assert len(resources) == 0\ndef test_parse_tfstate_file_not_found(capsys):\n    resources = parse_terraform_state_file(\"non_existent_file.tfstate\")\n    assert len(resources) == 0",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_file_not_found",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_file_not_found(capsys):\n    resources = parse_terraform_state_file(\"non_existent_file.tfstate\")\n    assert len(resources) == 0\n    captured = capsys.readouterr()\n    assert \"Error: Terraform state file not found\" in captured.err\ndef test_parse_tfstate_invalid_json(tmp_path: Path, capsys):\n    file_path = tmp_path / \"invalid.tfstate\"\n    file_path.write_text(\"this is not json\")\n    resources = parse_terraform_state_file(str(file_path))\n    assert len(resources) == 0",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_invalid_json",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_invalid_json(tmp_path: Path, capsys):\n    file_path = tmp_path / \"invalid.tfstate\"\n    file_path.write_text(\"this is not json\")\n    resources = parse_terraform_state_file(str(file_path))\n    assert len(resources) == 0\n    captured = capsys.readouterr()\n    assert \"Error: Invalid JSON\" in captured.err\n# --- Tests for parse_terraform_plan_json_file ---\ndef test_parse_tfplan_valid_file(temp_tfplan_json_file: Path):\n    changes = parse_terraform_plan_json_file(str(temp_tfplan_json_file))",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfplan_valid_file",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfplan_valid_file(temp_tfplan_json_file: Path):\n    changes = parse_terraform_plan_json_file(str(temp_tfplan_json_file))\n    assert len(changes) == 3 # Includes no-op for now\n    create_change = next((c for c in changes if c[\"change\"][\"actions\"] == [\"create\"]), None)\n    assert create_change is not None\n    assert create_change[\"address\"] == \"aws_instance.web_server_new\"\n    assert create_change[\"change\"][\"after\"][\"instance_type\"] == \"t3.micro\"\n    update_change = next((c for c in changes if c[\"change\"][\"actions\"] == [\"update\"]), None)\n    assert update_change is not None\n    assert update_change[\"address\"] == \"aws_s3_bucket.my_data_bucket\"",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfplan_file_not_found",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfplan_file_not_found(capsys):\n    changes = parse_terraform_plan_json_file(\"non_existent_plan.json\")\n    assert len(changes) == 0\n    captured = capsys.readouterr()\n    assert \"Error: Terraform plan JSON file not found\" in captured.err\ndef test_parse_tfplan_invalid_json(tmp_path: Path, capsys):\n    file_path = tmp_path / \"invalid_plan.json\"\n    file_path.write_text(\"{not_json_at_all\")\n    changes = parse_terraform_plan_json_file(str(file_path))\n    assert len(changes) == 0",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfplan_invalid_json",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfplan_invalid_json(tmp_path: Path, capsys):\n    file_path = tmp_path / \"invalid_plan.json\"\n    file_path.write_text(\"{not_json_at_all\")\n    changes = parse_terraform_plan_json_file(str(file_path))\n    assert len(changes) == 0\n    captured = capsys.readouterr()\n    assert \"Error: Invalid JSON\" in captured.err\ndef test_parse_tfplan_empty_changes(tmp_path: Path):\n    plan_content = {\"format_version\": \"1.0\", \"resource_changes\": []}\n    file_path = tmp_path / \"empty_changes_plan.json\"",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfplan_empty_changes",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfplan_empty_changes(tmp_path: Path):\n    plan_content = {\"format_version\": \"1.0\", \"resource_changes\": []}\n    file_path = tmp_path / \"empty_changes_plan.json\"\n    with open(file_path, 'w') as f:\n        json.dump(plan_content, f)\n    changes = parse_terraform_plan_json_file(str(file_path))\n    assert len(changes) == 0\ndef test_parse_tfstate_resource_missing_id_type_name(tmp_path: Path, capsys):\n    # Test case where a resource instance might be malformed (e.g., missing 'id')\n    malformed_tfstate_content = {",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_tfstate_resource_missing_id_type_name",
+        "kind": 2,
+        "importPath": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "description": "tests.unit.test_iac_drift_detector.test_terraform_parser",
+        "peekOfCode": "def test_parse_tfstate_resource_missing_id_type_name(tmp_path: Path, capsys):\n    # Test case where a resource instance might be malformed (e.g., missing 'id')\n    malformed_tfstate_content = {\n        \"version\": 4,\n        \"resources\": [\n            {\n                \"mode\": \"managed\",\n                \"type\": \"aws_instance\",\n                \"name\": \"bad_instance\",\n                \"provider\": \"provider[\\\"registry.terraform.io/hashicorp/aws\\\"]\",",
+        "detail": "tests.unit.test_iac_drift_detector.test_terraform_parser",
         "documentation": {}
     },
     {
