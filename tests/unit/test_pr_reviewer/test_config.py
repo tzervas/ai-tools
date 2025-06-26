@@ -16,28 +16,38 @@ from src.mcp_tools.pr_reviewer.config import (
     DisallowedPatternItem,
     FileSizePolicy,
     load_config,
-    DEFAULT_CONFIG_FILENAME
+    DEFAULT_CONFIG_FILENAME,
 )
+
 
 @pytest.fixture
 def temp_config_file(tmp_path):
     """Fixture to create a temporary config file and clean it up."""
     file_path = tmp_path / DEFAULT_CONFIG_FILENAME
+
     def _create_config(content_dict):
-        with open(file_path, 'w') as f:
+        with open(file_path, "w") as f:
             yaml.dump(content_dict, f)
         return file_path
+
     yield _create_config
     # No explicit cleanup needed for tmp_path, pytest handles it
 
+
 def test_load_config_default_values():
     """Test loading config when no file exists, should return defaults."""
-    config = load_config(config_path="non_existent_file.yml") # Should trigger default loading path if not found
+    config = load_config(
+        config_path="non_existent_file.yml"
+    )  # Should trigger default loading path if not found
     assert isinstance(config, PolicyConfig)
     assert config.branch_naming.enabled is True
-    assert config.branch_naming.pattern.pattern == "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    assert (
+        config.branch_naming.pattern.pattern
+        == "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    )
     assert config.commit_messages.enabled is True
     assert config.file_size.max_bytes == 1048576
+
 
 def test_load_config_from_file(temp_config_file):
     """Test loading a valid configuration from a YAML file."""
@@ -46,13 +56,15 @@ def test_load_config_from_file(temp_config_file):
         "commit_messages": {
             "conventional_commit": {"types": ["task", "bugfix"]},
             "require_issue_number": {"enabled": True, "pattern": "TASK-\\d+"},
-            "enabled": True
+            "enabled": True,
         },
         "disallowed_patterns": {
-            "patterns": [{"pattern": "TEMP_SECRET", "message": "Do not commit temp secrets."}],
-            "enabled": True
+            "patterns": [
+                {"pattern": "TEMP_SECRET", "message": "Do not commit temp secrets."}
+            ],
+            "enabled": True,
         },
-        "file_size": {"max_bytes": 5000, "enabled": False}
+        "file_size": {"max_bytes": 5000, "enabled": False},
     }
     config_file_path = temp_config_file(custom_config_data)
 
@@ -60,7 +72,7 @@ def test_load_config_from_file(temp_config_file):
     original_cwd = os.getcwd()
     os.chdir(config_file_path.parent)
     try:
-        config = load_config() # Test auto-detection
+        config = load_config()  # Test auto-detection
     finally:
         os.chdir(original_cwd)
 
@@ -73,9 +85,10 @@ def test_load_config_from_file(temp_config_file):
     assert config.file_size.max_bytes == 5000
     assert config.file_size.enabled is False
 
+
 def test_load_config_empty_file(temp_config_file):
     """Test loading an empty YAML file, should use defaults."""
-    config_file_path = temp_config_file({}) # Empty dict makes an empty YAML file
+    config_file_path = temp_config_file({})  # Empty dict makes an empty YAML file
 
     original_cwd = os.getcwd()
     os.chdir(config_file_path.parent)
@@ -85,13 +98,12 @@ def test_load_config_empty_file(temp_config_file):
         os.chdir(original_cwd)
 
     assert isinstance(config, PolicyConfig)
-    assert config.branch_naming.enabled is True # Check a default value
+    assert config.branch_naming.enabled is True  # Check a default value
+
 
 def test_load_config_partial_config(temp_config_file):
     """Test loading a file with only some sections defined."""
-    partial_data = {
-        "branch_naming": {"enabled": False}
-    }
+    partial_data = {"branch_naming": {"enabled": False}}
     config_file_path = temp_config_file(partial_data)
     original_cwd = os.getcwd()
     os.chdir(config_file_path.parent)
@@ -101,14 +113,15 @@ def test_load_config_partial_config(temp_config_file):
         os.chdir(original_cwd)
 
     assert config.branch_naming.enabled is False
-    assert config.commit_messages.enabled is True # Default
-    assert config.file_size.max_bytes == 1048576 # Default
+    assert config.commit_messages.enabled is True  # Default
+    assert config.file_size.max_bytes == 1048576  # Default
+
 
 def test_load_config_invalid_yaml(temp_config_file):
     """Test loading a file with invalid YAML content."""
-    file_path = temp_config_file(None) # Create empty file first
-    with open(file_path, 'w') as f:
-        f.write("branch_naming: {pattern: 'foo', enabled: true") # Missing closing }
+    file_path = temp_config_file(None)  # Create empty file first
+    with open(file_path, "w") as f:
+        f.write("branch_naming: {pattern: 'foo', enabled: true")  # Missing closing }
 
     original_cwd = os.getcwd()
     os.chdir(file_path.parent)
@@ -118,11 +131,10 @@ def test_load_config_invalid_yaml(temp_config_file):
         finally:
             os.chdir(original_cwd)
 
+
 def test_load_config_validation_error(temp_config_file):
     """Test loading a file with valid YAML but data that fails Pydantic validation."""
-    invalid_data = {
-        "file_size": {"max_bytes": "not-an-integer"}
-    }
+    invalid_data = {"file_size": {"max_bytes": "not-an-integer"}}
     config_file_path = temp_config_file(invalid_data)
     original_cwd = os.getcwd()
     os.chdir(config_file_path.parent)
@@ -131,6 +143,7 @@ def test_load_config_validation_error(temp_config_file):
             load_config()
         finally:
             os.chdir(original_cwd)
+
 
 def test_regex_compilation_in_models():
     """Test that regex patterns are compiled correctly in Pydantic models."""
@@ -146,9 +159,10 @@ def test_regex_compilation_in_models():
     assert isinstance(dp_item.pattern, re.Pattern)
     assert dp_item.pattern.pattern == "secret"
 
+
 def test_invalid_regex_pattern_in_models():
     """Test that invalid regex patterns raise ValueError during model instantiation."""
-    with pytest.raises(ValidationError): # Pydantic wraps it in ValidationError
+    with pytest.raises(ValidationError):  # Pydantic wraps it in ValidationError
         BranchNamingPolicy(pattern="*invalidregex")
 
     with pytest.raises(ValidationError):
@@ -156,6 +170,7 @@ def test_invalid_regex_pattern_in_models():
 
     with pytest.raises(ValidationError):
         DisallowedPatternItem(pattern="(?<invalid)")
+
 
 def test_default_config_file_search_logic(tmp_path):
     """Test the search logic for the default config file."""
@@ -165,7 +180,7 @@ def test_default_config_file_search_logic(tmp_path):
     sub_dir.mkdir(parents=True)
 
     config_content = {"branch_naming": {"pattern": "^search_logic_test/.+$"}}
-    with open(sub_dir / DEFAULT_CONFIG_FILENAME, 'w') as f:
+    with open(sub_dir / DEFAULT_CONFIG_FILENAME, "w") as f:
         yaml.dump(config_content, f)
 
     # Test 1: Run from a deeper directory, should find the file in parent
@@ -175,7 +190,7 @@ def test_default_config_file_search_logic(tmp_path):
     original_cwd = os.getcwd()
     os.chdir(current_deeper_dir)
     try:
-        config = load_config() # No explicit path, should search up
+        config = load_config()  # No explicit path, should search up
         assert config.branch_naming.pattern.pattern == "^search_logic_test/.+$"
     finally:
         os.chdir(original_cwd)
@@ -188,20 +203,29 @@ def test_default_config_file_search_logic(tmp_path):
     os.chdir(other_dir)
     try:
         config_defaults = load_config()
-        assert config_defaults.branch_naming.pattern.pattern == BranchNamingPolicy().pattern.pattern # Default
+        assert (
+            config_defaults.branch_naming.pattern.pattern
+            == BranchNamingPolicy().pattern.pattern
+        )  # Default
     finally:
         os.chdir(original_cwd)
+
 
 # Test specific model default values
 def test_branch_naming_policy_defaults():
     policy = BranchNamingPolicy()
     assert policy.enabled is True
-    assert policy.pattern.pattern == "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    assert (
+        policy.pattern.pattern
+        == "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    )
+
 
 def test_conventional_commit_policy_defaults():
     policy = ConventionalCommitPolicy()
     assert policy.enabled is True
     assert policy.types == ["feat", "fix", "docs", "style", "refactor", "test", "chore"]
+
 
 def test_require_issue_number_policy_defaults():
     policy = RequireIssueNumberPolicy()
@@ -209,10 +233,12 @@ def test_require_issue_number_policy_defaults():
     assert policy.pattern.pattern == "\\[[A-Z]+-[0-9]+\\]"
     assert policy.in_commit_body is True
 
+
 def test_disallowed_patterns_policy_defaults():
     policy = DisallowedPatternsPolicy()
     assert policy.enabled is True
     assert policy.patterns == []
+
 
 def test_file_size_policy_defaults():
     policy = FileSizePolicy()
