@@ -222,3 +222,6 @@ __marimo__/
 
 # ignore logs
 *.log
+
+# ignore .vscode directory
+.vscode/
