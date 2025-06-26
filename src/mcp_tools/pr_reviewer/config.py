@@ -1,10 +1,13 @@
-from pydantic import BaseModel, Field, field_validator, ValidationError
-from typing import List, Optional, Pattern
-import yaml
+"""Configuration and policy models for PR reviewer tool."""
+
 import os
 import re
 import sys
 
+from typing import List, Optional
+
+import yaml
+from pydantic import BaseModel, Field, ValidationError, field_validator
 
 DEFAULT_CONFIG_FILENAME = ".pr-policy.yml"
 
@@ -12,7 +15,10 @@ DEFAULT_CONFIG_FILENAME = ".pr-policy.yml"
 
 
 class BranchNamingPolicy(BaseModel):
-    pattern: Optional[str] = "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    """Policy for branch naming conventions."""
+    pattern: Optional[str] = (
+        "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    )
     enabled: bool = True
 
     @field_validator("pattern", mode="before")
@@ -22,11 +28,11 @@ class BranchNamingPolicy(BaseModel):
         try:
             return re.compile(v)
         except re.error as e:
-            raise ValueError(f"Invalid regex pattern '{v}': {e}")
-        return v
+            raise ValueError(f"Invalid regex pattern '{v}': {e}") from e
 
 
 class ConventionalCommitPolicy(BaseModel):
+    """Policy for conventional commit types."""
     enabled: bool = True
     types: List[str] = Field(
         default_factory=lambda: [
@@ -42,6 +48,7 @@ class ConventionalCommitPolicy(BaseModel):
 
 
 class RequireIssueNumberPolicy(BaseModel):
+    """Policy for requiring issue numbers in commits."""
     pattern: Optional[str] = "\\[[A-Z]+-[0-9]+\\]"  # Example: [PROJ-123]
     in_commit_body: bool = True  # Check commit message body
     in_pr_title: bool = False  # Placeholder for future PR title check
@@ -50,12 +57,19 @@ class RequireIssueNumberPolicy(BaseModel):
 
 
 class CommitMessagePolicy(BaseModel):
-    conventional_commit: ConventionalCommitPolicy = Field(default_factory=ConventionalCommitPolicy)
-    require_issue_number: RequireIssueNumberPolicy = Field(default_factory=RequireIssueNumberPolicy)
+    """Policy for commit messages."""
+    conventional_commit: ConventionalCommitPolicy = Field(
+        default_factory=ConventionalCommitPolicy
+    )
+    require_issue_number: RequireIssueNumberPolicy = Field(
+        default_factory=RequireIssueNumberPolicy
+    )
     enabled: bool = True
 
 
 class DisallowedPatternItem(BaseModel):
+    """Item for disallowed patterns in code."""
+
     pattern: str
     message: Optional[str] = None
     enabled: bool = True
@@ -67,8 +81,12 @@ class DisallowedPatternItem(BaseModel):
         try:
             return re.compile(v)
         except re.error as e:
-            raise ValueError(f"Invalid regex pattern '{v}': {e}")
-        return v
+            raise ValueError(f"Invalid regex pattern '{v}': {e}") from e
+
+    def is_enabled(self) -> bool:
+        """Return whether this disallowed pattern item is enabled."""
+        return self.enabled
+
 
 
 class DisallowedPatternsPolicy(BaseModel):
@@ -94,7 +112,6 @@ class FileSizePolicy(BaseModel):
         ignore_paths (List[str]): List of file paths or patterns to ignore.
         enabled (bool): Whether this policy is enabled.
     """
-
     max_bytes: int = 1048576  # 1MB
     ignore_extensions: List[str] = Field(default_factory=list)
     ignore_paths: List[str] = Field(
@@ -116,10 +133,11 @@ class PolicyConfig(BaseModel):
         disallowed_patterns (DisallowedPatternsPolicy): Disallowed patterns policy configuration.
         file_size (FileSizePolicy): File size policy configuration.
     """
-
     branch_naming: BranchNamingPolicy = Field(default_factory=BranchNamingPolicy)
     commit_messages: CommitMessagePolicy = Field(default_factory=CommitMessagePolicy)
-    disallowed_patterns: DisallowedPatternsPolicy = Field(default_factory=DisallowedPatternsPolicy)
+    disallowed_patterns: DisallowedPatternsPolicy = Field(
+        default_factory=DisallowedPatternsPolicy
+    )
     file_size: FileSizePolicy = Field(default_factory=FileSizePolicy)
 
     # Future policies can be added here
@@ -132,8 +150,8 @@ class PolicyConfig(BaseModel):
 def load_config(config_path: Optional[str] = None) -> PolicyConfig:
     """
     Loads policy configuration from a YAML file.
-    If config_path is None, tries to load from '.pr-policy.yml' in the current or parent directories.
-    If no file is found, returns default configuration.
+    If config_path is None, tries to load from '.pr-policy.yml' in the current or
+    parent directories. If no file is found, returns default configuration.
     """
     if config_path:
         if not os.path.exists(config_path):
@@ -161,13 +179,22 @@ def load_config(config_path: Optional[str] = None) -> PolicyConfig:
                 return PolicyConfig()
             return PolicyConfig(**config_data)
         except yaml.YAMLError as e:
-            raise ValueError(f"Error parsing YAML configuration file {config_path}: {e}")
+            raise ValueError(
+                f"Error parsing YAML configuration file {config_path}: {e}"
+            ) from e
         except ValidationError as e:
-            raise ValueError(f"Configuration validation error in {config_path}:\n{e}")
+            raise ValueError(
+                f"Configuration validation error in {config_path}:\n{e}"
+            ) from e
         except Exception as e:
-            raise ValueError(f"Unexpected error loading configuration from {config_path}: {e}")
+            raise ValueError(
+                f"Unexpected error loading configuration from {config_path}: {e}"
+            ) from e
     else:
-        print(f"No configuration file '{DEFAULT_CONFIG_FILENAME}' found. Using default policies.")
+        print(
+            f"No configuration file '{DEFAULT_CONFIG_FILENAME}' found. "
+            "Using default policies."
+        )
         return PolicyConfig()
 
 
@@ -175,7 +202,7 @@ if __name__ == "__main__":
     # Example usage and simple test
     try:
         # Create a dummy .pr-policy.yml for testing
-        dummy_config_content = """
+        DUMMY_CONFIG_CONTENT = """
 branch_naming:
   pattern: "^(feat|fix)/.+$"
   enabled: true
@@ -246,4 +273,3 @@ file_size:
     finally:
         if os.path.exists(DEFAULT_CONFIG_FILENAME):
             os.remove(DEFAULT_CONFIG_FILENAME)
-        pass

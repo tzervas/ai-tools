@@ -54,7 +54,7 @@ def run_all_checks(
 
     # Branch naming policy check
     if config.branch_naming.enabled:
-        print("\nChecking branch naming policy...")
+        print("\nChecking branch naming policy..."
         current_branch_name = git_utils.get_current_branch_name()
         branch_to_check = head_branch
         if head_branch.upper() == "HEAD":
@@ -87,6 +87,7 @@ def run_all_checks(
             print(
                 f"Found {len(all_changed_filepaths_in_range)} unique changed files in this range."
             )
+
     except GitRepoError as e:
         all_violations.append(f"Error accessing Git data: {e}")
         print(f"  Error: Could not retrieve commits/files: {e}")
@@ -116,11 +117,13 @@ def run_all_checks(
             print("  Commit message policies: OK")
 
     # File policies (disallowed patterns, file size)
+    # These checks are performed on each changed file at its state in the head_branch.
     if (
         config.disallowed_patterns.enabled or config.file_size.enabled
     ) and all_changed_filepaths_in_range:
         print("\nChecking file policies (content patterns, size)...")
         file_policy_violated = False
+
 
         def get_content_for_check(filepath: str) -> str:
             """
@@ -132,6 +135,7 @@ def run_all_checks(
                 str: The file content at the specified revision.
             """
             return git_utils.get_file_content_at_revision(filepath, revision=head_branch)
+
 
         def get_size_for_check(filepath: str) -> int:
             """
@@ -216,6 +220,7 @@ def main() -> None:
     try:
         print(f"Initializing repository at: {args.repo_path or os.getcwd()}")
         git_utils = GitUtils(repo_path=args.repo_path)
+
         print(
             f"Loading configuration (file: {args.config_file or 'auto-detect .pr-policy.yml'})..."
         )

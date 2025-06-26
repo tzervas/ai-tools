@@ -23,6 +23,17 @@ except ImportError:
         RequireIssueNumberPolicy,
     )
 import re
+from typing import Dict, List, Optional, Pattern, Tuple
+
+from ..config import (CommitMessagePolicy, ConventionalCommitPolicy,
+                      RequireIssueNumberPolicy)
+
+CONVENTIONAL_COMMIT_REGEX = re.compile(
+    r"^(?P<type>[a-zA-Z_]+)"
+    r"(?:\((?P<scope>[^\)]+)\))?"
+    r"(?P<breaking>!)?: "
+    r"(?P<subject>.+)$"
+)
 
 CONVENTIONAL_COMMIT_REGEX = re.compile(
     r"^(?P<type>[a-zA-Z_]+)(?:\((?P<scope>[^\)]+)\))?(?P<breaking>!)?: (?P<subject>.+)$"
@@ -64,9 +75,9 @@ def check_conventional_commit_format(
             f"Commit {commit_sha[:7]}: Type '{commit_type}' is not one of the allowed types: "
             f"{', '.join(policy.types)}."
         )
-
-    # Could add more checks: scope format, subject length, presence of body for breaking change,
-    # etc. For now, focusing on type and basic structure.
+    # Could add more checks: scope format, subject length,
+    # presence of body for breaking change, etc.
+    # For now, focusing on type and basic structure.
 
     return violations
 
@@ -95,7 +106,9 @@ def check_commit_for_issue_number(
     if not policy.enabled or not policy.pattern:
         return violations
 
-    text_to_check: List[Tuple[str, str]] = []  # List of (text_source_name, text_content)
+    text_to_check: List[Tuple[str, str]] = (
+        []
+    )  # List of (text_source_name, text_content)
 
     if policy.in_commit_body:
         text_to_check.append(("commit message body", commit_message_body))
@@ -106,7 +119,7 @@ def check_commit_for_issue_number(
     #     text_to_check.append(("PR body", pr_body))
 
     found_in_any = False
-    for source_name, text_content in text_to_check:
+    for _, text_content in text_to_check:
         if policy.pattern.search(text_content):
             found_in_any = True
             break
@@ -140,15 +153,20 @@ def check_commit_message_policies(
 
     commit_sha = commit_details.get("sha", "UnknownSHA")
     commit_subject = commit_details.get("message_subject", "")
-    commit_body = commit_details.get("message_body", "")  # Full message body after subject
+    commit_body = commit_details.get(
+        "message_body", ""
+    )  # Full message body after subject
 
     # Conventional Commit Check
     if policy.conventional_commit.enabled:
         violations.extend(
-            check_conventional_commit_format(commit_subject, commit_sha, policy.conventional_commit)
+            check_conventional_commit_format(
+                commit_subject, commit_sha, policy.conventional_commit
+            )
         )
 
     # Require Issue Number Check
+    # commit_message_body=commit_body: Or pass commit_details.get("message", "") for full message
     if policy.require_issue_number.enabled:
         violations.extend(
             check_commit_for_issue_number(
