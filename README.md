@@ -29,24 +29,51 @@ The project includes:
 │   └── mcp_tools/        # Client tools interacting with MCP
 │       ├── echo_tool/
 │       │   └── client.py
-│       └── pr_reviewer/  # Automated PR Review Helper tool
+│       ├── pr_reviewer/  # Automated PR Review Helper tool
+│       │   ├── cli.py
+│       │   ├── config.py
+│       │   ├── git_utils.py
+│       │   └── policies/
+│       │       ├── branch.py
+│       │       ├── commit.py
+│       │       └── file.py
+│       └── iac_drift_detector/ # IaC Drift Detector tool
 │           ├── cli.py
+│           ├── models.py
+│           ├── parsers/
+│           │   └── terraform_parser.py
+│           ├── connectors/
+│           │   └── mock_connector.py
+│           └── core_logic/
+│               ├── drift_engine.py
+│               └── remediation.py
+│       └── config_optimizer/ # Configuration Optimization Recommender tool
+│           ├── cli.py
+│           ├── models.py
 │           ├── config.py
-│           ├── git_utils.py
-│           └── policies/
-│               ├── branch.py
-│               ├── commit.py
-│               └── file.py
+│           └── aws/
+│               ├── ec2_optimizer.py
+│               └── s3_optimizer.py
 └── tests/                # Tests
     ├── integration/      # Integration tests
     │   ├── test_echo_tool.py
-    │   └── test_pr_reviewer/
-    │       └── test_pr_reviewer_cli.py
+    │   ├── test_pr_reviewer/
+    │   │   └── test_pr_reviewer_cli.py
+    │   └── test_iac_drift_detector/
+    │       └── test_iac_drift_cli.py
     └── unit/             # Unit tests
         ├── test_server.py
-        └── test_pr_reviewer/
-            ├── test_config.py
-            └── test_policies.py
+        ├── test_pr_reviewer/
+        │   ├── test_config.py
+        │   └── test_policies.py
+        └── test_iac_drift_detector/
+            ├── test_terraform_parser.py
+            ├── test_drift_engine.py
+            └── test_remediation.py
+        └── test_config_optimizer/
+            ├── test_optimizer_config.py
+            ├── test_ec2_optimizer.py
+            └── test_s3_optimizer.py
 ```
 
 ## Getting Started
@@ -349,3 +376,188 @@ file_size:
 *   The tool will exit with status code `0` if all checks pass, `1` if violations are found, and other non-zero codes for errors (e.g., Git issues, configuration problems).
 ```
 This tool helps maintain code quality and consistency across your project by automating common pre-PR checks.
+
+## Tool: IaC Drift Detector
+
+The IaC (Infrastructure as Code) Drift Detector (`src/mcp_tools/iac_drift_detector/cli.py`) is a command-line tool to identify differences (drift) between your infrastructure's desired state (defined in IaC files) and its actual state in the cloud or other environments. It also provides suggestions for remediation.
+
+### Current Features (Initial Version)
+
+*   **IaC Support:**
+    *   **Terraform:** Parses desired state from `.tfstate` files.
+*   **Actual State Source:**
+    *   **Mock Connector:** Uses a built-in mock data source to simulate actual cloud resources. This is useful for testing the tool's logic without live cloud access. (Future: AWS, GCP, Azure connectors).
+*   **Drift Detection:**
+    *   **Missing Resources:** Identifies resources defined in IaC but not found in the actual state.
+    *   **Unmanaged Resources:** Identifies resources found in the actual state but not defined (tracked) in the IaC state.
+    *   **Modified Resources:** Compares attributes of resources that exist in both states and flags differences. Includes basic support for ignoring common noisy attributes (e.g., ARNs, dynamic IPs for certain resource types) and special handling for `tags`.
+*   **Remediation Suggestions:** Provides human-readable suggestions for each detected drift (e.g., `terraform apply`, `terraform import`, or manual review).
+*   **CLI Interface:** Allows specifying IaC type, state file, and actual state source.
+
+### Usage
+
+1.  **Prepare your IaC files:**
+    *   For Terraform, ensure you have a relevant `.tfstate` file representing the desired state of your infrastructure.
+2.  **Run the tool from the root of your repository (or provide paths):**
+
+    ```bash
+    python -m src.mcp_tools.iac_drift_detector.cli --iac-type terraform --tf-state-file /path/to/your/terraform.tfstate --actual-state-source mock
+    ```
+
+    **Arguments:**
+    *   `--iac-type <type>`: The IaC tool used (default/currently only: `terraform`).
+    *   `--tf-state-file <path>`: Path to the Terraform state file. **Required for Terraform.**
+    *   `--actual-state-source <source>`: Source for actual state (default/currently only: `mock`).
+        *   *(Future: `--aws-profile`, `--aws-region` for an AWS connector, etc.)*
+
+### Example Output Interpretation
+
+The tool will output:
+1.  Initialization messages (loading state, connector type).
+2.  A summary of the comparison process.
+3.  If drifts are detected:
+    *   A header indicating the number of drifts.
+    *   For each drift:
+        *   Drift type (e.g., `MODIFIED`, `MISSING_IN_ACTUAL`, `UNMANAGED_IN_ACTUAL`).
+        *   Resource type, logical name, and ID.
+        *   For `MODIFIED` drifts, a list of differing attributes with their IaC and actual values.
+        *   Suggested remediation actions.
+4.  An exit code:
+    *   `0`: No drift detected.
+    *   `1`: Drifts detected.
+    *   Other non-zero codes for errors (e.g., file not found, parsing issues).
+
+**Example of a `MODIFIED` drift output:**
+```
+Drift 1/X: MODIFIED
+  Resource Type: aws_instance
+  Resource Name: my_web_server
+  Resource ID:   i-012345abcdef
+  Attribute Differences:
+    - 'instance_type': IaC = 't2.micro', Actual = 't3.small'
+    - 'tags.Environment': IaC = 'dev', Actual = 'staging'
+  Suggested Remediation:
+    - Resource aws_instance.my_web_server (ID: i-012345abcdef) has modified attributes.
+    -   - Attribute 'instance_type':
+    -     - IaC expects: 't2.micro'
+    -     - Actual is:   't3.small'
+    -   - Attribute 'tags.Environment':
+    -     - IaC expects: 'dev'
+    -     - Actual is:   'staging'
+    -   - Suggestion: Review the differences. If IaC is the source of truth, run 'terraform apply' to align the actual state.
+    -     If changes in actual state are intentional and desired, update your Terraform code to match, then plan and apply.
+```
+
+### Current Limitations & Future Enhancements
+
+*   **Mock Only:** The initial version only supports a mock connector for the actual state. Real cloud provider connectors (AWS, GCP, Azure) are planned.
+*   **Terraform State Only:** Currently focuses on `.tfstate` for desired state. Parsing HCL directly or using plan files more extensively for drift could be added.
+*   **Basic Attribute Comparison:** The attribute diffing logic is basic and may need refinement for complex nested attributes or specific resource types. Configuration for ignored attributes is currently via a default dictionary in code.
+*   **Limited IaC Tool Support:** Only Terraform is supported.
+```
+This tool aims to help you keep your infrastructure aligned with its definition in code, reducing unexpected changes and improving stability.
+
+## Tool: Configuration Optimization Recommender
+
+The Configuration Optimization Recommender (`src/mcp_tools/config_optimizer/cli.py`) is a command-line tool that analyzes your Infrastructure as Code (IaC) configurations (initially Terraform state files) and provides recommendations for cost, performance, security, and reliability improvements.
+
+### Current Features (Initial Version)
+
+*   **IaC Support:**
+    *   **Terraform:** Analyzes resources parsed from `.tfstate` files.
+*   **Focus Areas (AWS):**
+    *   **EC2 Instances:**
+        *   Suggests upgrading to newer instance generations (e.g., T2 to T3, M4 to M5) based on a configurable map.
+        *   Flags usage of very large instance types, prompting for justification.
+    *   **S3 Buckets:**
+        *   Checks if server-side encryption (SSE) is enabled (optionally requiring SSE-KMS).
+        *   Checks if object versioning is enabled.
+        *   Verifies if all S3 Public Access Block settings are enabled.
+*   **Configurable Rules:** Define optimization rules and their parameters in a `.config-optimizer-rules.yml` file.
+*   **CLI Interface:** Allows specifying the IaC source file and a custom rules file.
+
+### Usage
+
+1.  **Prepare your IaC files:**
+    *   For Terraform, have a relevant `.tfstate` file.
+2.  **Optionally, create a custom rules file:**
+    *   Create a `.config-optimizer-rules.yml` in your repository root or specify a path to a custom rules YAML file if you want to override default checks or parameters.
+3.  **Run the tool from the root of your repository (or provide paths):**
+
+    ```bash
+    python -m src.mcp_tools.config_optimizer.cli --tf-state-file /path/to/your/terraform.tfstate
+    ```
+    To use a custom rules file:
+    ```bash
+    python -m src.mcp_tools.config_optimizer.cli --tf-state-file /path/to/your/terraform.tfstate --rules-file /path/to/custom-rules.yml
+    ```
+
+    **Arguments:**
+    *   `--iac-type <type>`: The IaC tool source (default/currently only: `terraform`).
+    *   `--tf-state-file <path>`: Path to the Terraform state file. **Required for Terraform.**
+    *   `--rules-file <path>`: Optional path to the optimization rules YAML file (default: searches for `.config-optimizer-rules.yml`).
+
+### Configuration (`.config-optimizer-rules.yml`)
+
+Customize checks by creating a `.config-optimizer-rules.yml` file. If not found, default rules (defined in code) are applied.
+
+**Example `.config-optimizer-rules.yml`:**
+```yaml
+aws_ec2:
+  enabled: true # Enable/disable all EC2 checks
+  instance_type_optimization:
+    enabled: true
+    suggest_newer_generations: true
+    generation_map: # Override or extend default map
+      t2: t3 # Example: ensure t2 maps to t3 specifically
+      # m3: m5 # Add custom mappings
+    large_instance_types_to_flag: # Override default list
+      - "m5.16xlarge"
+      - "c5.12xlarge"
+    # flag_large_types_without_tag: # Future: more complex tag-based exemption
+    #   criticality!: ["high"]
+
+aws_s3:
+  enabled: true # Enable/disable all S3 checks
+  encryption:
+    enabled: true
+    require_sse_kms: true # Stricter: require KMS, not just any SSE
+  versioning:
+    enabled: true # Ensure versioning is checked
+  public_access_block:
+    enabled: true
+    require_all_blocks_true: true # Ensure all PAB settings are true
+```
+
+### Interpreting Output
+
+*   The tool will print messages about loading IaC data and rules.
+*   If recommendations are found:
+    *   A summary indicating the number of recommendations.
+    *   For each recommendation:
+        *   Severity (e.g., "High", "Medium", "Low").
+        *   A unique rule ID.
+        *   The affected resource (type, name, ID).
+        *   A descriptive message explaining the potential optimization.
+        *   Any relevant details (e.g., current vs. suggested instance type).
+*   An exit code:
+    *   `0`: No recommendations generated (all checks passed or no relevant resources/rules).
+    *   `1`: Recommendations found.
+    *   Other non-zero codes for errors.
+
+**Example of a Recommendation Output:**
+```
+Recommendation 1/X: [Low|AWS_EC2_NEWER_GENERATION_MAPPED]
+  Resource: aws_instance 'old_gen_server' (ID: i-012345abcdef)
+  Message:  Instance type 't2.medium' is an older generation. Consider upgrading to a newer generation like 't3.medium' from the same family for potential cost/performance benefits. Verify compatibility and pricing.
+  Details:  {'current_type': 't2.medium', 'suggested_type_example': 't3.medium'}
+```
+
+### Current Limitations & Future Enhancements
+
+*   **Terraform State Focus:** Primarily analyzes `.tfstate` files. Direct HCL parsing or richer plan file analysis would provide more context.
+*   **AWS Focus:** Initial checks are for AWS EC2 and S3. Support for more AWS services and other cloud providers (GCP, Azure) is planned.
+*   **Basic Rule Logic:** Some recommendation logic (e.g., instance right-sizing, "newer generation" mapping) is currently based on simple heuristics or predefined maps. More advanced analysis (e.g., using actual utilization metrics) is a future goal.
+*   **Limited Configuration for Rules:** While rules can be enabled/disabled and some parameters tweaked, the core logic of each rule is in code. More dynamic rule definitions could be explored.
+```
+This tool helps identify potential areas to optimize your cloud configurations for better cost, performance, security, and reliability.
