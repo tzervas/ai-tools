@@ -54,6 +54,11 @@ The project includes:
 │           └── aws/
 │               ├── ec2_optimizer.py
 │               └── s3_optimizer.py
+│       └── iac_doc_generator/ # Automated IaC Documentation Generator
+│           ├── cli.py
+│           ├── models.py
+│           ├── terraform_hcl_parser.py
+│           └── markdown_renderer.py
 └── tests/                # Tests
     ├── integration/      # Integration tests
     │   ├── test_echo_tool.py
@@ -73,7 +78,10 @@ The project includes:
         └── test_config_optimizer/
             ├── test_optimizer_config.py
             ├── test_ec2_optimizer.py
-            └── test_s3_optimizer.py
+            └── test_s3_optimizer.py=
+        └── test_iac_doc_generator/
+            ├── test_terraform_hcl_parser.py
+            └── test_markdown_renderer.py
 ```
 
 ## Getting Started
@@ -561,3 +569,104 @@ Recommendation 1/X: [Low|AWS_EC2_NEWER_GENERATION_MAPPED]
 *   **Limited Configuration for Rules:** While rules can be enabled/disabled and some parameters tweaked, the core logic of each rule is in code. More dynamic rule definitions could be explored.
 ```
 This tool helps identify potential areas to optimize your cloud configurations for better cost, performance, security, and reliability.
+
+## Tool: Automated IaC Documentation Generator
+
+The Automated IaC Documentation Generator (`src/mcp_tools/iac_doc_generator/cli.py`) analyzes your Terraform HCL code (`.tf` files) and generates Markdown documentation detailing the resources, variables, outputs, and modules defined within a Terraform module.
+
+### Current Features (Initial Version)
+
+*   **IaC Support:**
+    *   **Terraform:** Parses HCL code from `.tf` files directly using `python-hcl2`.
+*   **Information Extracted:**
+    *   **Providers:** Name and alias.
+    *   **Variables:** Name, description (if provided in the variable block), type, default value, and sensitive status.
+    *   **Outputs:** Name, description, and sensitive status.
+    *   **Managed Resources:** Type and logical name (e.g., `aws_instance.web_server`).
+    *   **Module Calls:** Logical name of the module instance and its source path/URL.
+*   **Output Format:** Markdown (`.md`). Documentation is structured per file within the module.
+*   **CLI Interface:** Allows specifying the input directory (Terraform module path) and an output file or directory.
+
+### Usage
+
+1.  **Point to your Terraform module directory:**
+    Ensure the directory contains your `.tf` files.
+2.  **Run the tool from your project root (or ensure `src` is in `PYTHONPATH`):**
+
+    To print to Standard Output:
+    ```bash
+    python -m src.mcp_tools.iac_doc_generator.cli /path/to/your/terraform_module_directory
+    ```
+
+    To output to a specific Markdown file:
+    ```bash
+    python -m src.mcp_tools.iac_doc_generator.cli /path/to/your/terraform_module_directory -o /path/to/output/documentation.md
+    ```
+
+    To output to a directory (will create `README.md` inside it):
+    ```bash
+    python -m src.mcp_tools.iac_doc_generator.cli /path/to/your/terraform_module_directory -o /path/to/output_docs_directory
+    ```
+
+    **Arguments:**
+    *   `input_dir`: (Positional) Path to the directory containing the Terraform module.
+    *   `--output-file` (`-o`): Optional path for the output Markdown file. If a directory is given, `README.md` is created inside. If omitted, output goes to STDOUT.
+
+### Example Output Structure (Snippet)
+
+The generated Markdown will typically include:
+*   A main header for the module.
+*   Sections for each `.tf` file found.
+*   Within each file section, tables or lists for:
+    *   Providers
+    *   Variables (Name, Description, Type, Default, Sensitive)
+    *   Outputs (Name, Description, Sensitive)
+    *   Managed Resources (Type.Name)
+    *   Module Calls (Name (Source))
+
+```markdown
+# Terraform Module: `my_module_name`
+**Path:** `/path/to/your/terraform_module_directory`
+
+<!-- Optional module description here -->
+
+---
+## File: `variables.tf`
+
+### Variables
+| Name             | Description                     | Type     | Default        | Sensitive |
+|------------------|---------------------------------|----------|----------------|-----------|
+| `instance_count` | Number of web instances         | `number` | `1`            | `False`   |
+| `admin_user`     | Admin username                  | `string` | *(Required)*   | `True`    |
+
+---
+## File: `main.tf`
+
+### Providers
+- `aws` (alias: `primary`)
+
+### Managed Resources
+- **`aws_instance.web`**
+
+### Module Calls
+- **`vpc`** (Source: `./modules/custom_vpc`)
+
+---
+## File: `outputs.tf`
+
+### Outputs
+| Name              | Description                 | Sensitive |
+|-------------------|-----------------------------|-----------|
+| `web_instance_ip` | Public IP of the web instance | `False`   |
+| `vpc_id_out`      | ID of the VPC               | `True`    |
+```
+
+### Current Limitations & Future Enhancements
+
+*   **Comment Parsing:** Extraction of descriptions primarily relies on `description` attributes within `variable` and `output` blocks. Associating arbitrary HCL comments with specific blocks is complex and currently very basic.
+*   **Terraform HCL Only:** Initial version focuses on Terraform.
+*   **Basic Structure:** The Markdown output structure is currently fixed. Template-based rendering could be added for customization.
+*   **No Cross-File Resolution:** Does not yet resolve dependencies or references between files or modules in-depth (e.g., to pull descriptions for module inputs from the module's own variables).
+*   **Limited Detail for Resources/Modules:** Currently lists resources and module calls by name/type and source. Could be expanded to include key arguments or attributes.
+```
+This tool helps automate the creation of baseline documentation for your Terraform modules, making it easier to understand their components and usage.
