@@ -1,22 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-__pycache\
-*.py[cod]
 *.py[codz]
 *$py.class
 *.pyc
 *.bin
-
-# specific binaries to ignore
-src/mcp_server/__pycache__/main.cpython-312.pyc
-src/mcp_tools/echo_tool/__pycache__/client.cpython-312.pyc
-src/mcp_tools/pr_reviewer/__pycache__/config.cpython-312.pyc
-src/mcp_tools/pr_reviewer/policies/__pycache__/branch.cpython-312.pyc
-tests/integration/__pycache__/test_echo_tool.cpython-312-pytest-8.4.1.pyc
-tests/integration/test_pr_reviewer/__pycache__/test_pr_reviewer_cli.cpython-312-pytest-8.4.1.pyc
-tests/unit/__pycache__/test_server.cpython-312-pytest-8.4.1.pyc
-tests/unit/test_pr_reviewer/__pycache__/test_config.cpython-312-pytest-8.4.1.pyc
-tests/unit/test_pr_reviewer/__pycache__/test_policies.cpython-312-pytest-8.4.1.pyc
 
 # C extensions
 *.so
@@ -235,3 +222,6 @@ __marimo__/
 
 # ignore logs
 *.log
+
+# ignore .vscode directory
+.vscode/

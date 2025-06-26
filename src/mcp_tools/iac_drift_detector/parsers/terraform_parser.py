@@ -1,9 +1,11 @@
 import json
 from typing import List, Dict, Any, Optional, Union
+
 # No longer need BaseModel, Field, validator directly here if ParsedResource is self-contained
-from ..models import ParsedResource # Import from shared models
+from ..models import ParsedResource  # Import from shared models
 
 # --- Terraform State Parser ---
+
 
 def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:
     """
@@ -17,13 +19,16 @@ def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:
         Returns an empty list if parsing fails or no resources are found.
     """
     try:
-        with open(file_path, 'r') as f:
+        with open(file_path, "r") as f:
             state_data = json.load(f)
     except FileNotFoundError:
         print(f"Error: Terraform state file not found at {file_path}", file=sys.stderr)
         return []
     except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in Terraform state file {file_path}: {e}", file=sys.stderr)
+        print(
+            f"Error: Invalid JSON in Terraform state file {file_path}: {e}",
+            file=sys.stderr,
+        )
         return []
     except Exception as e:
         print(f"Error reading Terraform state file {file_path}: {e}", file=sys.stderr)
@@ -46,20 +51,25 @@ def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:
 
         res_type = res_data.get("type")
         res_name = res_data.get("name")
-        res_provider_full = res_data.get("provider", "") # e.g., "provider[\"registry.terraform.io/hashicorp/aws\"]"
+        res_provider_full = res_data.get(
+            "provider", ""
+        )  # e.g., "provider[\"registry.terraform.io/hashicorp/aws\"]"
 
         # Extract provider name (e.g., "aws")
         provider_name_short = "unknown"
         if "hashicorp/" in res_provider_full:
-            provider_name_short = res_provider_full.split("hashicorp/")[-1].split("\"]")[0]
-        elif "providers/" in res_provider_full: # For some community providers
-             provider_name_short = res_provider_full.split("providers/")[-1].split("\"]")[0]
-
+            provider_name_short = res_provider_full.split("hashicorp/")[-1].split('"]')[
+                0
+            ]
+        elif "providers/" in res_provider_full:  # For some community providers
+            provider_name_short = res_provider_full.split("providers/")[-1].split('"]')[
+                0
+            ]
 
         # Each resource can have multiple instances (e.g., if using count or for_each)
         for instance_data in res_data.get("instances", []):
             instance_attributes = instance_data.get("attributes", {})
-            instance_id = instance_attributes.get("id") # Common 'id' attribute
+            instance_id = instance_attributes.get("id")  # Common 'id' attribute
 
             if not instance_id or not res_type or not res_name:
                 # print(f"Warning: Skipping resource instance due to missing id, type, or name: {instance_data}", file=sys.stderr)
@@ -68,15 +78,14 @@ def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:
             # Module path if present
             module_path = res_data.get("module")
 
-
             parsed_resources.append(
                 ParsedResource(
-                    id=str(instance_id), # Ensure ID is string
+                    id=str(instance_id),  # Ensure ID is string
                     type=res_type,
                     name=res_name,
                     provider_name=provider_name_short,
                     module=module_path,
-                    attributes=instance_attributes # Store all attributes from the instance
+                    attributes=instance_attributes,  # Store all attributes from the instance
                 )
             )
 
@@ -84,6 +93,7 @@ def parse_terraform_state_file(file_path: str) -> List[ParsedResource]:
 
 
 # --- Terraform Plan Parser ---
+
 
 def parse_terraform_plan_json_file(file_path: str) -> List[Dict[str, Any]]:
     """
@@ -104,13 +114,18 @@ def parse_terraform_plan_json_file(file_path: str) -> List[Dict[str, Any]]:
         Returns an empty list if parsing fails.
     """
     try:
-        with open(file_path, 'r') as f:
+        with open(file_path, "r") as f:
             plan_data = json.load(f)
     except FileNotFoundError:
-        print(f"Error: Terraform plan JSON file not found at {file_path}", file=sys.stderr)
+        print(
+            f"Error: Terraform plan JSON file not found at {file_path}", file=sys.stderr
+        )
         return []
     except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in Terraform plan file {file_path}: {e}", file=sys.stderr)
+        print(
+            f"Error: Invalid JSON in Terraform plan file {file_path}: {e}",
+            file=sys.stderr,
+        )
         return []
     except Exception as e:
         print(f"Error reading Terraform plan file {file_path}: {e}", file=sys.stderr)
@@ -127,10 +142,10 @@ def parse_terraform_plan_json_file(file_path: str) -> List[Dict[str, Any]]:
     # actual_changes = [rc for rc in resource_changes if rc.get("change", {}).get("actions", ["no-op"]) != ["no-op"]]
     # return actual_changes
 
-    return resource_changes # Return all resource change objects for now
+    return resource_changes  # Return all resource change objects for now
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Example Usage:
     # Create dummy tfstate and tfplan files for testing this module directly.
 
@@ -146,7 +161,7 @@ if __name__ == '__main__':
                 "mode": "managed",
                 "type": "aws_instance",
                 "name": "example_ec2",
-                "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+                "provider": 'provider["registry.terraform.io/hashicorp/aws"]',
                 "instances": [
                     {
                         "schema_version": 1,
@@ -154,35 +169,35 @@ if __name__ == '__main__':
                             "id": "i-12345abcdef",
                             "ami": "ami-0c55b31ad29f52962",
                             "instance_type": "t2.micro",
-                            "tags": {"Name": "example-instance"}
-                        }
+                            "tags": {"Name": "example-instance"},
+                        },
                     }
-                ]
+                ],
             },
             {
                 "mode": "managed",
                 "type": "aws_s3_bucket",
                 "name": "my_bucket",
-                "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+                "provider": 'provider["registry.terraform.io/hashicorp/aws"]',
                 "instances": [
                     {
                         "schema_version": 0,
                         "attributes": {
                             "id": "my-unique-bucket-name",
                             "bucket": "my-unique-bucket-name",
-                            "acl": "private"
-                        }
+                            "acl": "private",
+                        },
                     }
-                ]
+                ],
             },
             {
-                "mode": "data", # This should be skipped
+                "mode": "data",  # This should be skipped
                 "type": "aws_ami",
                 "name": "ubuntu",
-                "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
-                "instances": [{"attributes": {"id": "ami-0c55b31ad29f52962"}}]
-            }
-        ]
+                "provider": 'provider["registry.terraform.io/hashicorp/aws"]',
+                "instances": [{"attributes": {"id": "ami-0c55b31ad29f52962"}}],
+            },
+        ],
     }
 
     # Dummy tfplan JSON content (simplified)
@@ -200,8 +215,8 @@ if __name__ == '__main__':
                     "actions": ["create"],
                     "before": None,
                     "after": {"instance_type": "t3.small"},
-                    "after_unknown": {"id": True}
-                }
+                    "after_unknown": {"id": True},
+                },
             },
             {
                 "address": "aws_s3_bucket.my_bucket",
@@ -213,7 +228,7 @@ if __name__ == '__main__':
                     "actions": ["update"],
                     "before": {"acl": "private"},
                     "after": {"acl": "public-read"},
-                }
+                },
             },
             {
                 "address": "aws_instance.no_op_instance",
@@ -222,12 +237,14 @@ if __name__ == '__main__':
                 "type": "aws_instance",
                 "name": "no_op_instance",
                 "change": {
-                    "actions": ["no-op"], # Should ideally be filtered out by caller if only interested in actual changes
+                    "actions": [
+                        "no-op"
+                    ],  # Should ideally be filtered out by caller if only interested in actual changes
                     "before": {"instance_type": "t2.micro"},
                     "after": {"instance_type": "t2.micro"},
-                }
-            }
-        ]
+                },
+            },
+        ],
     }
 
     # Create temporary files
@@ -236,9 +253,9 @@ if __name__ == '__main__':
     tfstate_path = os.path.join(temp_dir, "test.tfstate")
     tfplan_path = os.path.join(temp_dir, "test_plan.json")
 
-    with open(tfstate_path, 'w') as f:
+    with open(tfstate_path, "w") as f:
         json.dump(dummy_tfstate_content, f)
-    with open(tfplan_path, 'w') as f:
+    with open(tfplan_path, "w") as f:
         json.dump(dummy_tfplan_json_content, f)
 
     print("--- Testing Terraform State Parser ---")
@@ -246,9 +263,11 @@ if __name__ == '__main__':
     if parsed_state_resources:
         print(f"Found {len(parsed_state_resources)} managed resources in state:")
         for res in parsed_state_resources:
-            print(f"  ID: {res.id}, Type: {res.type}, Name: {res.name}, Provider: {res.provider_name}, Attrs count: {len(res.attributes)}")
+            print(
+                f"  ID: {res.id}, Type: {res.type}, Name: {res.name}, Provider: {res.provider_name}, Attrs count: {len(res.attributes)}"
+            )
             if res.type == "aws_instance":
-                 assert res.attributes.get("instance_type") == "t2.micro"
+                assert res.attributes.get("instance_type") == "t2.micro"
     else:
         print("No resources parsed from state or error occurred.")
 
@@ -257,9 +276,11 @@ if __name__ == '__main__':
     if parsed_plan_changes:
         print(f"Found {len(parsed_plan_changes)} resource changes in plan:")
         for change in parsed_plan_changes:
-            print(f"  Address: {change['address']}, Actions: {change['change']['actions']}")
-            if change['change']['actions'] == ['create']:
-                assert change['change']['after'].get("instance_type") == "t3.small"
+            print(
+                f"  Address: {change['address']}, Actions: {change['change']['actions']}"
+            )
+            if change["change"]["actions"] == ["create"]:
+                assert change["change"]["after"].get("instance_type") == "t3.small"
     else:
         print("No changes parsed from plan or error occurred.")
 

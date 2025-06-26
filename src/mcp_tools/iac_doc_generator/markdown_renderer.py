@@ -1,23 +1,30 @@
 from .models import (
-    TerraformModuleProcessedDoc, TerraformFileDoc,
-    TerraformVariableDoc, TerraformOutputDoc, TerraformResourceDoc,
-    TerraformModuleCallDoc, TerraformProviderDoc
+    TerraformModuleProcessedDoc,
+    TerraformFileDoc,
+    TerraformVariableDoc,
+    TerraformOutputDoc,
+    TerraformResourceDoc,
+    TerraformModuleCallDoc,
+    TerraformProviderDoc,
 )
-from typing import List, Any # Added Any
+from typing import List, Any  # Added Any
+
 
 def format_value(value: Any) -> str:
     """Helper to format default values or other complex values for display."""
     if isinstance(value, (str, int, float, bool)):
         return f"`{value}`"
     if value is None:
-        return "`null`" # or "Not set" or ""
+        return "`null`"  # or "Not set" or ""
     # For lists or dicts, show a compact representation or placeholder
     if isinstance(value, list):
-        if not value: return "`[]`"
-        return f"`{str(value)[:50]}{'...' if len(str(value)) > 50 else ''}`" # Truncate long lists
+        if not value:
+            return "`[]`"
+        return f"`{str(value)[:50]}{'...' if len(str(value)) > 50 else ''}`"  # Truncate long lists
     if isinstance(value, dict):
-        if not value: return "`{}`"
-        return f"`{str(value)[:50]}{'...' if len(str(value)) > 50 else ''}`" # Truncate long dicts
+        if not value:
+            return "`{}`"
+        return f"`{str(value)[:50]}{'...' if len(str(value)) > 50 else ''}`"  # Truncate long dicts
     return f"`{type(value).__name__}` (Complex Value)"
 
 
@@ -44,7 +51,9 @@ class MarkdownRenderer:
             # Escape pipe characters in description for table rendering
             desc = desc.replace("|", "\\|").replace("\n", " <br> ")
 
-            default_val_str = format_value(var.default) if var.default is not None else "*(Required)*"
+            default_val_str = (
+                format_value(var.default) if var.default is not None else "*(Required)*"
+            )
 
             self._add_line(
                 f"| `{var.name}` | {desc} | `{var.type or 'any'}` | {default_val_str} | `{var.is_sensitive}` |"
@@ -60,9 +69,7 @@ class MarkdownRenderer:
         for out in sorted(outputs, key=lambda o: o.name):
             desc = out.description or "N/A"
             desc = desc.replace("|", "\\|").replace("\n", " <br> ")
-            self._add_line(
-                f"| `{out.name}` | {desc} | `{out.is_sensitive}` |"
-            )
+            self._add_line(f"| `{out.name}` | {desc} | `{out.is_sensitive}` |")
         self._add_line()
 
     def _render_resources(self, resources: List[TerraformResourceDoc]):
@@ -96,7 +103,9 @@ class MarkdownRenderer:
     def render_file_doc(self, file_doc: TerraformFileDoc):
         self._add_header(2, f"File: `{file_doc.file_path}`")
         if file_doc.description:
-            self._add_line(file_doc.description) # Assuming it's already formatted or simple text
+            self._add_line(
+                file_doc.description
+            )  # Assuming it's already formatted or simple text
             self._add_line()
 
         # Aggregate and render for the file
@@ -111,9 +120,12 @@ class MarkdownRenderer:
         """
         Generates Markdown documentation for the entire Terraform module.
         """
-        self.lines = [] # Reset for fresh render
+        self.lines = []  # Reset for fresh render
 
-        self._add_header(1, f"Terraform Module: `{os.path.basename(self.module_doc.module_path) or os.path.basename(os.path.dirname(self.module_doc.module_path))}`") # Use directory name
+        self._add_header(
+            1,
+            f"Terraform Module: `{os.path.basename(self.module_doc.module_path) or os.path.basename(os.path.dirname(self.module_doc.module_path))}`",
+        )  # Use directory name
         self._add_line(f"**Path:** `{self.module_doc.module_path}`")
         self._add_line()
 
@@ -124,7 +136,7 @@ class MarkdownRenderer:
         # Option 1: Render file by file
         for file_doc in sorted(self.module_doc.files, key=lambda f: f.file_path):
             self.render_file_doc(file_doc)
-            self._add_line("---") # Separator between files
+            self._add_line("---")  # Separator between files
             self._add_line()
 
         # Option 2: Aggregate all elements and render module-level sections
@@ -138,43 +150,56 @@ class MarkdownRenderer:
 
         return "\n".join(self.lines)
 
-# Helper to get a basename for a module path
-import os # Already imported but good for clarity if this class moves
 
-if __name__ == '__main__':
+# Helper to get a basename for a module path
+import os  # Already imported but good for clarity if this class moves
+
+if __name__ == "__main__":
     # Example Usage (requires dummy models from a test or direct instantiation)
     print("--- Testing Markdown Renderer ---")
 
     # Create dummy TerraformModuleProcessedDoc data
-    var1 = TerraformVariableDoc(name="instance_count", type="number", description="Number of instances to create.", default=1)
-    var2 = TerraformVariableDoc(name="image_id", type="string", description="AMI ID for instances. This description | has a pipe.")
-    out1 = TerraformOutputDoc(name="instance_ips", description="List of public IPs.", is_sensitive=False)
-    res1 = TerraformResourceDoc(resource_type="aws_instance", resource_name="web", source_file="main.tf")
-    modcall1 = TerraformModuleCallDoc(module_name="my_vpc", source="./modules/vpc", source_file="main.tf")
+    var1 = TerraformVariableDoc(
+        name="instance_count",
+        type="number",
+        description="Number of instances to create.",
+        default=1,
+    )
+    var2 = TerraformVariableDoc(
+        name="image_id",
+        type="string",
+        description="AMI ID for instances. This description | has a pipe.",
+    )
+    out1 = TerraformOutputDoc(
+        name="instance_ips", description="List of public IPs.", is_sensitive=False
+    )
+    res1 = TerraformResourceDoc(
+        resource_type="aws_instance", resource_name="web", source_file="main.tf"
+    )
+    modcall1 = TerraformModuleCallDoc(
+        module_name="my_vpc", source="./modules/vpc", source_file="main.tf"
+    )
     prov1 = TerraformProviderDoc(name="aws", alias="primary", source_file="main.tf")
 
     file_doc_main = TerraformFileDoc(
         file_path="main.tf",
         description="Main configuration file for the web application.",
-        variables=[], # Typically variables are in their own file
+        variables=[],  # Typically variables are in their own file
         outputs=[],
         resources=[res1],
         module_calls=[modcall1],
-        providers=[prov1]
+        providers=[prov1],
     )
     file_doc_vars = TerraformFileDoc(
         file_path="variables.tf",
         variables=[var1, var2],
     )
-    file_doc_outputs = TerraformFileDoc(
-        file_path="outputs.tf",
-        outputs=[out1]
-    )
+    file_doc_outputs = TerraformFileDoc(file_path="outputs.tf", outputs=[out1])
 
     module_doc_data = TerraformModuleProcessedDoc(
         module_path="/path/to/my_terraform_module",
         description="This Terraform module sets up a basic web application infrastructure.",
-        files=[file_doc_main, file_doc_vars, file_doc_outputs]
+        files=[file_doc_main, file_doc_vars, file_doc_outputs],
     )
 
     renderer = MarkdownRenderer(module_doc_data)
@@ -186,10 +211,18 @@ if __name__ == '__main__':
     # Basic assertions on output
     assert "# Terraform Module: `my_terraform_module`" in markdown_output
     assert "## File: `main.tf`" in markdown_output
-    assert "### Variables" in markdown_output # Variables section should exist due to variables.tf
-    assert "| `image_id` | AMI ID for instances. This description \\| has a pipe. | `string` | *(Required)* | `False` |" in markdown_output
-    assert "| `instance_count` | Number of instances to create. | `number` | `1` | `False` |" in markdown_output
-    assert "### Outputs" in markdown_output # Outputs section from outputs.tf
+    assert (
+        "### Variables" in markdown_output
+    )  # Variables section should exist due to variables.tf
+    assert (
+        "| `image_id` | AMI ID for instances. This description \\| has a pipe. | `string` | *(Required)* | `False` |"
+        in markdown_output
+    )
+    assert (
+        "| `instance_count` | Number of instances to create. | `number` | `1` | `False` |"
+        in markdown_output
+    )
+    assert "### Outputs" in markdown_output  # Outputs section from outputs.tf
     assert "| `instance_ips` | List of public IPs. | `False` |" in markdown_output
     assert "### Managed Resources" in markdown_output
     assert "- **`aws_instance.web`**" in markdown_output

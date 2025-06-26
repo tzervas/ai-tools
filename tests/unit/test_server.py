@@ -1,9 +1,10 @@
 import pytest
 from fastapi.testclient import TestClient
-from src.mcp_server.main import app # Import the FastAPI app
+from src.mcp_server.main import app  # Import the FastAPI app
 
 # Create a TestClient instance for making requests to the app
 client = TestClient(app)
+
 
 def test_health_check():
     """
@@ -14,6 +15,7 @@ def test_health_check():
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
 
+
 def test_create_context_success():
     """
     Test successful context creation.
@@ -21,7 +23,10 @@ def test_create_context_success():
     context_id = "test_context_01"
     response = client.post("/v1/contexts", json={"context_id": context_id})
     assert response.status_code == 201
-    assert response.json() == {"message": "Context created successfully", "context_id": context_id}
+    assert response.json() == {
+        "message": "Context created successfully",
+        "context_id": context_id,
+    }
 
     # Verify it's in the store (optional, depends on how much you want to test internal state)
     # This requires access to CONTEXT_STORE or a way to inspect it.
@@ -43,6 +48,7 @@ def test_create_context_conflict():
     assert response.status_code == 409
     assert response.json() == {"detail": "Context already exists"}
 
+
 def test_get_context_not_found():
     """
     Test retrieving a context that does not exist.
@@ -51,11 +57,13 @@ def test_get_context_not_found():
     assert response.status_code == 404
     assert response.json() == {"detail": "Context not found"}
 
+
 # Clean up contexts created during tests to ensure test isolation if needed
 # For simple in-memory store, this might not be strictly necessary if TestClient re-initializes state,
 # but good practice for more complex scenarios.
 # However, TestClient(app) uses the same app instance.
 # We can clear the store manually for now after certain tests or globally.
+
 
 @pytest.fixture(autouse=True)
 def clear_context_store_after_each_test():
@@ -65,8 +73,9 @@ def clear_context_store_after_each_test():
     # Setup:
     # Could backup CONTEXT_STORE here if needed
 
-    yield # This is where the test runs
+    yield  # This is where the test runs
 
     # Teardown: Clear the CONTEXT_STORE
     from src.mcp_server.main import CONTEXT_STORE
+
     CONTEXT_STORE.clear()

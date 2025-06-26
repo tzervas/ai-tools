@@ -46,6 +46,7 @@ output "vpc_id_out" {
 }
 """
 
+
 @pytest.fixture
 def temp_tf_module_for_cli(tmp_path: Path) -> Path:
     """Fixture to create a temporary Terraform module directory with sample .tf files."""
@@ -62,6 +63,7 @@ def temp_tf_module_for_cli(tmp_path: Path) -> Path:
 
     yield module_dir
     # Cleanup handled by tmp_path
+
 
 def run_iac_doc_cli(cwd_path: Path, args: list[str]) -> subprocess.CompletedProcess:
     """Helper function to run the IaC Doc Generator CLI tool."""
@@ -91,12 +93,16 @@ def run_iac_doc_cli(cwd_path: Path, args: list[str]) -> subprocess.CompletedProc
 
 # --- CLI Tests ---
 
+
 def test_cli_iac_doc_help_message():
-    result = subprocess.run(["python", "-m", CLI_MODULE_PATH, "--help"], capture_output=True, text=True)
+    result = subprocess.run(
+        ["python", "-m", CLI_MODULE_PATH, "--help"], capture_output=True, text=True
+    )
     assert "usage: cli.py" in result.stdout
     assert "Path to the directory containing the Terraform module" in result.stdout
     assert "--output-file" in result.stdout
     assert result.returncode == 0
+
 
 def test_cli_iac_doc_invalid_input_dir(tmp_path: Path):
     result = run_iac_doc_cli(tmp_path, ["non_existent_dir"])
@@ -104,9 +110,10 @@ def test_cli_iac_doc_invalid_input_dir(tmp_path: Path):
     assert "Error: Input path" in result.stderr
     assert "is not a valid directory." in result.stderr
 
+
 def test_cli_iac_doc_generate_to_stdout(temp_tf_module_for_cli: Path, tmp_path: Path):
     input_dir_abs = str(temp_tf_module_for_cli.resolve())
-    result = run_iac_doc_cli(tmp_path, [input_dir_abs]) # Output to STDOUT by default
+    result = run_iac_doc_cli(tmp_path, [input_dir_abs])  # Output to STDOUT by default
 
     # print("STDOUT:", result.stdout)
     # print("STDERR:", result.stderr)
@@ -124,22 +131,35 @@ def test_cli_iac_doc_generate_to_stdout(temp_tf_module_for_cli: Path, tmp_path: 
 
     assert "## File: `variables.tf`" in result.stdout
     assert "### Variables" in result.stdout
-    assert "| `instance_count` | Number of web instances | `number` | `1` | `False` |" in result.stdout
-    assert "| `admin_user` | Admin username | `string` | *(Required)* | `True` |" in result.stdout
+    assert (
+        "| `instance_count` | Number of web instances | `number` | `1` | `False` |"
+        in result.stdout
+    )
+    assert (
+        "| `admin_user` | Admin username | `string` | *(Required)* | `True` |"
+        in result.stdout
+    )
 
     assert "## File: `outputs.tf`" in result.stdout
     assert "### Outputs" in result.stdout
-    assert "| `web_instance_ip` | Public IP of the web instance | `False` |" in result.stdout
+    assert (
+        "| `web_instance_ip` | Public IP of the web instance | `False` |"
+        in result.stdout
+    )
     assert "| `vpc_id_out` | ID of the VPC | `True` |" in result.stdout
     assert "--- IaC Documentation Generation Complete ---" in result.stdout
 
 
-def test_cli_iac_doc_generate_to_output_file(temp_tf_module_for_cli: Path, tmp_path: Path):
+def test_cli_iac_doc_generate_to_output_file(
+    temp_tf_module_for_cli: Path, tmp_path: Path
+):
     input_dir_abs = str(temp_tf_module_for_cli.resolve())
     output_file = tmp_path / "generated_doc.md"
     output_file_abs = str(output_file.resolve())
 
-    result = run_iac_doc_cli(tmp_path, [input_dir_abs, "--output-file", output_file_abs])
+    result = run_iac_doc_cli(
+        tmp_path, [input_dir_abs, "--output-file", output_file_abs]
+    )
 
     # print("STDOUT:", result.stdout)
     # print("STDERR:", result.stderr)
@@ -153,7 +173,10 @@ def test_cli_iac_doc_generate_to_output_file(temp_tf_module_for_cli: Path, tmp_p
     assert "## File: `variables.tf`" in content
     assert "| `instance_count`" in content
 
-def test_cli_iac_doc_generate_to_output_directory(temp_tf_module_for_cli: Path, tmp_path: Path):
+
+def test_cli_iac_doc_generate_to_output_directory(
+    temp_tf_module_for_cli: Path, tmp_path: Path
+):
     input_dir_abs = str(temp_tf_module_for_cli.resolve())
     output_dir = tmp_path / "docs_output"
     # CLI should create README.md inside this if it's a dir
@@ -172,11 +195,15 @@ def test_cli_iac_doc_generate_to_output_directory(temp_tf_module_for_cli: Path, 
 
     assert result.returncode == 0
     expected_output_readme = output_dir / "README.md"
-    assert f"Documentation successfully written to: {str(expected_output_readme.resolve())}" in result.stdout
+    assert (
+        f"Documentation successfully written to: {str(expected_output_readme.resolve())}"
+        in result.stdout
+    )
     assert expected_output_readme.exists()
 
     content = expected_output_readme.read_text()
     assert "# Terraform Module: `sample_tf_module`" in content
+
 
 def test_cli_iac_doc_empty_module_dir(tmp_path: Path):
     empty_module_dir = tmp_path / "empty_tf_module"
@@ -186,9 +213,15 @@ def test_cli_iac_doc_empty_module_dir(tmp_path: Path):
     result = run_iac_doc_cli(tmp_path, [input_dir_abs])
     # print("STDOUT:", result.stdout)
     # print("STDERR:", result.stderr)
-    assert result.returncode == 0 # Exits 0 if no .tf files found
-    assert f"No Terraform (.tf) files found or processed in directory: {input_dir_abs}" in result.stdout
-    assert "--- Generated Markdown Documentation ---" not in result.stdout # Should not attempt to print if no files
+    assert result.returncode == 0  # Exits 0 if no .tf files found
+    assert (
+        f"No Terraform (.tf) files found or processed in directory: {input_dir_abs}"
+        in result.stdout
+    )
+    assert (
+        "--- Generated Markdown Documentation ---" not in result.stdout
+    )  # Should not attempt to print if no files
+
 
 # Future tests:
 # - Invalid HCL content in one of the .tf files (check stderr for warnings from parser)

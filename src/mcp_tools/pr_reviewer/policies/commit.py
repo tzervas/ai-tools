@@ -1,13 +1,26 @@
-from typing import List, Pattern, Optional, Dict
-from ..config import CommitMessagePolicy, ConventionalCommitPolicy, RequireIssueNumberPolicy
-import re
+"""
+Commit message policy checks for PR reviewer tool.
+Provides functions to validate commit messages against configured policies.
+"""
 
-CONVENTIONAL_COMMIT_REGEX = re.compile(r"^(?P<type>[a-zA-Z_]+)(?:\((?P<scope>[^\)]+)\))?(?P<breaking>!)?: (?P<subject>.+)$")
+import re
+from typing import Dict, List, Optional, Pattern, Tuple
+
+from ..config import (CommitMessagePolicy, ConventionalCommitPolicy,
+                      RequireIssueNumberPolicy)
+
+CONVENTIONAL_COMMIT_REGEX = re.compile(
+    r"^(?P<type>[a-zA-Z_]+)"
+    r"(?:\((?P<scope>[^\)]+)\))?"
+    r"(?P<breaking>!)?: "
+    r"(?P<subject>.+)$"
+)
+
 
 def check_conventional_commit_format(
-    commit_subject: str, # The first line of the commit message
-    commit_sha: str, # For context in violation messages
-    policy: ConventionalCommitPolicy
+    commit_subject: str,  # The first line of the commit message
+    commit_sha: str,  # For context in violation messages
+    policy: ConventionalCommitPolicy,
 ) -> List[str]:
     """
     Checks if the commit subject line adheres to Conventional Commits format.
@@ -28,28 +41,31 @@ def check_conventional_commit_format(
     match = CONVENTIONAL_COMMIT_REGEX.match(commit_subject)
     if not match:
         violations.append(
-            f"Commit {commit_sha[:7]}: Subject line '{commit_subject}' does not follow Conventional Commits format "
-            f"(e.g., 'feat(scope): description' or 'fix: description')."
+            f"Commit {commit_sha[:7]}: Subject line '{commit_subject}' does not follow "
+            "Conventional Commits format (e.g., 'feat(scope): description' or 'fix: description')."
         )
-        return violations # No further checks if basic format fails
+        return violations  # No further checks if basic format fails
 
     commit_type = match.group("type")
     if policy.types and commit_type not in policy.types:
         violations.append(
-            f"Commit {commit_sha[:7]}: Type '{commit_type}' is not one of the allowed types: {', '.join(policy.types)}."
+            f"Commit {commit_sha[:7]}: Type '{commit_type}' is not one of the allowed types: "
+            f"{', '.join(policy.types)}."
         )
 
-    # Could add more checks: scope format, subject length, presence of body for breaking change, etc.
+    # Could add more checks: scope format, subject length,
+    # presence of body for breaking change, etc.
     # For now, focusing on type and basic structure.
 
     return violations
 
+
 def check_commit_for_issue_number(
-    commit_message_body: str, # Full commit message body (excluding subject, or could be full message)
-    pr_title: Optional[str], # Placeholder for future use
-    pr_body: Optional[str],  # Placeholder for future use
-    commit_sha: str, # For context in violation messages
-    policy: RequireIssueNumberPolicy
+    commit_message_body: str,
+    pr_title: Optional[str],
+    pr_body: Optional[str],
+    commit_sha: str,
+    policy: RequireIssueNumberPolicy,
 ) -> List[str]:
     """
     Checks if the commit message body (or future PR title/body) contains an issue number.
@@ -68,7 +84,9 @@ def check_commit_for_issue_number(
     if not policy.enabled or not policy.pattern:
         return violations
 
-    text_to_check: List[Tuple[str, str]] = [] # List of (text_source_name, text_content)
+    text_to_check: List[Tuple[str, str]] = (
+        []
+    )  # List of (text_source_name, text_content)
 
     if policy.in_commit_body:
         text_to_check.append(("commit message body", commit_message_body))
@@ -79,26 +97,27 @@ def check_commit_for_issue_number(
     #     text_to_check.append(("PR body", pr_body))
 
     found_in_any = False
-    for source_name, text_content in text_to_check:
+    for _, text_content in text_to_check:
         if policy.pattern.search(text_content):
             found_in_any = True
             break
 
-    if not text_to_check: # No sources configured to check
+    if not text_to_check:  # No sources configured to check
         # This could be a warning if policy is enabled but no locations are selected.
         # For now, treat as no violation.
         pass
     elif not found_in_any:
         checked_sources = ", ".join([name for name, _ in text_to_check])
         violations.append(
-            f"Commit {commit_sha[:7]}: No issue number matching pattern '{policy.pattern.pattern}' found in {checked_sources}."
+            f"Commit {commit_sha[:7]}: No issue number matching pattern "
+            f"'{policy.pattern.pattern}' found in {checked_sources}."
         )
 
     return violations
 
 
 def check_commit_message_policies(
-    commit_details: Dict, # As returned by GitUtils.get_commit_details
+    commit_details: Dict,  # As returned by GitUtils.get_commit_details
     policy: CommitMessagePolicy,
     # pr_title: Optional[str] = None, # For future PR context
     # pr_body: Optional[str] = None   # For future PR context
@@ -112,24 +131,29 @@ def check_commit_message_policies(
 
     commit_sha = commit_details.get("sha", "UnknownSHA")
     commit_subject = commit_details.get("message_subject", "")
-    commit_body = commit_details.get("message_body", "") # Full message body after subject
+    commit_body = commit_details.get(
+        "message_body", ""
+    )  # Full message body after subject
 
     # Conventional Commit Check
     if policy.conventional_commit.enabled:
-        violations.extend(check_conventional_commit_format(
-            commit_subject,
-            commit_sha,
-            policy.conventional_commit
-        ))
+        violations.extend(
+            check_conventional_commit_format(
+                commit_subject, commit_sha, policy.conventional_commit
+            )
+        )
 
     # Require Issue Number Check
+    # commit_message_body=commit_body: Or pass commit_details.get("message", "") for full message
     if policy.require_issue_number.enabled:
-        violations.extend(check_commit_for_issue_number(
-            commit_message_body=commit_body, # Or pass commit_details.get("message", "") for full message
-            pr_title=None, # Placeholder
-            pr_body=None,  # Placeholder
-            commit_sha=commit_sha,
-            policy.require_issue_number
-        ))
+        violations.extend(
+            check_commit_for_issue_number(
+                commit_message_body=commit_body,
+                pr_title=None,  # Placeholder
+                pr_body=None,  # Placeholder
+                commit_sha=commit_sha,
+                policy=policy.require_issue_number,
+            )
+        )
 
     return violations
