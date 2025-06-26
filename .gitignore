@@ -1,10 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-__pycache\
-*.py[cod]
+__pycache__/*
 *.py[codz]
 *$py.class
-*.pyc
 *.bin
 
 # specific binaries to ignore
@@ -235,3 +233,6 @@ __marimo__/
 
 # ignore logs
 *.log
+
+# ignore .vscode directory
+.vscode/
