@@ -1,0 +1,15 @@
+action_id: trunk-upgrade-available
+date: 2025-06-26 16:14:17
+run: trunk upgrade --notify --allow-daemon-start=false
+run_from: ""
+trigger: schedule 1h
+result:
+  exit_code: 1
+  out: ""
+  err: Exception occurred while executing 'trunk-upgrade-available'. See .trunk\out\GoFtj.yaml for details.
+  error_path: C:\Users\tyler\Documents\devel\github\projects\ai-tools\.trunk\out\GoFtj.yaml
+timestamp: 1750954457
+full_timestamp:
+  nanos: 83943000
+  seconds: 1750954457
+trunk_version: 1.24.0
