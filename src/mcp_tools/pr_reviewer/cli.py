@@ -54,7 +54,7 @@ def run_all_checks(
 
     # Branch naming policy check
     if config.branch_naming.enabled:
-        print("\nChecking branch naming policy..."
+        print("\nChecking branch naming policy...")
         current_branch_name = git_utils.get_current_branch_name()
         branch_to_check = head_branch
         if head_branch.upper() == "HEAD":
