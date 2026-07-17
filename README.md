@@ -1,5 +1,10 @@
 # MCP Tools Project
 
+<!-- FLEET-BADGES:BEGIN -->
+[![CI](https://github.com/tzervas/ai-tools/actions/workflows/fleet-ci.yml/badge.svg?branch=main)](https://github.com/tzervas/ai-tools/actions/workflows/fleet-ci.yml?query=branch%3Amain)
+[![Security](https://github.com/tzervas/ai-tools/actions/workflows/fleet-security.yml/badge.svg?branch=main)](https://github.com/tzervas/ai-tools/actions/workflows/fleet-security.yml?query=branch%3Amain)
+<!-- FLEET-BADGES:END -->
+
 ## Overview
 
 This project is a collection of tools and servers related to the Anthropic Model Context Protocol
