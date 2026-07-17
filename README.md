@@ -1,22 +1,61 @@
-# MCP Tools Project
+# ai-tools
 
 <!-- FLEET-BADGES:BEGIN -->
 [![CI](https://github.com/tzervas/ai-tools/actions/workflows/fleet-ci.yml/badge.svg?branch=main)](https://github.com/tzervas/ai-tools/actions/workflows/fleet-ci.yml?query=branch%3Amain)
 [![Security](https://github.com/tzervas/ai-tools/actions/workflows/fleet-security.yml/badge.svg?branch=main)](https://github.com/tzervas/ai-tools/actions/workflows/fleet-security.yml?query=branch%3Amain)
 <!-- FLEET-BADGES:END -->
 
+**Python package of MCP-related utilities and CLI tools** for AI-assisted R&D, software, and IT
+engineering. Ships a small FastAPI MCP server scaffold plus focused tools for PR policy, IaC
+drift/docs/compliance, config optimization, and agentic GPG/GitHub setup.
+
+| | |
+|---|---|
+| **Package** | `ai-tools` (`pyproject.toml` name; install with `uv sync`) |
+| **Status** | **0.1.x alpha** — useful locally; not a published PyPI product yet |
+| **Python** | ≥ 3.12 |
+| **Agents** | [`AGENTS.md`](AGENTS.md) · [`CLAUDE.md`](CLAUDE.md) |
+
+## Tool catalog
+
+| Tool | Path | Purpose |
+|------|------|---------|
+| **MCP server** | [`src/mcp_server/`](src/mcp_server/) | FastAPI scaffold implementing basic MCP-style context endpoints |
+| **echo_tool** | [`src/mcp_tools/echo_tool/`](src/mcp_tools/echo_tool/) | Minimal client that hits the server echo endpoint (smoke / example) |
+| **pr_reviewer** | [`src/mcp_tools/pr_reviewer/`](src/mcp_tools/pr_reviewer/) | Automated PR review helper — branch/commit/file policies before open/push |
+| **iac_drift_detector** | [`src/mcp_tools/iac_drift_detector/`](src/mcp_tools/iac_drift_detector/) | Compare Terraform desired vs actual state; remediation hints (mock connector) |
+| **config_optimizer** | [`src/mcp_tools/config_optimizer/`](src/mcp_tools/config_optimizer/) | IaC config recommendations (cost/perf/security) for AWS EC2/S3 patterns |
+| **iac_doc_generator** | [`src/mcp_tools/iac_doc_generator/`](src/mcp_tools/iac_doc_generator/) | Generate Markdown docs from Terraform HCL modules |
+| **git_compliance_analyzer** | [`src/mcp_tools/git_compliance_analyzer/`](src/mcp_tools/git_compliance_analyzer/) | Scan a local repo against configurable file/commit/IaC compliance rules |
+| **gpg_github_tool** | [`src/mcp_tools/gpg_github_tool/`](src/mcp_tools/gpg_github_tool/) | Generate GPG keys and add them to GitHub for agentic signed commits |
+| **common** | [`src/mcp_tools/common/`](src/mcp_tools/common/) | Shared helpers (e.g. git utilities) used by multiple tools |
+
+Detailed usage for each tool is in the sections below and in each tool’s own `README.md` where present.
+
 ## Overview
 
-This project is a collection of tools and servers related to the Anthropic Model Context Protocol
-(MCP). It aims to provide useful utilities for AI-assisted Research & Development, Machine Learning,
-AI, Software, and IT engineering tasks.
+This repository packages tools and a server related to the Anthropic Model Context Protocol (MCP)
+and adjacent engineering workflows. It includes:
 
-The project includes:
-
-- An MCP Server implementation.
-- Various MCP client tools.
+- An MCP Server implementation (`src/mcp_server`).
+- Various CLI / client tools under `src/mcp_tools/`.
 - Development environment setup using Docker and Devcontainers.
-- Testing framework using Pytest.
+- Testing with Pytest; lint/format with **ruff**.
+
+## 5-minute path
+
+```bash
+git clone https://github.com/tzervas/ai-tools.git
+cd ai-tools
+uv sync --extra dev
+uv run pytest -q
+uv run ruff check src tests
+# optional: run the MCP server scaffold
+uv run uvicorn src.mcp_server.main:app --host 127.0.0.1 --port 8000
+```
+
+Expected: pytest collects unit/integration tests; ruff reports (may still flag historical style
+debt — fix incrementally). Server listens on `:8000` when started.
 
 ## Project Structure
 

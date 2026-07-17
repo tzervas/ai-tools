@@ -13,7 +13,8 @@ This document provides guidelines for AI agents contributing to this project.
 7.  **Branching:**
     *   Use feature branches for new tools or significant enhancements (e.g., `feature/my-new-tool`).
     *   Use `fix/` for bug fixes (e.g., `fix/issue-with-parser`).
-8.  **Code Style:** Follow PEP 8 guidelines for Python code. Use a formatter like Black or Ruff Formatter if possible.
+8.  **Code Style:** Follow PEP 8 guidelines for Python code. Prefer **ruff** for lint and format
+    (`uv run ruff check` / `uv run ruff format`; config in `pyproject.toml`).
 
 ## MCP Server
 
