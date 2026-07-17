@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-from typing import List, Optional
+from typing import List, Optional, Pattern
 
 import yaml
 from pydantic import BaseModel, Field, ValidationError, field_validator
@@ -16,8 +16,8 @@ DEFAULT_CONFIG_FILENAME = ".pr-policy.yml"
 
 class BranchNamingPolicy(BaseModel):
     """Policy for branch naming conventions."""
-    pattern: Optional[str] = (
-        "^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
+    pattern: Optional[Pattern[str]] = Field(
+        default="^(feature|fix|chore|docs|style|refactor|test)/[a-zA-Z0-9_.-]+$"
     )
     enabled: bool = True
 
@@ -25,6 +25,8 @@ class BranchNamingPolicy(BaseModel):
     def compile_pattern_branch(cls, v):
         if v is None:
             return None
+        if isinstance(v, re.Pattern):
+            return v
         try:
             return re.compile(v)
         except re.error as e:
@@ -49,11 +51,24 @@ class ConventionalCommitPolicy(BaseModel):
 
 class RequireIssueNumberPolicy(BaseModel):
     """Policy for requiring issue numbers in commits."""
-    pattern: Optional[str] = "\\[[A-Z]+-[0-9]+\\]"  # Example: [PROJ-123]
+    pattern: Optional[Pattern[str]] = Field(
+        default="\\[[A-Z]+-[0-9]+\\]"
+    )  # Example: [PROJ-123]
     in_commit_body: bool = True  # Check commit message body
     in_pr_title: bool = False  # Placeholder for future PR title check
     in_pr_body: bool = False  # Placeholder for future PR body check
     enabled: bool = False
+
+    @field_validator("pattern", mode="before")
+    def compile_pattern_issue(cls, v):
+        if v is None:
+            return None
+        if isinstance(v, re.Pattern):
+            return v
+        try:
+            return re.compile(v)
+        except re.error as e:
+            raise ValueError(f"Invalid regex pattern '{v}': {e}") from e
 
 
 class CommitMessagePolicy(BaseModel):
@@ -70,7 +85,7 @@ class CommitMessagePolicy(BaseModel):
 class DisallowedPatternItem(BaseModel):
     """Item for disallowed patterns in code."""
 
-    pattern: str
+    pattern: Pattern[str]
     message: Optional[str] = None
     enabled: bool = True
 
@@ -78,6 +93,8 @@ class DisallowedPatternItem(BaseModel):
     def compile_pattern_disallowed(cls, v):
         if v is None:
             raise ValueError("Pattern for DisallowedPatternItem cannot be None")
+        if isinstance(v, re.Pattern):
+            return v
         try:
             return re.compile(v)
         except re.error as e:
